@@ -1,0 +1,56 @@
+<!DOCTYPE rkplugin>
+<document>
+	<!-- this code was generated using the rkwarddev package.
+			perhaps don't make changes here, but in the rkwarddev script instead! -->
+	<code file="PairwisetTests.js" />
+	<help file="PairwisetTests.rkh" />
+	<logic>
+		<convert id="lgc_chcPldSD" sources="chc_PldSDfrl.state" mode="equals" standard="true" />
+		<connect governor="lgc_chcPldSD.not" client="chc_PrdtTsts.enabled" />
+		<convert id="lgc_chcPrdtT" sources="chc_PrdtTsts.state" mode="equals" standard="true" />
+		<connect governor="lgc_chcPrdtT.not" client="chc_PldSDfrl.enabled" />
+		<convert id="lgc_rdDtfrmt" sources="rad_Datafrmt.string" mode="equals" standard="one" />
+		<connect governor="lgc_rdDtfrmt" client="vrsl_Rspnsvct.visible" />
+		<connect governor="lgc_rdDtfrmt" client="vrsl_Rspnsvct.required" />
+		<connect governor="lgc_rdDtfrmt" client="vrsl_Grpngvct.visible" />
+		<connect governor="lgc_rdDtfrmt" client="vrsl_Grpngvct.required" />
+		<connect governor="lgc_rdDtfrmt.not" client="vrsl_Sprtrsp3.visible" />
+		<connect governor="lgc_rdDtfrmt.not" client="vrsl_Sprtrsp3.required" />
+	</logic>
+	<dialog label="Pairwise t-Tests">
+		<row id="row_vSSDDSSDDR">
+			<varselector id="vrs_Selectdt" label="Select data" />
+			<column id="clm_rDDSSDDRRS">
+				<radio id="rad_Datafrmt" label="Data format">
+					<option label="Single (grouped) vector" value="one" checked="true" />
+					<option label="Separate variables" value="group" />
+				</radio>
+				<frame label="Data" id="frm_Data">
+					<varslot id="vrsl_Rspnsvct" label="Response vector" source="vrs_Selectdt" />
+					<varslot id="vrsl_Grpngvct" label="Grouping vector or factor" source="vrs_Selectdt" />
+					<varslot id="vrsl_Sprtrsp3" label="Separate response vectors (&gt;= 3)" source="vrs_Selectdt" multi="true" min_vars="3" />
+				</frame>
+				<frame label="Alpha error correction" id="frm_Alphrrrc">
+					<dropdown id="drp_Mthdfrdj" label="Method for adjusting p values">
+						<option label="none" value="none" />
+						<option label="Bonferroni" value="bonferroni" />
+						<option label="Holm" value="holm" checked="true" />
+						<option label="Benjamini &amp; Hochberg (fdr)" value="BH" />
+						<option label="Benjamini &amp; Yekutieli" value="BY" />
+						<option label="Hochberg" value="hochberg" />
+						<option label="Hommel" value="hommel" />
+					</dropdown>
+				</frame>
+				<frame id="frm_cPSDPSDPTP">
+					<checkbox id="chc_PldSDfrl" label="Pooled SD for all groups" value="true" />
+					<checkbox id="chc_PrdtTsts" label="Paired t-Tests" value="true" checked="true" />
+				</frame>
+				<radio id="rad_Altrntvh" label="Alternative hypothesis">
+					<option label="Two-sided" value="two.sided" />
+					<option label="First is greater" value="greater" />
+					<option label="Second is greater" value="less" />
+				</radio>
+			</column>
+		</row>
+	</dialog>
+</document>

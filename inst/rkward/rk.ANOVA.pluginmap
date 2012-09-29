@@ -1,0 +1,119 @@
+<!DOCTYPE rkpluginmap>
+<document 
+	namespace="rkward"
+	id="ANOVA_rkward"
+>
+	<!-- 
+		this code was generated using the rkwarddev package.
+			perhaps don't make changes here, but in the rkwarddev script instead! 
+	-->
+	<about 
+		name="rk.ANOVA"
+		shortinfo="RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions."
+		longinfo="RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions."
+		version="0.01-13"
+		releasedate="2012-09-29"
+		url="http://rkward.sf.net"
+		license="GPL (&gt;= 3)"
+	>
+		<author 
+			given="Meik"
+			family="Michalke"
+			email="meik.michalke@hhu.de"
+			role="aut, cre"
+		 />
+		<dependencies rkward_min_version="0.5.6">
+			<package name="ez" />
+			<package name="sciplot" />
+			<!-- 
+				If this plugin depends on other pluginmaps, edit this part to your needs: 				<pluginmap 
+								name="CHANGE_ME_OR_DELETE_ME"
+								url="CHANGE_ME_OR_DELETE_ME"
+							 /> 
+			-->
+		</dependencies>
+	</about>
+	<!-- 
+		<require file="path/file.pluginmap" /> 
+	-->
+	<components>
+		<component 
+			id="cmp_ANOVAPairwisetTests"
+			label="Pairwise t-Tests"
+			type="standard"
+			file="plugins/PairwisetTests.xml"
+		 />
+		<component 
+			id="cmp_ANOVAInteractionplot"
+			label="Interaction plot"
+			type="standard"
+			file="plugins/Interactionplot.xml"
+		 />
+		<component 
+			id="cmp_ANOVAPreparewithinsbjctdt"
+			label="Prepare within subject data"
+			type="standard"
+			file="plugins/Preparewithinsubjectdata.xml"
+		 />
+		<component 
+			id="cmp_ANOVAANOVA"
+			label="ANOVA"
+			type="standard"
+			file="plugins/ANOVA.xml"
+		 />
+	</components>
+	<hierarchy>
+		<menu 
+			id="analysis"
+			label.analysis="Analysis"
+		>
+			<menu 
+				id="means"
+				label="means"
+			>
+				<menu 
+					id="ttests"
+					label="t-tests"
+				>
+					<entry component="cmp_ANOVAPairwisetTests" />
+				</menu>
+			</menu>
+		</menu>
+		<menu 
+			id="plots"
+			label.plots="Plots"
+		>
+			<entry component="cmp_ANOVAInteractionplot" />
+		</menu>
+		<menu 
+			id="data"
+			label.data="Data"
+		>
+			<menu 
+				id="ANOVA"
+				label="ANOVA"
+			>
+				<entry component="cmp_ANOVAPreparewithinsbjctdt" />
+			</menu>
+		</menu>
+		<menu 
+			id="analysis"
+			label.analysis="Analysis"
+		>
+			<menu 
+				id="ANOVA"
+				label="ANOVA"
+			>
+				<entry component="cmp_ANOVAANOVA" />
+			</menu>
+		</menu>
+	</hierarchy>
+	<!-- 
+		<context id="x11">
+			</context> 
+	-->
+	<!-- 
+		<context id="import">
+			</context> 
+	-->
+</document>

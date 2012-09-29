@@ -1,0 +1,61 @@
+<!DOCTYPE rkplugin>
+<document>
+	<!-- this code was generated using the rkwarddev package.
+			perhaps don't make changes here, but in the rkwarddev script instead! -->
+	<code file="Interactionplot.js" />
+	<help file="Interactionplot.rkh" />
+	<logic>
+		<convert id="lgc_rdPlttyp" sources="rad_Plottype.string" mode="equals" standard="line" />
+		<connect governor="lgc_rdPlttyp" client="rad_Elements.visible" />
+		<connect governor="lgc_rdPlttyp.not" client="rad_Bars.visible" />
+		<convert id="lgc_vrslGrpn" sources="vrsl_Grpngfct.available" mode="notequals" />
+		<connect governor="lgc_vrslGrpn" client="rad_Bars.enabled" />
+		<connect governor="lgc_vrslGrpn" client="chc_Legend.enabled" />
+		<convert id="lgc_lgcvrsGL" sources="lgc_vrslGrpn;chc_Legend.state" mode="and" />
+		<connect governor="lgc_lgcvrsGL" client="inp_Legndlbl.enabled" />
+		<connect governor="vrsl_Factrxxs.available" client="emb_Gnrcpltp.xvar" />
+		<connect governor="vrsl_Rspnsvct.available" client="emb_Gnrcpltp.yvar" />
+		<set id="emb_Gnrcpltp.allow_type" to="false" />
+	</logic>
+	<dialog label="Interaction plot">
+		<row id="row_vSSDDFFSRR">
+			<varselector id="vrs_Selectdt" label="Select data" />
+			<column id="clm_fDDFFSRRSG">
+				<frame label="Data" id="frm_Data">
+					<varslot id="vrsl_Factrxxs" label="Factor (x axis)" source="vrs_Selectdt" required="true" />
+					<varslot id="vrsl_Rspnsvct" label="Response vector" source="vrs_Selectdt" required="true" />
+					<varslot id="vrsl_Grpngfct" label="Grouping factor (traces)" source="vrs_Selectdt" />
+				</frame>
+				<stretch />
+				<frame id="frm_rPPLBSSLLP">
+					<row id="row_cPPLBSSLLP">
+						<column id="clm_rdPPLBSSLL">
+							<radio id="rad_Plottype" label="Plot type">
+								<option label="Lineplot" value="line" checked="true" />
+								<option label="Bargraph" value="bar" />
+							</radio>
+							<checkbox id="chc_Stndrdrr" label="Standard error" value="true" checked="true" />
+							<checkbox id="chc_Legend" label="Legend" value="true" checked="true" />
+							<stretch />
+						</column>
+						<column id="clm_rEELLPBBGS">
+							<radio id="rad_Elements" label="Elements">
+								<option label="Lines + points" value="b" checked="true" />
+								<option label="Lines only" value="l" />
+								<option label="Points only" value="p" />
+							</radio>
+							<radio id="rad_Bars" label="Bars">
+								<option label="Group bars" value="group" checked="true" />
+								<option label="Split bars" value="split" />
+							</radio>
+							<stretch />
+						</column>
+					</row>
+					<input label="Legend label" id="inp_Legndlbl" />
+					<embed component="rkward::plot_options" as_button="true" label="Generic plot options" id="emb_Gnrcpltp" />
+					<preview />
+				</frame>
+			</column>
+		</row>
+	</dialog>
+</document>

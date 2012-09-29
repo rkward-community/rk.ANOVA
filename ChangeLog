@@ -1,0 +1,14 @@
+ChangeLog for package rk.ANOVA
+
+changes in version 0.01-13 (2012-09-29)
+fixed:
+  - added generic pre/post plot options
+
+changes in version 0.01-12 (2012-08-15)
+fixed:
+  - create a dummy subject ID for pure between designs if none was given, as ezANOVA insists on one
+
+changes in version 0.01-11 (2012-04-06)
+changes:
+  - added a ChangeLog file
+  - rebuild package for R 2.15
