@@ -377,7 +377,7 @@ ip.rad.btype <- rk.XML.radio("Bars", options=list(
 ip.chk.se <- rk.XML.cbox("Standard error", val="true", chk=TRUE)
 ip.chk.legend <- rk.XML.cbox("Legend", val="true", chk=TRUE)
 ip.inp.trace.label <- rk.XML.input("Legend label")
-ip.plot.options <- rk.XML.embed(component="rkward::plot_options", button=TRUE, label="Generic plot options")
+ip.plot.options <- rk.plotOptions()
 ip.preview <- rk.XML.preview()
 
 ## logic
@@ -413,7 +413,6 @@ ip.full.dialog <- rk.XML.dialog(
 	), label="Interaction plot")
 
 ## JavaScript
-js.po.printout <- rk.JS.vars(ip.plot.options, modifiers="code.printout", check.modifiers=FALSE)
 ip.js.prnt <- 	rk.paste.JS.graph(
 	ite(rkwarddev:::id(ip.rad.plottype, " == \"line\""),
 		echo("\t\tlineplot.CI("),
@@ -427,10 +426,9 @@ ip.js.prnt <- 	rk.paste.JS.graph(
 	ite(rkwarddev:::id(ip.rad.plottype, " == \"bar\" & ", ip.chk.legend, " == \"true\" & ", ip.tvar.group, " != \"\""), echo(",\n\t\t\tlegend=TRUE")),
 	ite(rkwarddev:::id(ip.chk.legend, " == \"true\" & ", ip.tvar.group, " != \"\" & ", ip.inp.trace.label, " != \"\""), echo(",\n\t\t\ttrace.label=\"", ip.inp.trace.label, "\"")),
 	ite(rkwarddev:::id("!", ip.chk.se), echo(",\n\t\t\tci.fun=function(x)c(mean(x, na.rm=TRUE), mean(x, na.rm=TRUE))")),
-	id("echo(", js.po.printout, ".replace(/, /g, \",\\n\\t\\t\\t\"));"),
+	id("echo(", ip.plot.options, ".replace(/, /g, \",\\n\\t\\t\\t\"));"),
 	echo(")"),
-	plotOpts=ip.plot.options,
-	printoutObj=js.po.printout
+	plotOpts=ip.plot.options
 )
 
 ## make a whole component of the interaction plot
