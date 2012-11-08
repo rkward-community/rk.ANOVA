@@ -1,4 +1,4 @@
-<!DOCTYPE rkplugin>
+<!DOCTYPE rkplugin >
 <document>
 	<!-- this code was generated using the rkwarddev package.
 			perhaps don't make changes here, but in the rkwarddev script instead! -->
@@ -13,9 +13,9 @@
 		<connect governor="lgc_vrslGrpn" client="chc_Legend.enabled" />
 		<convert id="lgc_lgcvrsGL" sources="lgc_vrslGrpn;chc_Legend.state" mode="and" />
 		<connect governor="lgc_lgcvrsGL" client="inp_Legndlbl.enabled" />
-		<connect governor="vrsl_Factrxxs.available" client="emb_Gnrcpltp.xvar" />
-		<connect governor="vrsl_Rspnsvct.available" client="emb_Gnrcpltp.yvar" />
-		<set id="emb_Gnrcpltp.allow_type" to="false" />
+		<connect governor="vrsl_Factrxxs.available" client="emb_rkwrdpltptnG.xvar" />
+		<connect governor="vrsl_Rspnsvct.available" client="emb_rkwrdpltptnG.yvar" />
+		<set id="emb_rkwrdpltptnG.allow_type" to="false" />
 	</logic>
 	<dialog label="Interaction plot">
 		<row id="row_vSSDDFFSRR">
@@ -52,7 +52,7 @@
 						</column>
 					</row>
 					<input label="Legend label" id="inp_Legndlbl" />
-					<embed component="rkward::plot_options" as_button="true" label="Generic plot options" id="emb_Gnrcpltp" />
+					<embed component="rkward::plot_options" as_button="true" label="Generic plot options" id="emb_rkwrdpltptnG" />
 					<preview />
 				</frame>
 			</column>

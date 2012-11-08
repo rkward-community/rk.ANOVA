@@ -69,7 +69,7 @@ function printout(){
 	// printout the results
 	echo("rk.header(\"Prepare within subject data results\")\n");
 
-
+	echo("\trk.print(summary(anova.data))\n");
 	//// save result object
 	// read in saveobject variables
 	var svbSvrsltst = getValue("svb_Svrsltst");

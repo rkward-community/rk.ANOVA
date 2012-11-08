@@ -41,9 +41,9 @@ function doPrintout(full){
 	}
 
 	// in case there are generic plot options defined:
-	var embGnrcpltpCodePreprocess = getValue("emb_Gnrcpltp.code.preprocess");
-	var embGnrcpltpCodePrintout = getValue("emb_Gnrcpltp.code.printout");
-	var embGnrcpltpCodeCalculate = getValue("emb_Gnrcpltp.code.calculate");
+	var embRkwrdpltptnGCodePreprocess = getValue("emb_rkwrdpltptnG.code.preprocess");
+	var embRkwrdpltptnGCodePrintout = getValue("emb_rkwrdpltptnG.code.printout");
+	var embRkwrdpltptnGCodeCalculate = getValue("emb_rkwrdpltptnG.code.calculate");
 
 	if(full) {
 		echo("rk.graph.on()\n");
@@ -51,7 +51,7 @@ function doPrintout(full){
 	echo("\ttry({\n");
 
 	// insert any option-setting code that should be run before the actual plotting commands:
-	printIndentedUnlessEmpty("\t\t", embGnrcpltpCodePreprocess, "\n", "");
+	printIndentedUnlessEmpty("\t\t", embRkwrdpltptnGCodePreprocess, "\n", "");
 
 	// the actual plot:
 	if(radPlottype == "line") {
@@ -86,11 +86,11 @@ function doPrintout(full){
 	if(!chcStndrdrr) {
 		echo(",\n\t\t\tci.fun=function(x)c(mean(x, na.rm=TRUE), mean(x, na.rm=TRUE))");
 	}
-	echo(embGnrcpltpCodePrintout.replace(/, /g, ",\n\t\t\t"));
+	echo(embRkwrdpltptnGCodePrintout.replace(/, /g, ",\n\t\t\t"));
 	echo(")");
 
 	// insert any option-setting code that should be run after the actual plot:
-	printIndentedUnlessEmpty("\t\t", embGnrcpltpCodeCalculate, "\n", "");
+	printIndentedUnlessEmpty("\t\t", embRkwrdpltptnGCodeCalculate, "\n", "");
 
 	echo("\n\t})\n");
 	if(full) {

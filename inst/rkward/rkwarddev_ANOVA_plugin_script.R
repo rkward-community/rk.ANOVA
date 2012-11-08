@@ -5,7 +5,7 @@
 
 local({
 # set the output directory to overwrite the actual plugin
-output.dir <- tempdir()
+#output.dir <- tempdir()
 overwrite <- TRUE
 
 require(rkwarddev)
@@ -16,7 +16,7 @@ about.info <- rk.XML.about(
 		person(given="Meik", family="Michalke",
 			email="meik.michalke@hhu.de", role=c("aut","cre"))),
 	about=list(desc="RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions.",
-		version="0.01-13", url="http://rkward.sf.net"),
+		version="0.01-14", url="http://rkward.sf.net"),
 	dependencies=list(rkward.min="0.5.6"),
 	package=list(c(name="ez"), c(name="sciplot"))
 	)
@@ -126,18 +126,18 @@ js.calc <- rk.paste.JS(
 	jsVarWithin <- rk.JS.vars(var.within, modifiers="shortname", join=", "),
 	jsVarBetween <- rk.JS.vars(var.between, modifiers="shortname", join=", "),
 	jsVarObserved <- rk.JS.vars(var.observed, modifiers="shortname", join=", "),
-	ite(rkwarddev:::id(drp.vtype, " == 3"), echo("\t# set contrasts for accurate type 3 ANOVA\n\toptions(contrasts=c(\"contr.sum\",\"contr.poly\"))\n")),
-	ite(rkwarddev:::id(var.wid, " == \"\" & ", anova.drp.design, " == \"between\""), echo("\t# ezANOVA demands a subject identifier variable\n\t", var.data, " <- cbind(", var.data ,", ez.subject.ID.dummy=factor(1:nrow(", var.data ,")))\n")),
+	ite(rkwarddev::id(drp.vtype, " == 3"), echo("\t# set contrasts for accurate type 3 ANOVA\n\toptions(contrasts=c(\"contr.sum\",\"contr.poly\"))\n")),
+	ite(rkwarddev::id(var.wid, " == \"\" & ", anova.drp.design, " == \"between\""), echo("\t# ezANOVA demands a subject identifier variable\n\t", var.data, " <- cbind(", var.data ,", ez.subject.ID.dummy=factor(1:nrow(", var.data ,")))\n")),
 	echo("\tanova.results <- ezANOVA("),
 	ite(var.data, echo("\n\t\tdata=", var.data)),
 	ite(var.dv, echo(",\n\t\tdv=.(", jsVarDv ,")")),
-	ite(var.wid, echo(",\n\t\twid=.(", jsVarWid ,")"), ite(rkwarddev:::id(anova.drp.design, " == \"between\""), echo(",\n\t\twid=.(ez.subject.ID.dummy)"))), # wid is needed anyway
-	ite(rkwarddev:::id(var.within, " != \"\" & ", anova.drp.design, " != \"between\""), echo(",\n\t\twithin=.(", jsVarWithin ,")")),
-	ite(rkwarddev:::id(var.between, " != \"\" & ", anova.drp.design, " != \"within\""), echo(",\n\t\tbetween=.(", jsVarBetween ,")")),
+	ite(var.wid, echo(",\n\t\twid=.(", jsVarWid ,")"), ite(rkwarddev::id(anova.drp.design, " == \"between\""), echo(",\n\t\twid=.(ez.subject.ID.dummy)"))), # wid is needed anyway
+	ite(rkwarddev::id(var.within, " != \"\" & ", anova.drp.design, " != \"between\""), echo(",\n\t\twithin=.(", jsVarWithin ,")")),
+	ite(rkwarddev::id(var.between, " != \"\" & ", anova.drp.design, " != \"within\""), echo(",\n\t\tbetween=.(", jsVarBetween ,")")),
 	ite(var.observed, echo(",\n\t\tobserved=.(", jsVarObserved ,")")),
 
-	ite(rkwarddev:::id(drp.vtype, " != 2"), echo(",\n\t\ttype=", drp.vtype)),
-	ite(rkwarddev:::id(drp.white, " != \"false\""), echo(",\n\t\twhite.adjust=\"", drp.white, "\"")),
+	ite(rkwarddev::id(drp.vtype, " != 2"), echo(",\n\t\ttype=", drp.vtype)),
+	ite(rkwarddev::id(drp.white, " != \"false\""), echo(",\n\t\twhite.adjust=\"", drp.white, "\"")),
 	tf(check.extrainfo, opt="detailed"),
 	tf(check.aov, opt="return_aov"),
 	echo(")\n\n"),
@@ -217,7 +217,7 @@ pd.js.calc <- rk.paste.JS(
 		echo("\tnum.cases <- nrow(", pd.var.data,")\n"),
 		rk.paste.JS(
 			echo("\tnum.cases <- unique(sapply(list(\n\t\t\t", pd.js.dep),
-			ite(id("!", pd.chk.genCaseID , " && ", pd.var.wid),
+			ite(rkwarddev::id("!", pd.chk.genCaseID , " && ", pd.var.wid),
 				echo(",\n\t\t\t", pd.var.wid)),
 			ite(pd.var.between,
 				echo(",\n\t\t\t", pd.js.between)),
@@ -227,7 +227,7 @@ pd.js.calc <- rk.paste.JS(
 	),
 	ite(pd.var.dependent, echo("\tanova.conditions <- c(\"", pd.js.dep.names, "\")\n\tnum.conditions <- length(anova.conditions)\n\n")),
 	ite(pd.var.between,
-		rkwarddev:::id("\tvar betweenVarsNames = ", pd.js.between.short, ".split(\"\\n\");\n",
+		rkwarddev::id("\tvar betweenVarsNames = ", pd.js.between.short, ".split(\"\\n\");\n",
 		"\tvar betweenVars = ", pd.var.between, ".split(\"\\n\");"),
 			"\tvar betweenVars = \"\";"),
 	echo("\tanova.data <- data.frame("),
@@ -235,16 +235,20 @@ pd.js.calc <- rk.paste.JS(
 		echo("\n\t\t", pd.inp.dependent, "=c(\n\t\t\t", pd.js.dep, ")",
 		",\n\t\t", pd.inp.condition, "=factor(rep(anova.conditions, each=num.cases))")
 	),
-	ite(id(pd.chk.genCaseID , " && ", pd.inp.caseID),
+	ite(rkwarddev::id(pd.chk.genCaseID , " && ", pd.inp.caseID),
 		echo(",\n\t\t", pd.inp.caseID, "=factor(rep(1:num.cases, times=num.conditions))")),
-	ite(id("!", pd.chk.genCaseID , " && ", pd.var.wid),
+	ite(rkwarddev::id("!", pd.chk.genCaseID , " && ", pd.var.wid),
 		echo(",\n\t\t", pd.js.wid, "=factor(rep(", pd.var.wid, ", times=num.conditions))")),
-	ite(pd.var.between, rkwarddev:::id("\tfor (var i=0, len=betweenVarsNames.length; i<len; ++i ){\n",
+	ite(pd.var.between, rkwarddev::id("\tfor (var i=0, len=betweenVarsNames.length; i<len; ++i ){\n",
 		"\t\t\techo(\",\\n\\t\\t\" + betweenVarsNames[i] + \"=factor(rep(\" + betweenVars[i] + \", times=num.conditions))\");\n",
 		"\t\t}"
 	)),
 	echo(",\n\t\tstringsAsFactors=FALSE)\n\n"),
 	empty.e=TRUE
+)
+
+pd.js.print <- rk.paste.JS(
+	echo("\trk.print(summary(anova.data))\n")
 )
 
 ## make a whole component of the data preparation
@@ -253,8 +257,8 @@ pdata.component <- rk.plugin.component("Prepare within subject data",
 		logic=pd.lgc.sect,
 		dialog=pd.full.dialog),
  	js=list(
- 		calculate=pd.js.calc),
-# 		printout=pd.js.print),
+ 		calculate=pd.js.calc,
+ 		printout=pd.js.print),
 	hierarchy=list("data", "ANOVA"),
 	create=c("xml", "js"))
 
@@ -320,7 +324,7 @@ pt.lgc.sect <- rk.XML.logic(
 
 ## JavaScript
 pt.js.calc <- rk.paste.JS(
-	ite(rkwarddev:::id(pt.data.format, " == \"one\""),
+	ite(rkwarddev::id(pt.data.format, " == \"one\""),
 		rk.paste.JS(
 			echo("\tpair.t.results <- pairwise.t.test(\n\t\t"),
 			ite(pt.tvar.data, echo("x=", pt.tvar.data)),
@@ -336,7 +340,7 @@ pt.js.calc <- rk.paste.JS(
 	ite(pt.drp.adjust, echo(",\n\t\tp.adjust.method=\"", pt.drp.adjust, "\"")),
 	tf(pt.chk.poolSD, opt="pool.sd"),
 	tf(pt.chk.paired, opt="paired"),
-	ite(rkwarddev:::id(pt.radio.altern, " != \"two.sided\""), echo(",\n\t\talternative=\"", pt.radio.altern, "\"")),
+	ite(rkwarddev::id(pt.radio.altern, " != \"two.sided\""), echo(",\n\t\talternative=\"", pt.radio.altern, "\"")),
 	echo(")\n\n"),
 	empty.e=TRUE
 )
@@ -414,19 +418,19 @@ ip.full.dialog <- rk.XML.dialog(
 
 ## JavaScript
 ip.js.prnt <- 	rk.paste.JS.graph(
-	ite(rkwarddev:::id(ip.rad.plottype, " == \"line\""),
+	ite(rkwarddev::id(ip.rad.plottype, " == \"line\""),
 		echo("\t\tlineplot.CI("),
 		echo("\t\tbargraph.CI(")),
 	ite(ip.tvar.x, echo("\n\t\t\tx.factor=", ip.tvar.x)),
 	ite(ip.tvar.response, echo(",\n\t\t\tresponse=", ip.tvar.response)),
 	ite(ip.tvar.group, echo(",\n\t\t\tgroup=", ip.tvar.group)),
-	ite(rkwarddev:::id(ip.rad.plottype, " == \"line\" & ", ip.rad.ltype, " != \"b\""), echo(",\n\t\t\ttype=\"", ip.rad.ltype, "\"")),
-	ite(rkwarddev:::id(ip.rad.plottype, " == \"bar\" & ", ip.rad.btype, " == \"split\""), echo(",\n\t\t\tsplit=TRUE")),
-	ite(rkwarddev:::id(ip.rad.plottype, " == \"line\" & !", ip.chk.legend, " & ", ip.tvar.group, " != \"\""), echo(",\n\t\t\tlegend=FALSE")),
-	ite(rkwarddev:::id(ip.rad.plottype, " == \"bar\" & ", ip.chk.legend, " == \"true\" & ", ip.tvar.group, " != \"\""), echo(",\n\t\t\tlegend=TRUE")),
-	ite(rkwarddev:::id(ip.chk.legend, " == \"true\" & ", ip.tvar.group, " != \"\" & ", ip.inp.trace.label, " != \"\""), echo(",\n\t\t\ttrace.label=\"", ip.inp.trace.label, "\"")),
-	ite(rkwarddev:::id("!", ip.chk.se), echo(",\n\t\t\tci.fun=function(x)c(mean(x, na.rm=TRUE), mean(x, na.rm=TRUE))")),
-	id("echo(", ip.plot.options, ".replace(/, /g, \",\\n\\t\\t\\t\"));"),
+	ite(rkwarddev::id(ip.rad.plottype, " == \"line\" & ", ip.rad.ltype, " != \"b\""), echo(",\n\t\t\ttype=\"", ip.rad.ltype, "\"")),
+	ite(rkwarddev::id(ip.rad.plottype, " == \"bar\" & ", ip.rad.btype, " == \"split\""), echo(",\n\t\t\tsplit=TRUE")),
+	ite(rkwarddev::id(ip.rad.plottype, " == \"line\" & !", ip.chk.legend, " & ", ip.tvar.group, " != \"\""), echo(",\n\t\t\tlegend=FALSE")),
+	ite(rkwarddev::id(ip.rad.plottype, " == \"bar\" & ", ip.chk.legend, " == \"true\" & ", ip.tvar.group, " != \"\""), echo(",\n\t\t\tlegend=TRUE")),
+	ite(rkwarddev::id(ip.chk.legend, " == \"true\" & ", ip.tvar.group, " != \"\" & ", ip.inp.trace.label, " != \"\""), echo(",\n\t\t\ttrace.label=\"", ip.inp.trace.label, "\"")),
+	ite(rkwarddev::id("!", ip.chk.se), echo(",\n\t\t\tci.fun=function(x)c(mean(x, na.rm=TRUE), mean(x, na.rm=TRUE))")),
+	rkwarddev::id("echo(", ip.plot.options, ".replace(/, /g, \",\\n\\t\\t\\t\"));"),
 	echo(")"),
 	plotOpts=ip.plot.options
 )

@@ -1,4 +1,4 @@
-<!DOCTYPE rkplugin>
+<!DOCTYPE rkplugin >
 <document>
 	<!-- this code was generated using the rkwarddev package.
 			perhaps don't make changes here, but in the rkwarddev script instead! -->
@@ -23,7 +23,7 @@
 		<connect governor="lgc_vvars" client="vrsl_Wthnsbjc.visible" />
 		<connect governor="lgc_bvars" client="vrsl_Btwnsbjc.required" />
 		<connect governor="lgc_vvars" client="vrsl_Wthnsbjc.required" />
-		<connect governor="lgc_vrslDtms" client="row_vSSOTOOTOO.enabled" />
+		<connect governor="lgc_vrslDtms" client="row_vSSOTOTOTO.enabled" />
 		<connect governor="vrsl_Dtmstbdt.available" client="vrs_Slctbsrv.root" />
 	</logic>
 	<dialog label="ANOVA">
@@ -54,10 +54,10 @@
 				</row>
 			</tab>
 			<tab label="Observed" id="tab_Observed">
-				<row id="row_vSSOTOOTOO">
+				<row id="row_vSSOTOTOTO">
 					<varselector id="vrs_Slctbsrv" label="Select observed variables" />
-					<column id="clm_fOTOOTOOOS">
-						<frame id="frm_txtdtxtOTO">
+					<column id="clm_fOTOTOTOTO">
+						<frame id="frm_txtdtxOTOT">
 							<text id="txt_ObsrvdvT">
 								Observed variables are independent variables you have 								<b>
 									already defined
@@ -65,6 +65,7 @@
 								as either between or within variables, but that were measured and 								<b>
 									not manipulated
 								</b>
+								. They affect the calculated effect size (generalized eta seqared).
 							</text>
 						</frame>
 						<frame id="frm_vrsltdvOOS">
