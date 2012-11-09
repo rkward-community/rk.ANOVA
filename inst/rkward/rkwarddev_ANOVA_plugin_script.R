@@ -5,7 +5,7 @@
 
 local({
 # set the output directory to overwrite the actual plugin
-#output.dir <- tempdir()
+output.dir <- tempdir()
 overwrite <- TRUE
 
 require(rkwarddev)

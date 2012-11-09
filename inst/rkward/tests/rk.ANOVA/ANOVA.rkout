@@ -1,0 +1,70 @@
+<h1>ANOVA results</h1>
+DATE<br />
+
+
+<p align= center >
+<table cellspacing=0 border=1>
+<caption align=bottom class=captiondataframe></caption>
+<tr><td>
+	<table border=0 class=dataframe>
+	<tbody> 
+	<tr class= firstline > 
+		<th>&nbsp;  </th>
+		<th>Effect  </th>
+		<th>DFn  </th>
+		<th>DFd  </th>
+		<th>SSn  </th>
+		<th>SSd  </th>
+		<th>F  </th>
+		<th>p  </th>
+		<th>p<.05  </th>
+		<th>ges</th> 
+	</tr> 
+<tr> 
+<td class=firstcolumn>1
+</td>
+<td class=cellinside>(Intercept)
+</td>
+<td class=cellinside>1
+</td>
+<td class=cellinside>29
+</td>
+<td class=cellinside>547215
+</td>
+<td class=cellinside>4495
+</td>
+<td class=cellinside>3530
+</td>
+<td class=cellinside>7.6e-32
+</td>
+<td class=cellinside>*
+</td>
+<td class=cellinside>0.99
+</td></tr>
+ 
+<tr> 
+<td class=firstcolumn>2
+</td>
+<td class=cellinside>condition
+</td>
+<td class=cellinside>1
+</td>
+<td class=cellinside>29
+</td>
+<td class=cellinside>150000
+</td>
+<td class=cellinside>   0
+</td>
+<td class=cellinside> Inf
+</td>
+<td class=cellinside>0.0e+00
+</td>
+<td class=cellinside>*
+</td>
+<td class=cellinside>0.97
+</td></tr>
+ 
+	</tbody>
+</table>
+ </td></table>
+ <br>

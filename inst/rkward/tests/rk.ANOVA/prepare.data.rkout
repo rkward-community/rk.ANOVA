@@ -1,0 +1,50 @@
+<h1>Prepare within subject data results</h1>
+DATE<br />
+
+
+
+<p align= center >
+<table cellspacing=0 border=1><caption align=bottom class=captiondataframe></caption>
+<tr><td>
+	<table border=0 class=dataframe>
+	<tbody> <tr class= firstline > <th></th><th>   response</th><th>condition</th><th>   subjects</th> </tr>
+ 
+<tr><td class=firstcolumn></td>
+<td class=cellinside>Min.   : 31.0  </td>
+<td class=cellinside>cond1:30       </td>
+<td class=cellinside>1      : 2     </td></tr>
+ 
+<tr><td class=firstcolumn></td>
+<td class=cellinside>1st Qu.: 45.8  </td>
+<td class=cellinside>cond2:30       </td>
+<td class=cellinside>2      : 2     </td></tr>
+ 
+<tr><td class=firstcolumn></td>
+<td class=cellinside>Median : 95.5  </td>
+<td class=cellinside>NA             </td>
+<td class=cellinside>3      : 2     </td></tr>
+ 
+<tr><td class=firstcolumn></td>
+<td class=cellinside>Mean   : 95.5  </td>
+<td class=cellinside>NA             </td>
+<td class=cellinside>4      : 2     </td></tr>
+ 
+<tr><td class=firstcolumn></td>
+<td class=cellinside>3rd Qu.:145.2  </td>
+<td class=cellinside>NA             </td>
+<td class=cellinside>5      : 2     </td></tr>
+ 
+<tr><td class=firstcolumn></td>
+<td class=cellinside>Max.   :160.0  </td>
+<td class=cellinside>NA             </td>
+<td class=cellinside>6      : 2     </td></tr>
+ 
+<tr><td class=firstcolumn></td>
+<td class=cellinside>NA             </td>
+<td class=cellinside>NA             </td>
+<td class=cellinside>(Other):48     </td></tr>
+ 
+	</tbody>
+</table>
+ </td></table>
+ <br>
