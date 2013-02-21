@@ -1,5 +1,9 @@
 ChangeLog for package rk.ANOVA
 
+changes in version 0.01-15 (2013-02-21)
+changed:
+  - updated rkwarddev generator script (compatibility with 0.06-2) and regenerated plugin code
+
 changes in version 0.01-14 (2012-11-09)
 added:
   - plugin tests

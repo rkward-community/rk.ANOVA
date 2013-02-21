@@ -7,6 +7,8 @@ local({
 # set the output directory to overwrite the actual plugin
 output.dir <- tempdir()
 overwrite <- TRUE
+# if you set guess.getters to TRUE, the resulting code will need RKWard >= 0.6.0
+guess.getter <- FALSE
 
 require(rkwarddev)
 
@@ -16,10 +18,12 @@ about.info <- rk.XML.about(
 		person(given="Meik", family="Michalke",
 			email="meik.michalke@hhu.de", role=c("aut","cre"))),
 	about=list(desc="RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions.",
-		version="0.01-14", url="http://rkward.sf.net"),
-	dependencies=list(rkward.min="0.5.6"),
-	package=list(c(name="ez"), c(name="sciplot"))
+		version="0.01-15", url="http://rkward.sf.net")
 	)
+dependencies.info <- rk.XML.dependencies(
+	dependencies=list(rkward.min=ifelse(isTRUE(guess.getter), "0.6.0", "0.5.6")),
+	package=list(c(name="ez"), c(name="sciplot"))
+)
 
 ############
 ## ANOVA
@@ -105,10 +109,10 @@ full.dialog <- rk.XML.dialog(rk.XML.tabbook(label="ANOVA",
 		anova.gov.mixed <- rk.XML.convert(sources=list(string=anova.drp.design), mode=c(equals="mixed")),
 		anova.gov.show.bvars <- rk.XML.convert(sources=list(anova.gov.between, anova.gov.mixed), mode=c(or=""), id.name="lgc_bvars"),
 		anova.gov.show.wvars <- rk.XML.convert(sources=list(anova.gov.within, anova.gov.mixed), mode=c(or=""), id.name="lgc_vvars"),
- 		rk.XML.connect(governor=anova.gov.data, client=var.dv, set="enabled"),
- 		rk.XML.connect(governor=anova.gov.data, client=var.between, set="enabled"),
- 		rk.XML.connect(governor=anova.gov.data, client=var.within, set="enabled"),
- 		rk.XML.connect(governor=anova.gov.data, client=var.wid, set="enabled"),
+		rk.XML.connect(governor=anova.gov.data, client=var.dv, set="enabled"),
+		rk.XML.connect(governor=anova.gov.data, client=var.between, set="enabled"),
+		rk.XML.connect(governor=anova.gov.data, client=var.within, set="enabled"),
+		rk.XML.connect(governor=anova.gov.data, client=var.wid, set="enabled"),
 		rk.XML.connect(governor=anova.gov.show.wvars, client=var.wid, set="required"),
 		rk.XML.connect(governor=anova.gov.show.bvars, client=var.between, set="visible"),
 		rk.XML.connect(governor=anova.gov.show.wvars, client=var.within, set="visible"),
@@ -256,9 +260,10 @@ pdata.component <- rk.plugin.component("Prepare within subject data",
 	xml=list(
 		logic=pd.lgc.sect,
 		dialog=pd.full.dialog),
- 	js=list(
- 		calculate=pd.js.calc,
- 		printout=pd.js.print),
+	js=list(
+		calculate=pd.js.calc,
+		printout=pd.js.print),
+	guess.getter=guess.getter,
 	hierarchy=list("data", "ANOVA"),
 	create=c("xml", "js"))
 
@@ -358,6 +363,7 @@ pttest.component <- rk.plugin.component("Pairwise t-Tests",
 	js=list(
 		calculate=pt.js.calc,
 		printout=pt.js.print),
+	guess.getter=guess.getter,
 	hierarchy=list("analysis", "means", "t-tests"),
 	create=c("xml", "js"))
 
@@ -386,13 +392,13 @@ ip.preview <- rk.XML.preview()
 
 ## logic
 ip.lgc.sect <- rk.XML.logic(
-  		ip.gov.lineplot <- rk.XML.convert(sources=list(string=ip.rad.plottype), mode=c(equals="line")),
-  		rk.XML.connect(governor=ip.gov.lineplot, client=ip.rad.ltype, set="visible"),
+		ip.gov.lineplot <- rk.XML.convert(sources=list(string=ip.rad.plottype), mode=c(equals="line")),
+		rk.XML.connect(governor=ip.gov.lineplot, client=ip.rad.ltype, set="visible"),
 		rk.XML.connect(governor=ip.gov.lineplot, client=ip.rad.btype, set="visible", not=TRUE),
-  		ip.gov.traces <- rk.XML.convert(sources=list(available=ip.tvar.group), mode=c(notequals="")),
+		ip.gov.traces <- rk.XML.convert(sources=list(available=ip.tvar.group), mode=c(notequals="")),
 		rk.XML.connect(governor=ip.gov.traces, client=ip.rad.btype, set="enabled"),
 		rk.XML.connect(governor=ip.gov.traces, client=ip.chk.legend, set="enabled"),
-  		ip.gov.leglabel <- rk.XML.convert(sources=list(ip.gov.traces, state=ip.chk.legend), mode=c(and="")),
+		ip.gov.leglabel <- rk.XML.convert(sources=list(ip.gov.traces, state=ip.chk.legend), mode=c(and="")),
 		rk.XML.connect(governor=ip.gov.leglabel, client=ip.inp.trace.label, set="enabled"),
 		rk.XML.connect(governor=ip.tvar.x, client=ip.plot.options, get="available", set="xvar"),
 		rk.XML.connect(governor=ip.tvar.response, client=ip.plot.options, get="available", set="yvar"),
@@ -440,10 +446,11 @@ plot.component <- rk.plugin.component("Interaction plot",
 	xml=list(
 		logic=ip.lgc.sect,
 		dialog=ip.full.dialog),
- 	js=list(
+	js=list(
 		results.header="\"Interaction plot\"",
 		require="sciplot",
- 		doPrintout=ip.js.prnt),
+		doPrintout=ip.js.prnt),
+	guess.getter=guess.getter,
 	hierarchy=list("plots"),
 	create=c("xml", "js"))
 
@@ -456,6 +463,7 @@ plot.component <- rk.plugin.component("Interaction plot",
 rk.ANOVA.dir <<- rk.plugin.skeleton(
 	about.info,
 	path=output.dir,
+	guess.getter=guess.getter,
 	xml=list(
 		logic=lgc.sect,
 		dialog=full.dialog),
@@ -466,6 +474,7 @@ rk.ANOVA.dir <<- rk.plugin.skeleton(
 		load.silencer=var.chk.suppress),
 	pluginmap=list(name="ANOVA", hierarchy=list("analysis", "ANOVA")),
 	components=list(pttest.component, plot.component, pdata.component),
+	dependencies=dependencies.info,
 	create=c("pmap", "xml", "js", "desc"),
 	overwrite=overwrite,
 	tests=FALSE,
