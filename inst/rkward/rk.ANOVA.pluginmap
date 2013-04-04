@@ -16,8 +16,8 @@
 		name="rk.ANOVA"
 		shortinfo="RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions."
 		longinfo="RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions."
-		version="0.01-15"
-		releasedate="2013-02-21"
+		version="0.01-16"
+		releasedate="2013-04-04"
 		url="http://rkward.sf.net"
 		license="GPL (&gt;= 3)"
 	>
@@ -28,11 +28,6 @@
 			role="aut, cre"
 		 />
 	</about>
-	<!-- 
-		<require 
-				file="path/file.pluginmap"
-			 /> 
-	-->
 	<components>
 		<component 
 			id="cmp_ANOVAPairwisetTests"
@@ -109,12 +104,4 @@
 			</menu>
 		</menu>
 	</hierarchy>
-	<!-- 
-		<context id="x11">
-			</context> 
-	-->
-	<!-- 
-		<context id="import">
-			</context> 
-	-->
 </document>

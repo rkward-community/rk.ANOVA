@@ -4,7 +4,6 @@
 			perhaps don't make changes here, but in the rkwarddev script instead! -->
 	<code file="ANOVA.js" />
 	<help file="ANOVA.rkh" />
-	<include file="../rk.ANOVA.pluginmap" />
 	<logic>
 		<connect governor="current_object" client="vrsl_Dtmstbdt.available" />
 		<connect governor="vrsl_Dtmstbdt.available" client="vrs_Selectdt.root" />

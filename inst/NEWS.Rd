@@ -1,5 +1,17 @@
 \name{NEWS}
 \title{News for Package 'rk.ANOVA'}
+\section{Changes in rk.ANOVA version 0.01-16 (2013-04-04)}{
+  \subsection{added}{
+    \itemize{
+      \item debianized the plugin
+    }
+  }
+  \subsection{fixed}{
+    \itemize{
+      \item removed erroneous pluginmap inclusions from XML files
+    }
+  }
+}
 \section{Changes in rk.ANOVA version 0.01-15 (2013-02-21)}{
   \subsection{changed}{
     \itemize{

@@ -1,5 +1,11 @@
 ChangeLog for package rk.ANOVA
 
+changes in version 0.01-16 (2013-04-04)
+added:
+  - debianized the plugin
+fixed:
+  - removed erroneous pluginmap inclusions from XML files
+
 changes in version 0.01-15 (2013-02-21)
 changed:
   - updated rkwarddev generator script (compatibility with 0.06-2) and regenerated plugin code

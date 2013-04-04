@@ -18,7 +18,7 @@ about.info <- rk.XML.about(
 		person(given="Meik", family="Michalke",
 			email="meik.michalke@hhu.de", role=c("aut","cre"))),
 	about=list(desc="RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions.",
-		version="0.01-15", url="http://rkward.sf.net")
+		version="0.01-16", url="http://rkward.sf.net")
 	)
 dependencies.info <- rk.XML.dependencies(
 	dependencies=list(rkward.min=ifelse(isTRUE(guess.getter), "0.6.0", "0.5.6")),
@@ -479,7 +479,7 @@ rk.ANOVA.dir <<- rk.plugin.skeleton(
 	overwrite=overwrite,
 	tests=FALSE,
 #	edit=TRUE,
-	load=TRUE,
+#	load=TRUE,
 #	show=TRUE,
 	hints=FALSE)
 })
