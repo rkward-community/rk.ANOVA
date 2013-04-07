@@ -3,7 +3,7 @@ The R library rk.ANOVA was originally  written and is maintained by Meik Michalk
 This Debian package was put together m.eik michalke <meik.michalke@hhu.de>.
 
 The package was renamed from its upstream name 'rk.ANOVA' to
-'r-other-rkward-rk-anova' in harmony with the R packaging policy to indicate
+'r-other-rkward-rk.anova' in harmony with the R packaging policy to indicate
 that the package is external to the CRAN or BioC repositories.
 
 rk.ANOVA Copyright (C) 2013 Meik Michalke, released under the
