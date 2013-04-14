@@ -16,8 +16,8 @@
 		name="rk.ANOVA"
 		shortinfo="RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions."
 		longinfo="RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions."
-		version="0.01-16"
-		releasedate="2013-04-04"
+		version="0.01-17"
+		releasedate="2013-04-14"
 		url="http://rkward.sf.net"
 		license="GPL (&gt;= 3)"
 	>

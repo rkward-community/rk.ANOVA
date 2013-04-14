@@ -1,5 +1,13 @@
 \name{NEWS}
 \title{News for Package 'rk.ANOVA'}
+\section{Changes in rk.ANOVA version 0.01-17 (2013-04-14)}{
+  \subsection{fixed}{
+    \itemize{
+      \item corrected logic sections in pairwise t-tests dialog
+        (options for pooled SDs and pairwise tests were not correctly enabled/disabled)
+    }
+  }
+}
 \section{Changes in rk.ANOVA version 0.01-16 (2013-04-04)}{
   \subsection{added}{
     \itemize{

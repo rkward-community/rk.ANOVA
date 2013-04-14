@@ -2,8 +2,8 @@ Package: rk.ANOVA
 Type: Package
 Title: RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests
     and plot interactions.
-Version: 0.01-16
-Date: 2013-04-04
+Version: 0.01-17
+Date: 2013-04-14
 Author: Meik Michalke <meik.michalke@hhu.de>
 Maintainer: Meik Michalke <meik.michalke@hhu.de>
 Depends:

@@ -2,12 +2,12 @@ bibentry("Manual",
 		title="rk.ANOVA: RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions.",
 		author="Meik Michalke",
 		year="2013",
-		note="(Version 0.01-16)",
+		note="(Version 0.01-17)",
 		url="http://rkward.sf.net",
 
 		textVersion =
 		paste("Michalke, M. (2013). ",
-				"rk.ANOVA: RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions. (Version 0.01-16). ",
+				"rk.ANOVA: RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions. (Version 0.01-17). ",
 				"Available from http://rkward.sf.net",
 				sep=""),
 

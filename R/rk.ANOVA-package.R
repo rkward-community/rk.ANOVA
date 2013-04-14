@@ -3,8 +3,8 @@
 #' \tabular{ll}{
 #' Package: \tab rk.ANOVA\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.01-16\cr
-#' Date: \tab 2013-04-04\cr
+#' Version: \tab 0.01-17\cr
+#' Date: \tab 2013-04-14\cr
 #' Depends: \tab  rkward (>= 0.5.6)\cr
 #' Enhances: \tab rkward\cr
 #' License: \tab GPL (>= 3)\cr

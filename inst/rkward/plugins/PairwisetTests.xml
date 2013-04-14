@@ -5,10 +5,8 @@
 	<code file="PairwisetTests.js" />
 	<help file="PairwisetTests.rkh" />
 	<logic>
-		<convert id="lgc_chcPldSD" sources="chc_PldSDfrl.state" mode="equals" standard="true" />
-		<connect governor="lgc_chcPldSD.not" client="chc_PrdtTsts.enabled" />
-		<convert id="lgc_chcPrdtT" sources="chc_PrdtTsts.state" mode="equals" standard="true" />
-		<connect governor="lgc_chcPrdtT.not" client="chc_PldSDfrl.enabled" />
+		<connect governor="chc_PldSDfrl.state.not" client="chc_PrdtTsts.enabled" />
+		<connect governor="chc_PrdtTsts.state.not" client="chc_PldSDfrl.enabled" />
 		<convert id="lgc_rdDtfrmt" sources="rad_Datafrmt.string" mode="equals" standard="one" />
 		<connect governor="lgc_rdDtfrmt" client="vrsl_Rspnsvct.visible" />
 		<connect governor="lgc_rdDtfrmt" client="vrsl_Rspnsvct.required" />

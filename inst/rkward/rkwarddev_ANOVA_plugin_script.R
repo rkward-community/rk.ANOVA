@@ -18,7 +18,7 @@ about.info <- rk.XML.about(
 		person(given="Meik", family="Michalke",
 			email="meik.michalke@hhu.de", role=c("aut","cre"))),
 	about=list(desc="RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions.",
-		version="0.01-16", url="http://rkward.sf.net")
+		version="0.01-17", url="http://rkward.sf.net")
 	)
 dependencies.info <- rk.XML.dependencies(
 	dependencies=list(rkward.min=ifelse(isTRUE(guess.getter), "0.6.0", "0.5.6")),
@@ -314,10 +314,8 @@ pt.full.dialog <- rk.XML.dialog(
 
 ## logic
 pt.lgc.sect <- rk.XML.logic(
-  		pt.gov.pool <- rk.XML.convert(sources=list(state=pt.chk.poolSD), mode=c(equals="true")),
-  		rk.XML.connect(governor=pt.gov.pool, client=pt.chk.paired, set="enabled", not=TRUE),
-		pt.gov.pair <- rk.XML.convert(sources=list(state=pt.chk.paired), mode=c(equals="true")),
-		rk.XML.connect(governor=pt.gov.pair, client=pt.chk.poolSD, set="enabled", not=TRUE),
+		rk.XML.connect(governor=pt.chk.poolSD, client=pt.chk.paired, set="enabled", not=TRUE),
+		rk.XML.connect(governor=pt.chk.paired, client=pt.chk.poolSD, set="enabled", not=TRUE),
 		pt.gov.onevar <- rk.XML.convert(sources=list(string=pt.data.format), mode=c(equals="one")),
 		rk.XML.connect(governor=pt.gov.onevar, client=pt.tvar.data, set="visible"),
 		rk.XML.connect(governor=pt.gov.onevar, client=pt.tvar.data, set="required"),
