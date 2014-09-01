@@ -12,13 +12,16 @@ guess.getter <- FALSE
 
 require(rkwarddev)
 
+rk.set.language("en", "en_EN")
+#rk.set.language("de", "de_DE")
+
 about.info <- rk.XML.about(
 	name="rk.ANOVA",
 	author=c(
 		person(given="Meik", family="Michalke",
 			email="meik.michalke@hhu.de", role=c("aut","cre"))),
 	about=list(desc="RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions.",
-		version="0.01-17", url="http://rkward.sf.net")
+		version="0.01-18", url="http://rkward.sf.net")
 	)
 dependencies.info <- rk.XML.dependencies(
 	dependencies=list(rkward.min=ifelse(isTRUE(guess.getter), "0.6.0", "0.5.6")),
@@ -28,43 +31,60 @@ dependencies.info <- rk.XML.dependencies(
 ############
 ## ANOVA
 ############
-anova.drp.design <- rk.XML.radio("Design", options=list(
+anova.drp.design <- rk.XML.radio("Design", options=i18n(
+  en=list(
 		"Between subjects"=c(val="between"),
 		"Within subjects (repeated measures)"=c(val="within", chk=TRUE),
 		"Mixed"=c(val="mixed")
-	))
-var.select <- rk.XML.varselector(label="Select data")
-var.data <- rk.XML.varslot(label="Data (must be data.frame)", source=var.select, required=TRUE, classes="data.frame")
-var.dv <- rk.XML.varslot(label="Dependent variable", source=var.select, required=TRUE)
-var.wid <- rk.XML.varslot(label="Case/subject identifier", source=var.select)
-var.within <- rk.XML.varslot(label="Within subject variables", source=var.select, multi=TRUE)
-var.between <- rk.XML.varslot(label="Between subject variables", source=var.select, multi=TRUE)
+	),
+	de=list(
+    "Between subjects"=c(val="between"),
+    "Within subjects (Messwiederholung)"=c(val="within", chk=TRUE),
+    "Gemischt"=c(val="mixed")
+  ))
+)
+var.select <- rk.XML.varselector(label=i18n(en="Select data", de="Wähle Daten"))
+var.data <- rk.XML.varslot(label=i18n(en="Data (must be data.frame)", de="Daten (müssen ein data.frame sein)"), source=var.select, required=TRUE, classes="data.frame")
+var.dv <- rk.XML.varslot(label=i18n(en="Dependent variable", de="Abhängige Variable"), source=var.select, required=TRUE)
+var.wid <- rk.XML.varslot(label=i18n(en="Case/subject identifier", de="Fall/Personunterscheider"), source=var.select)
+var.within <- rk.XML.varslot(label=i18n(en="Within subject variables", de="Within Subject Variablen"), source=var.select, multi=TRUE)
+var.between <- rk.XML.varslot(label=i18n(en="Between subject variables", de="Between Subject Variablen"), source=var.select, multi=TRUE)
 # observed data
-var.select2 <- rk.XML.varselector(label="Select observed variables")
-var.observed <- rk.XML.varslot(label="Observed variables (not manipulated)", source=var.select2, multi=TRUE)
+var.select2 <- rk.XML.varselector(label=i18n(en="Select observed variables", de="Wähle beobachtete Variablen"))
+var.observed <- rk.XML.varslot(label=i18n(en="Observed variables (not manipulated)", de="Beobachtete Variablen (nicht manipuliert)"), source=var.select2, multi=TRUE)
 
 #diff
 #reverse_diff
 drp.vtype <- rk.XML.dropdown(
-	label="Sums of squares type for unbalanced designs",
-	options=list("Type 1"=c(val=1), "Type 2"=c(val=2, chk=TRUE), "Type 3"=c(val=3)))
+	label=i18n(en="Sums of squares type for unbalanced designs", de="Quadratsummentyp für unbalancierte Designs"),
+	options=i18n(
+    en=list("Type 1"=c(val=1), "Type 2"=c(val=2, chk=TRUE), "Type 3"=c(val=3)),
+    de=list("Typ 1"=c(val=1), "Typ 2"=c(val=2, chk=TRUE), "Typ 3"=c(val=3))))
 
 # logic: only relevant for pure between designs
 drp.white <- rk.XML.dropdown(
-	label="Heteroscedasticity correction",
-	options=list(
-		"None"=c(val="false", chk=TRUE),
-		"hc3 (Long & Ervin; default)"=c(val="hc3"),
-		"hc0 (White)"=c(val="hc0"),
-		"hc1 (Long & Ervin)"=c(val="hc1"),
-		"hc2 (Long & Ervin)"=c(val="hc2"),
-		"hc4 (Cribari-Neto)"=c(val="hc4")))
+	label=i18n(en="Heteroscedasticity correction", de="Heteroskedastizitätskorrektur"),
+	options=i18n(
+    en=list(
+      "None"=c(val="false", chk=TRUE),
+      "hc3 (Long & Ervin; default)"=c(val="hc3"),
+      "hc0 (White)"=c(val="hc0"),
+      "hc1 (Long & Ervin)"=c(val="hc1"),
+      "hc2 (Long & Ervin)"=c(val="hc2"),
+      "hc4 (Cribari-Neto)"=c(val="hc4")),
+		de=list(
+      "Keine"=c(val="false", chk=TRUE),
+      "hc3 (Long & Ervin; Voreinstellung)"=c(val="hc3"),
+      "hc0 (White)"=c(val="hc0"),
+      "hc1 (Long & Ervin)"=c(val="hc1"),
+      "hc2 (Long & Ervin)"=c(val="hc2"),
+      "hc4 (Cribari-Neto)"=c(val="hc4"))))
 
-check.extrainfo <- rk.XML.cbox(label="Show sums of squares, raw likelihood ratios etc.", value="true")
-check.aov <- rk.XML.cbox(label="Return 'aov' object", value="true", chk=TRUE)
+check.extrainfo <- rk.XML.cbox(label=i18n(en="Show sums of squares, raw likelihood ratios etc.", de="Zeige Quadratsummen, rohe Likelihood Ratios etc."), value="true")
+check.aov <- rk.XML.cbox(label=i18n(en="Return 'aov' object", de="Gebe 'aov' Object zurück"), value="true", chk=TRUE)
 
-var.chk.suppress <- rk.XML.cbox(label="Suppress package loading messages", value="true", chk=TRUE)
-save.results <- rk.XML.saveobj("Save results to workspace", initial="anova.results")
+var.chk.suppress <- rk.XML.cbox(label=i18n(en="Suppress package loading messages", de="Unterdrücke Meldungen beim Laden von Paketen"), value="true", chk=TRUE)
+save.results <- rk.XML.saveobj(i18n(en="Save results to workspace", de="Sichere Ergebnisse im Workspace"), initial="anova.results")
 
 tab1.data <- rk.XML.row(
 		var.select,
@@ -79,7 +99,9 @@ tab1.data <- rk.XML.row(
 tab2.observed <- rk.XML.row(
 		var.select2,
 		rk.XML.col(
-			rk.XML.frame(rk.XML.text("Observed variables are independent variables you have <b>already defined</b> as either between or within variables, but that were measured and <b>not manipulated</b>. They affect the calculated effect size (generalized eta seqared).")),
+			rk.XML.frame(rk.XML.text(i18n(
+        en="Observed variables are independent variables you have <b>already defined</b> as either between or within variables, but that were measured and <b>not manipulated</b>. They affect the calculated effect size (generalized eta seqared).",
+        de="Beobachtete Variablen sind unabhängige Varaiblen die <b>bereits definiert sind</b>, entweder als Between oder Within Variablen, die allerdings nur gemessen und <b>nicht manipuliert</b> wurden. Sie beeinflussen die berechnete Effektgröße (Generalisiertes Eta-Quadrat))"))),
 			rk.XML.frame(var.observed)
 		)
 	)
@@ -96,7 +118,9 @@ tab3.options <- rk.XML.row(
 	)
 
 full.dialog <- rk.XML.dialog(rk.XML.tabbook(label="ANOVA",
-		tabs=list("Data"=tab1.data, "Observed"=tab2.observed, "Options"=tab3.options)
+		tabs=i18n(
+      en=list("Data"=tab1.data, "Observed"=tab2.observed, "Options"=tab3.options),
+      de=list("Daten"=tab1.data, "Beobachtet"=tab2.observed, "Optionen"=tab3.options))
 	), label="ANOVA")
 
 ## logic section to tie the second varslot to the data.frame
