@@ -14,6 +14,7 @@ require(rkwarddev)
 
 rk.set.language("en", "en_EN")
 #rk.set.language("de", "de_DE")
+#rk.set.language()
 
 about.info <- rk.XML.about(
 	name="rk.ANOVA",
@@ -504,4 +505,7 @@ rk.ANOVA.dir <<- rk.plugin.skeleton(
 #	load=TRUE,
 #	show=TRUE,
 	hints=FALSE)
+
+	# reset language
+	rk.set.language()
 })
