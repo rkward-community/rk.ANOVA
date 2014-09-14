@@ -12,3 +12,4 @@ Section: math
 Depends: r-base (>= 2.15.0), rkward (>= 0.5.6)
 Description: GNU R package: RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions.
 Homepage: http://rkward.sf.net
+Suggests: r-cran-ez, r-cran-sciplot
