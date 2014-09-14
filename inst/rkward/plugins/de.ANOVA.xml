@@ -1,0 +1,112 @@
+<!DOCTYPE rkplugin >
+<document lang="de" xml:lang="de">
+	<!-- this code was generated using the rkwarddev package.
+			perhaps don't make changes here, but in the rkwarddev script instead! -->
+	<code file="de.ANOVA.js" />
+	<help file="de.ANOVA.rkh" />
+	<logic>
+		<connect governor="current_object" client="vrsl_Dtnmssnd.available" />
+		<connect governor="vrsl_Dtnmssnd.available" client="vrs_WhleDatn.root" />
+		<convert id="lgc_vrslDtnm" sources="vrsl_Dtnmssnd.available" mode="notequals" />
+		<convert id="lgc_rdDsgnbt" sources="rad_Design.string" mode="equals" standard="between" />
+		<convert id="lgc_rdDsgnwt" sources="rad_Design.string" mode="equals" standard="within" />
+		<convert id="lgc_rdDsgnmx" sources="rad_Design.string" mode="equals" standard="mixed" />
+		<convert id="lgc_bvars" sources="lgc_rdDsgnbt;lgc_rdDsgnmx" mode="or" />
+		<convert id="lgc_vvars" sources="lgc_rdDsgnwt;lgc_rdDsgnmx" mode="or" />
+		<connect governor="lgc_vrslDtnm" client="vrsl_AbhnggVr.enabled" />
+		<connect governor="lgc_vrslDtnm" client="vrsl_BtwnSbjV.enabled" />
+		<connect governor="lgc_vrslDtnm" client="vrsl_WthnSbjV.enabled" />
+		<connect governor="lgc_vrslDtnm" client="vrsl_FllPrsnn.enabled" />
+		<connect governor="lgc_vvars" client="vrsl_FllPrsnn.required" />
+		<connect governor="lgc_bvars" client="vrsl_BtwnSbjV.visible" />
+		<connect governor="lgc_vvars" client="vrsl_WthnSbjV.visible" />
+		<connect governor="lgc_bvars" client="vrsl_BtwnSbjV.required" />
+		<connect governor="lgc_vvars" client="vrsl_WthnSbjV.required" />
+		<connect governor="lgc_vrslDtnm" client="row_vWVWVBVVBW.enabled" />
+		<connect governor="vrsl_Dtnmssnd.available" client="vrs_WhlbbchV.root" />
+	</logic>
+	<dialog label="ANOVA">
+		<tabbook id="tbbk_ANOVA" label="ANOVA">
+			<tab label="Daten" id="tab_Daten">
+				<row id="row_vWDWDDDWDD">
+					<varselector id="vrs_WhleDatn" label="Wähle Daten" />
+					<column id="clm_fDDWDDDWDD">
+						<frame id="frm_vrsltdDDWD">
+							<varslot id="vrsl_Dtnmssnd" label="Daten (muss ein data.frame sein)" source="vrs_WhleDatn" classes="data.frame" required="true" />
+						</frame>
+						<frame id="frm_rddrDDBWMG">
+							<radio id="rad_Design" label="Design">
+								<option label="Between subjects" value="between" />
+								<option label="Within subjects (Messwiederholung)" value="within" checked="true" />
+								<option label="Gemischt" value="mixed" />
+							</radio>
+						</frame>
+						<frame id="frm_vAVAVWDFPF">
+							<varslot id="vrsl_AbhnggVr" label="Abhängige Variable" source="vrs_WhleDatn" required="true" />
+							<varslot id="vrsl_FllPrsnn" label="Fall/Personunterscheider" source="vrs_WhleDatn" />
+						</frame>
+						<frame id="frm_vWSVWSVWDB">
+							<varslot id="vrsl_WthnSbjV" label="Within-Subject-Variablen" source="vrs_WhleDatn" multi="true" />
+							<varslot id="vrsl_BtwnSbjV" label="Between-Subject-Variablen" source="vrs_WhleDatn" multi="true" />
+						</frame>
+					</column>
+				</row>
+			</tab>
+			<tab label="Beobachtet" id="tab_Beobchtt">
+				<row id="row_vWVWVBVVBW">
+					<varselector id="vrs_WhlbbchV" label="Wähle beobachtete Variablen" />
+					<column id="clm_fBVVBWVSEB">
+						<frame id="frm_tBVVBWVSEB">
+							<text id="txt_BVVBWVSE">
+								Beobachtete Variablen sind unabhängige Varaiblen die 								<b>
+									bereits definiert sind
+								</b>
+								, entweder als Between- oder Within-Variablen; sie wurden allerdings nur gemessen und 								<b>
+									nicht manipuliert
+								</b>
+								. Sie beeinflussen die berechnete Effektgröße (Generalisiertes Eta-Quadrat))
+							</text>
+						</frame>
+						<frame id="frm_vrslBVBVWV">
+							<varslot id="vrsl_BbchttVr" label="Beobachtete Variablen (nicht manipuliert)" source="vrs_WhlbbchV" multi="true" />
+						</frame>
+					</column>
+				</row>
+			</tab>
+			<tab label="Optionen" id="tab_Optionen">
+				<row id="row_cQDQDT11T2">
+					<column id="clm_fQDQDT11T2">
+						<frame id="frm_dQDQDT11T2">
+							<dropdown id="drp_QdrtsmmD" label="Quadratsummentyp für unbalancierte Designs">
+								<option label="Typ 1" value="1" />
+								<option label="Typ 2" value="2" checked="true" />
+								<option label="Typ 3" value="3" />
+							</dropdown>
+						</frame>
+						<frame id="frm_dHHK3LEV30">
+							<dropdown id="drp_Htrskdst" label="Heteroskedastizitätskorrektur">
+								<option label="Keine" value="false" checked="true" />
+								<option label="hc3 (Long &amp; Ervin; Voreinstellung)" value="hc3" />
+								<option label="hc0 (White)" value="hc0" />
+								<option label="hc1 (Long &amp; Ervin)" value="hc1" />
+								<option label="hc2 (Long &amp; Ervin)" value="hc2" />
+								<option label="hc4 (Cribari-Neto)" value="hc4" />
+							</dropdown>
+						</frame>
+						<frame id="frm_cZQLRZQLRZ">
+							<column id="clm_chZQLRZQLR">
+								<checkbox id="chc_ZgQdrtLR" label="Zeige Quadratsummen, rohe Likelihood Ratios etc." value="true" />
+							</column>
+							<column id="clm_chckbxGOGO">
+								<checkbox id="chc_GbvObjkt" label="Gebe 'aov'-Objekt zurück" value="true" checked="true" />
+							</column>
+						</frame>
+						<stretch />
+						<checkbox id="chc_UntrdMLP" label="Unterdrücke Meldungen beim Laden von Paketen" value="true" checked="true" />
+						<saveobject label="Sichere Ergebnisse im Workspace" checkable="true" initial="anova.results" id="svb_SchrErgW" />
+					</column>
+				</row>
+			</tab>
+		</tabbook>
+	</dialog>
+</document>

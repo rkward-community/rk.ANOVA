@@ -1,9 +1,9 @@
 <!DOCTYPE rkplugin >
-<document>
+<document lang="en" xml:lang="en">
 	<!-- this code was generated using the rkwarddev package.
 			perhaps don't make changes here, but in the rkwarddev script instead! -->
-	<code file="ANOVA.js" />
-	<help file="ANOVA.rkh" />
+	<code file="en.ANOVA.js" />
+	<help file="en.ANOVA.rkh" />
 	<logic>
 		<connect governor="current_object" client="vrsl_Dtmstbdt.available" />
 		<connect governor="vrsl_Dtmstbdt.available" client="vrs_Selectdt.root" />

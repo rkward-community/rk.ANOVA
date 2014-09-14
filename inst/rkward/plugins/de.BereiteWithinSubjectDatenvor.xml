@@ -1,0 +1,29 @@
+<!DOCTYPE rkplugin >
+<document lang="de" xml:lang="de">
+	<!-- this code was generated using the rkwarddev package.
+			perhaps don't make changes here, but in the rkwarddev script instead! -->
+	<code file="de.BereiteWithinSubjectDatenvor.js" />
+	<help file="de.BereiteWithinSubjectDatenvor.rkh" />
+	<logic>
+		<connect governor="current_object" client="vrsl_WhlllVrb.available" />
+		<connect governor="vrsl_WhlllVrb.available" client="vrs_WhleDatn.root" />
+		<connect governor="chc_AtmtscFP.state" client="inp_BzchnnFP.visible" />
+		<connect governor="chc_AtmtscFP.state.not" client="vrsl_FllPrsnn.visible" />
+	</logic>
+	<dialog label="Bereite Within-Subject-Daten vor">
+		<row id="row_vWDWDWVWVW">
+			<varselector id="vrs_WhleDatn" label="Wähle Daten" />
+			<column id="clm_vWVWVWDAAA">
+				<varslot id="vrsl_WhlllVrb" label="Wähle alle Variablen aus einem data.frame" source="vrs_WhleDatn" classes="data.frame" />
+				<varslot id="vrsl_AbhnggAn" label="Abhängige/Antwortvektor" source="vrs_WhleDatn" required="true" multi="true" min_vars="2" />
+				<input label="Bezeichnung für die abhängige Variable" id="inp_BzchnngV" initial="response" required="true" />
+				<input label="Bezeichnung für die Experimentalbedingung" id="inp_BzchnngE" initial="condition" required="true" />
+				<checkbox id="chc_AtmtscFP" label="Automatischer Fall/Personunterscheider" value="true" checked="true" />
+				<input label="Bezeichnung für den Fall/Personunterscheider" id="inp_BzchnnFP" initial="case" required="true" />
+				<varslot id="vrsl_FllPrsnn" label="Fall/Personunterscheider" source="vrs_WhleDatn" required="true" />
+				<varslot id="vrsl_BtwnSbjV" label="Between-Subject-Variablen" source="vrs_WhleDatn" multi="true" />
+				<saveobject label="Sichere Ergebnisse im Workspace" checkable="true" checked="true" initial="anova.data" id="svb_SchrErgW" />
+			</column>
+		</row>
+	</dialog>
+</document>

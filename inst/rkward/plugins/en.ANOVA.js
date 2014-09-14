@@ -82,9 +82,9 @@ function printout(){
 	echo("rk.header(\"ANOVA results\")\n");
 
 	echo("rk.print(anova.results[[\"ANOVA\"]])\n");
-	echo("\tif(\"Mauchly's Test for Sphericity\" %in% names(anova.results)){\n\t\trk.header(\"Mauchly's Test for Sphericity\", level=3)\n\t\trk.print(anova.results[[\"Mauchly's Test for Sphericity\"]])\n\t} else {}\n");
-	echo("\tif(\"Sphericity Corrections\" %in% names(anova.results)){\n\t\trk.header(\"Sphericity Corrections\", level=3)\n\t\trk.print(anova.results[[\"Sphericity Corrections\"]])\n\t} else {}\n");
-	echo("\tif(\"Levene's Test for Homgeneity\" %in% names(anova.results)){\n\t\trk.header(\"Levene's Test for Homgeneity\", level=3)\n\t\trk.print(anova.results[[\"Levene's Test for Homgeneity\"]])\n\t} else {}\n");
+	echo("\tif(\"Mauchly's Test for Sphericity\" %in% names(anova.results)){\n    rk.header(\"Mauchly's Test for Sphericity\", level=3)\n    rk.print(anova.results[[\"Mauchly's Test for Sphericity\"]])\n  } else {}\n");
+	echo("\tif(\"Sphericity Corrections\" %in% names(anova.results)){\n    rk.header(\"Sphericity Corrections\", level=3)\n    rk.print(anova.results[[\"Sphericity Corrections\"]])\n  } else {}\n");
+	echo("\tif(\"Levene's Test for Homgeneity\" %in% names(anova.results)){\n    rk.header(\"Levene's Test for Homgeneity\", level=3)\n    rk.print(anova.results[[\"Levene's Test for Homgeneity\"]])\n  } else {}\n");
 	//// save result object
 	// read in saveobject variables
 	var svbSvrsltst = getValue("svb_Svrsltst");

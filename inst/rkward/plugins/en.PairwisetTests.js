@@ -57,7 +57,7 @@ function calculate(){
 
 function printout(){
 	// printout the results
-	echo("rk.header(\"Pairwise t-Tests results\")\n");
+	echo("rk.header(\"Pairwise t-Tests\")\n");
 
 	echo("rk.print(pair.t.results)\n");
 

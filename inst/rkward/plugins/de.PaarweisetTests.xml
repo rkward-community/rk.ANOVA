@@ -1,0 +1,54 @@
+<!DOCTYPE rkplugin >
+<document lang="de" xml:lang="de">
+	<!-- this code was generated using the rkwarddev package.
+			perhaps don't make changes here, but in the rkwarddev script instead! -->
+	<code file="de.PaarweisetTests.js" />
+	<help file="de.PaarweisetTests.rkh" />
+	<logic>
+		<connect governor="chc_GpltStnG.state.not" client="chc_PrwstTst.enabled" />
+		<connect governor="chc_PrwstTst.state.not" client="chc_GpltStnG.enabled" />
+		<convert id="lgc_rdDtnfrm" sources="rad_Datnfrmt.string" mode="equals" standard="one" />
+		<connect governor="lgc_rdDtnfrm" client="vrsl_Antwrtvk.visible" />
+		<connect governor="lgc_rdDtnfrm" client="vrsl_Antwrtvk.required" />
+		<connect governor="lgc_rdDtnfrm" client="vrsl_Grppnvkt.visible" />
+		<connect governor="lgc_rdDtnfrm" client="vrsl_Grppnvkt.required" />
+		<connect governor="lgc_rdDtnfrm.not" client="vrsl_SprtAnt3.visible" />
+		<connect governor="lgc_rdDtnfrm.not" client="vrsl_SprtAnt3.required" />
+	</logic>
+	<dialog label="Paarweise t-Tests">
+		<row id="row_vWDWDDDEVS">
+			<varselector id="vrs_WhleDatn" label="Wähle Daten" />
+			<column id="clm_rDDEVSVDDA">
+				<radio id="rad_Datnfrmt" label="Datenformat">
+					<option label="Einzelner (gruppierter) Vektor" value="one" checked="true" />
+					<option label="Separate Variablen" value="group" />
+				</radio>
+				<frame label="Daten" id="frm_Daten">
+					<varslot id="vrsl_Antwrtvk" label="Antwortvektor" source="vrs_WhleDatn" />
+					<varslot id="vrsl_Grppnvkt" label="Gruppenvektor oder -faktor" source="vrs_WhleDatn" />
+					<varslot id="vrsl_SprtAnt3" label="Separate Antwortvektoren (&gt;= 3)" source="vrs_WhleDatn" multi="true" min_vars="3" />
+				</frame>
+				<frame label="Alphafehlerkorrektur" id="frm_Alphfhlr">
+					<dropdown id="drp_MthdzrWA" label="Methode zur p-Wert-Adjustierung">
+						<option label="keine" value="none" />
+						<option label="Bonferroni" value="bonferroni" />
+						<option label="Holm" value="holm" checked="true" />
+						<option label="Benjamini &amp; Hochberg (fdr)" value="BH" />
+						<option label="Benjamini &amp; Yekutieli" value="BY" />
+						<option label="Hochberg" value="hochberg" />
+						<option label="Hommel" value="hommel" />
+					</dropdown>
+				</frame>
+				<frame id="frm_cGSGGSGPTP">
+					<checkbox id="chc_GpltStnG" label="Gepoolte Standardabweichung für alle Gruppen" value="true" />
+					<checkbox id="chc_PrwstTst" label="Paarweise t-Tests" value="true" checked="true" />
+				</frame>
+				<radio id="rad_Altrntvh" label="Alternativhypothese">
+					<option label="Zweiseitig" value="two.sided" />
+					<option label="Erster ist größer" value="greater" />
+					<option label="Zweiter ist größer" value="less" />
+				</radio>
+			</column>
+		</row>
+	</dialog>
+</document>

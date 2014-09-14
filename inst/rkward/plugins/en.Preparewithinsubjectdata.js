@@ -67,7 +67,7 @@ function calculate(){
 
 function printout(){
 	// printout the results
-	echo("rk.header(\"Prepare within subject data results\")\n");
+	echo("rk.header(\"Prepare within subject data\")\n");
 
 	echo("\trk.print(summary(anova.data))\n");
 	//// save result object

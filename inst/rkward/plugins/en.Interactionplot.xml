@@ -1,9 +1,9 @@
 <!DOCTYPE rkplugin >
-<document>
+<document lang="en" xml:lang="en">
 	<!-- this code was generated using the rkwarddev package.
 			perhaps don't make changes here, but in the rkwarddev script instead! -->
-	<code file="Interactionplot.js" />
-	<help file="Interactionplot.rkh" />
+	<code file="en.Interactionplot.js" />
+	<help file="en.Interactionplot.rkh" />
 	<logic>
 		<convert id="lgc_rdPlttyp" sources="rad_Plottype.string" mode="equals" standard="line" />
 		<connect governor="lgc_rdPlttyp" client="rad_Elements.visible" />
@@ -45,7 +45,7 @@
 								<option label="Points only" value="p" />
 							</radio>
 							<radio id="rad_Bars" label="Bars">
-								<option label="Group bars" value="group" checked="true" />
+								<option label="Grouped bars" value="group" checked="true" />
 								<option label="Split bars" value="split" />
 							</radio>
 							<stretch />
