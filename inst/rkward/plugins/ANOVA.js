@@ -15,19 +15,20 @@ function preprocess(){
 
 function calculate(){
 	// read in variables from dialog
-	var vrslDtmstbdt = getValue("vrsl_Dtmstbdt");
-	var radDesign = getValue("rad_Design");
-	var vrslDpndntvr = getValue("vrsl_Dpndntvr");
-	var vrslCssbjctd = getValue("vrsl_Cssbjctd");
-	var vrslWthnsbjc = getValue("vrsl_Wthnsbjc");
-	var vrslBtwnsbjc = getValue("vrsl_Btwnsbjc");
-	var vrslObsrvdvr = getValue("vrsl_Obsrvdvr");
-	var drpSmsfsqrs = getValue("drp_Smsfsqrs");
-	var drpHtrscdst = getValue("drp_Htrscdst");
-	var chcShwsmsfs = getValue("chc_Shwsmsfs");
-	var chcRtrnvbjc = getValue("chc_Rtrnvbjc");
-	var chcSpprsspc = getValue("chc_Spprsspc");
-	var svbSvrsltst = getValue("svb_Svrsltst");
+
+	var vrslDtmstbdt = getString("vrsl_Dtmstbdt");
+	var radDesign = getString("rad_Design");
+	var vrslDpndntvr = getString("vrsl_Dpndntvr");
+	var vrslCssbjctd = getString("vrsl_Cssbjctd");
+	var vrslWthnsbjc = getString("vrsl_Wthnsbjc");
+	var vrslBtwnsbjc = getString("vrsl_Btwnsbjc");
+	var vrslObsrvdvr = getString("vrsl_Obsrvdvr");
+	var drpSmsfsqrs = getString("drp_Smsfsqrs");
+	var drpHtrscdst = getString("drp_Htrscdst");
+	var svbSvrsltst = getString("svb_Svrsltst");
+	var chcShwsmsfs = getBoolean("chc_Shwsmsfs.state");
+	var chcRtrnvbjc = getBoolean("chc_Rtrnvbjc.state");
+	var chcSpprsspc = getBoolean("chc_Spprsspc.state");
 
 	// the R code to be evaluated
 	var vrslDpndntvrShortname = getValue("vrsl_Dpndntvr.shortname").split("\n").join(", ");
@@ -79,7 +80,8 @@ function calculate(){
 
 function printout(){
 	// printout the results
-	echo("rk.header(\"ANOVA results\")\n");
+	new Header(i18n("ANOVA results")).print();
+
 
 	echo("rk.print(anova.results[[\"ANOVA\"]])\n");
 	echo("\tif(\"Mauchly's Test for Sphericity\" %in% names(anova.results)){\n    rk.header(\"Mauchly's Test for Sphericity\", level=3)\n    rk.print(anova.results[[\"Mauchly's Test for Sphericity\"]])\n  } else {}\n");

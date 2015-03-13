@@ -10,14 +10,15 @@ function preprocess(){
 
 function calculate(){
 	// read in variables from dialog
-	var radDatafrmt = getValue("rad_Datafrmt");
-	var vrslRspnsvct = getValue("vrsl_Rspnsvct");
-	var vrslGrpngvct = getValue("vrsl_Grpngvct");
-	var vrslSprtrsp3 = getValue("vrsl_Sprtrsp3");
-	var drpMthdfrdj = getValue("drp_Mthdfrdj");
-	var chcPldSDfrl = getValue("chc_PldSDfrl");
-	var chcPrdtTsts = getValue("chc_PrdtTsts");
-	var radAltrntvh = getValue("rad_Altrntvh");
+
+	var radDatafrmt = getString("rad_Datafrmt");
+	var vrslRspnsvct = getString("vrsl_Rspnsvct");
+	var vrslGrpngvct = getString("vrsl_Grpngvct");
+	var vrslSprtrsp3 = getString("vrsl_Sprtrsp3");
+	var drpMthdfrdj = getString("drp_Mthdfrdj");
+	var radAltrntvh = getString("rad_Altrntvh");
+	var chcPldSDfrl = getBoolean("chc_PldSDfrl.state");
+	var chcPrdtTsts = getBoolean("chc_PrdtTsts.state");
 
 	// the R code to be evaluated
 	if(radDatafrmt == "one") {
@@ -57,7 +58,8 @@ function calculate(){
 
 function printout(){
 	// printout the results
-	echo("rk.header(\"Pairwise t-Tests\")\n");
+	new Header(i18n("Pairwise t-Tests")).print();
+
 
 	echo("rk.print(pair.t.results)\n");
 

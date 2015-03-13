@@ -3,9 +3,9 @@
 #' \tabular{ll}{
 #' Package: \tab rk.ANOVA\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.01-18\cr
-#' Date: \tab 2014-09-14\cr
-#' Depends: \tab  rkward (>= 0.5.6)\cr
+#' Version: \tab 0.01-19\cr
+#' Date: \tab 2015-03-13\cr
+#' Depends: \tab rkward (>= 0.6.0)\cr
 #' Enhances: \tab rkward\cr
 #' License: \tab GPL (>= 3)\cr
 #' LazyLoad: \tab yes\cr

@@ -1,5 +1,9 @@
 ChangeLog for package rk.ANOVA
 
+changes in version 0.01-19 (2015-03-13)
+changed:
+  - revoked previous translations to comply with RKWard 0.6.3
+
 changes in version 0.01-18 (2014-09-14)
 added:
   - initial german translation (needs RKWard >= 0.6.1+svn4813 for automatic detection)

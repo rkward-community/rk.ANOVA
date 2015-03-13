@@ -1,9 +1,11 @@
 <!DOCTYPE rkplugin >
-<document lang="en" xml:lang="en">
+<document>
 	<!-- this code was generated using the rkwarddev package.
 			perhaps don't make changes here, but in the rkwarddev script instead! -->
-	<code file="en.PairwisetTests.js" />
-	<help file="en.PairwisetTests.rkh" />
+	<code file="PairwisetTests.js" />
+	<help file="PairwisetTests.rkh" />
+	<!-- <dependencies>
+			</dependencies> -->
 	<logic>
 		<connect governor="chc_PldSDfrl.state.not" client="chc_PrdtTsts.enabled" />
 		<connect governor="chc_PrdtTsts.state.not" client="chc_PldSDfrl.enabled" />

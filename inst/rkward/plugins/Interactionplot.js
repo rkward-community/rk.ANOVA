@@ -25,19 +25,21 @@ function preview(){
 
 function doPrintout(full){
 	// read in variables from dialog
-	var vrslFactrxxs = getValue("vrsl_Factrxxs");
-	var vrslRspnsvct = getValue("vrsl_Rspnsvct");
-	var vrslGrpngfct = getValue("vrsl_Grpngfct");
-	var radPlottype = getValue("rad_Plottype");
-	var chcStndrdrr = getValue("chc_Stndrdrr");
-	var chcLegend = getValue("chc_Legend");
-	var radElements = getValue("rad_Elements");
-	var radBars = getValue("rad_Bars");
-	var inpLegndlbl = getValue("inp_Legndlbl");
+
+	var vrslFactrxxs = getString("vrsl_Factrxxs");
+	var vrslRspnsvct = getString("vrsl_Rspnsvct");
+	var vrslGrpngfct = getString("vrsl_Grpngfct");
+	var radPlottype = getString("rad_Plottype");
+	var radElements = getString("rad_Elements");
+	var radBars = getString("rad_Bars");
+	var inpLegndlbl = getString("inp_Legndlbl");
+	var chcStndrdrr = getBoolean("chc_Stndrdrr.state");
+	var chcLegend = getBoolean("chc_Legend.state");
 
 	// create the plot
 	if(full) {
-		echo("rk.header(\"Interaction plot\")\n");
+		new Header(i18n("Interaction plot")).print();
+
 	}
 
 	// in case there are generic plot options defined:

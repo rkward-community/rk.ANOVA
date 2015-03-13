@@ -1,5 +1,12 @@
 \name{NEWS}
 \title{News for Package 'rk.ANOVA'}
+\section{Changes in rk.ANOVA version 0.01-19 (2015-03-13)}{
+  \subsection{changed}{
+    \itemize{
+      \item revoked previous translations to comply with RKWard 0.6.3
+    }
+  }
+}
 \section{Changes in rk.ANOVA version 0.01-18 (2014-09-14)}{
   \subsection{added}{
     \itemize{

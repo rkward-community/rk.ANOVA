@@ -1,13 +1,15 @@
 <!DOCTYPE rkplugin >
-<document lang="en" xml:lang="en">
+<document>
 	<!-- this code was generated using the rkwarddev package.
 			perhaps don't make changes here, but in the rkwarddev script instead! -->
-	<code file="en.ANOVA.js" />
-	<help file="en.ANOVA.rkh" />
+	<code file="ANOVA.js" />
+	<help file="ANOVA.rkh" />
+	<!-- <dependencies>
+			</dependencies> -->
 	<logic>
 		<connect governor="current_object" client="vrsl_Dtmstbdt.available" />
 		<connect governor="vrsl_Dtmstbdt.available" client="vrs_Selectdt.root" />
-		<convert id="lgc_vrslDtms" sources="vrsl_Dtmstbdt.available" mode="notequals" />
+		<convert id="lgc_vrslDtms" sources="vrsl_Dtmstbdt.available" mode="notequals" standard="" />
 		<convert id="lgc_rdDsgnbt" sources="rad_Design.string" mode="equals" standard="between" />
 		<convert id="lgc_rdDsgnwt" sources="rad_Design.string" mode="equals" standard="within" />
 		<convert id="lgc_rdDsgnmx" sources="rad_Design.string" mode="equals" standard="mixed" />

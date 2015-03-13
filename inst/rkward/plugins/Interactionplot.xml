@@ -1,14 +1,16 @@
 <!DOCTYPE rkplugin >
-<document lang="en" xml:lang="en">
+<document>
 	<!-- this code was generated using the rkwarddev package.
 			perhaps don't make changes here, but in the rkwarddev script instead! -->
-	<code file="en.Interactionplot.js" />
-	<help file="en.Interactionplot.rkh" />
+	<code file="Interactionplot.js" />
+	<help file="Interactionplot.rkh" />
+	<!-- <dependencies>
+			</dependencies> -->
 	<logic>
 		<convert id="lgc_rdPlttyp" sources="rad_Plottype.string" mode="equals" standard="line" />
 		<connect governor="lgc_rdPlttyp" client="rad_Elements.visible" />
 		<connect governor="lgc_rdPlttyp.not" client="rad_Bars.visible" />
-		<convert id="lgc_vrslGrpn" sources="vrsl_Grpngfct.available" mode="notequals" />
+		<convert id="lgc_vrslGrpn" sources="vrsl_Grpngfct.available" mode="notequals" standard="" />
 		<connect governor="lgc_vrslGrpn" client="rad_Bars.enabled" />
 		<connect governor="lgc_vrslGrpn" client="chc_Legend.enabled" />
 		<convert id="lgc_lgcvrsGL" sources="lgc_vrslGrpn;chc_Legend.state" mode="and" />

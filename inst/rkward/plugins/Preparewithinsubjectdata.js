@@ -10,15 +10,16 @@ function preprocess(){
 
 function calculate(){
 	// read in variables from dialog
-	var vrslSlctllvr = getValue("vrsl_Slctllvr");
-	var vrslDpndntrs = getValue("vrsl_Dpndntrs");
-	var inpNmfrdpnd = getValue("inp_Nmfrdpnd");
-	var inpNmfrxprm = getValue("inp_Nmfrxprm");
-	var chcAtmtccss = getValue("chc_Atmtccss");
-	var inpNmfrcssb = getValue("inp_Nmfrcssb");
-	var vrslCssbjctd = getValue("vrsl_Cssbjctd");
-	var vrslBtwnsbjc = getValue("vrsl_Btwnsbjc");
-	var svbSvrsltst = getValue("svb_Svrsltst");
+
+	var vrslSlctllvr = getString("vrsl_Slctllvr");
+	var vrslDpndntrs = getString("vrsl_Dpndntrs");
+	var inpNmfrdpnd = getString("inp_Nmfrdpnd");
+	var inpNmfrxprm = getString("inp_Nmfrxprm");
+	var inpNmfrcssb = getString("inp_Nmfrcssb");
+	var vrslCssbjctd = getString("vrsl_Cssbjctd");
+	var vrslBtwnsbjc = getString("vrsl_Btwnsbjc");
+	var svbSvrsltst = getString("svb_Svrsltst");
+	var chcAtmtccss = getBoolean("chc_Atmtccss.state");
 
 	// the R code to be evaluated
 	var vrslDpndntrsShortname = getValue("vrsl_Dpndntrs.shortname").split("\n").join("\", \"");
@@ -67,7 +68,8 @@ function calculate(){
 
 function printout(){
 	// printout the results
-	echo("rk.header(\"Prepare within subject data\")\n");
+	new Header(i18n("Prepare within subject data")).print();
+
 
 	echo("\trk.print(summary(anova.data))\n");
 	//// save result object

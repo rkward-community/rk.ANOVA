@@ -1,9 +1,11 @@
 <!DOCTYPE rkplugin >
-<document lang="en" xml:lang="en">
+<document>
 	<!-- this code was generated using the rkwarddev package.
 			perhaps don't make changes here, but in the rkwarddev script instead! -->
-	<code file="en.Preparewithinsubjectdata.js" />
-	<help file="en.Preparewithinsubjectdata.rkh" />
+	<code file="Preparewithinsubjectdata.js" />
+	<help file="Preparewithinsubjectdata.rkh" />
+	<!-- <dependencies>
+			</dependencies> -->
 	<logic>
 		<connect governor="current_object" client="vrsl_Slctllvr.available" />
 		<connect governor="vrsl_Slctllvr.available" client="vrs_Selectdt.root" />
