@@ -1,5 +1,12 @@
 \name{NEWS}
 \title{News for Package 'rk.ANOVA'}
+\section{Changes in rk.ANOVA version 0.01-20 (2015-03-14)}{
+  \subsection{fixed}{
+    \itemize{
+      \item replaced the outdated links to sourceforge with our new KDE URL
+    }
+  }
+}
 \section{Changes in rk.ANOVA version 0.01-19 (2015-03-13)}{
   \subsection{changed}{
     \itemize{

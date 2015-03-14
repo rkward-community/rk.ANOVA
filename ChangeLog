@@ -1,5 +1,9 @@
 ChangeLog for package rk.ANOVA
 
+changes in version 0.01-20 (2015-03-14)
+fixed:
+  - replaced the outdated links to sourceforge with our new KDE URL
+
 changes in version 0.01-19 (2015-03-13)
 changed:
   - revoked previous translations to comply with RKWard 0.6.3
