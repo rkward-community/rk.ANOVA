@@ -18,7 +18,7 @@ about.info <- rk.XML.about(
     person(given="Meik", family="Michalke",
       email="meik.michalke@hhu.de", role=c("aut","cre"))),
   about=list(desc="RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions.",
-    version="0.01-20", url="https://rkward.kde.org")
+    version="0.01-21", url="https://rkward.kde.org")
   )
 dependencies.info <- rk.XML.dependencies(
   dependencies=list(rkward.min=ifelse(isTRUE(guess.getter), "0.6.0", "0.5.6")),
@@ -556,19 +556,40 @@ ip.rad.btype <- rk.XML.radio(
     "Split bars"=c(val="split")
   )
 )
+ip.drp.boutreg <- rk.XML.dropdown(
+  label="Clipping",
+  options=list(
+    "clip to plot (no bar outside region)"=c(val="plot", chk=TRUE), # xpd=FALSE
+    "clip to figure"=c(val="figure"), # xpd=TRUE
+    "clip to device"=c(val="device") # xpd=NA
+  )
+)
 ip.chk.se <- rk.XML.cbox(
   label="Standard error",
-  val="true",
   chk=TRUE
 )
-ip.chk.legend <- rk.XML.cbox(
+ip.frm.legend <- rk.XML.frame(
+  ip.inp.trace.label <- rk.XML.input(
+    label="Legend label"
+  ),
   label="Legend",
-  val="true",
+  checkable=TRUE,
   chk=TRUE
 )
-ip.inp.trace.label <- rk.XML.input(
-  label="Legend label"
+ip.frm.se <- rk.XML.frame(
+  ip.chk.se.uc <- rk.XML.cbox(
+    label="Upper error",
+    chk=TRUE
+  ),
+  ip.chk.se.lc <- rk.XML.cbox(
+    label="Lower error",
+    chk=TRUE
+  ),
+  label="Draw standard error",
+  checkable=TRUE,
+  chk=TRUE
 )
+
 ip.plot.options <- rk.plotOptions()
 ip.preview <- rk.XML.preview()
 
@@ -577,53 +598,97 @@ ip.lgc.sect <- rk.XML.logic(
   ip.gov.lineplot <- rk.XML.convert(sources=list(string=ip.rad.plottype), mode=c(equals="line")),
   rk.XML.connect(governor=ip.gov.lineplot, client=ip.rad.ltype, set="visible"),
   rk.XML.connect(governor=ip.gov.lineplot, client=ip.rad.btype, set="visible", not=TRUE),
+  rk.XML.connect(governor=ip.gov.lineplot, client=ip.drp.boutreg, set="visible", not=TRUE),
   ip.gov.traces <- rk.XML.convert(sources=list(available=ip.tvar.group), mode=c(notequals="")),
   rk.XML.connect(governor=ip.gov.traces, client=ip.rad.btype, set="enabled"),
-  rk.XML.connect(governor=ip.gov.traces, client=ip.chk.legend, set="enabled"),
-  ip.gov.leglabel <- rk.XML.convert(sources=list(ip.gov.traces, state=ip.chk.legend), mode=c(and="")),
+  rk.XML.connect(governor=ip.gov.traces, client=ip.frm.legend, set="enabled"),
+  ip.gov.leglabel <- rk.XML.convert(sources=list(ip.gov.traces, checked=ip.frm.legend), mode=c(and="")),
   rk.XML.connect(governor=ip.gov.leglabel, client=ip.inp.trace.label, set="enabled"),
   rk.XML.connect(governor=ip.tvar.x, client=ip.plot.options, get="available", set="xvar"),
   rk.XML.connect(governor=ip.tvar.response, client=ip.plot.options, get="available", set="yvar"),
   rk.XML.set(ip.plot.options, set="allow_type", to=FALSE)
 )
 
-ip.full.dialog <- rk.XML.dialog(
+ip.tab1 <- rk.XML.row(
+  ip.var.selectVars,
+  rk.XML.col(
+    rk.XML.frame(ip.tvar.x, ip.tvar.response, ip.tvar.group,
+      label="Data"
+    ),
+    rk.XML.stretch()
+  )
+)
+
+ip.tab2.options <- rk.XML.col(
   rk.XML.row(
-    ip.var.selectVars,
-    rk.XML.col(
-      rk.XML.frame(ip.tvar.x, ip.tvar.response, ip.tvar.group,
-        label="Data"
-      ),
-      rk.XML.stretch(),
       rk.XML.frame(
         rk.XML.row(
-          rk.XML.col(ip.rad.plottype, ip.chk.se, ip.chk.legend, rk.XML.stretch()),
-          rk.XML.col(ip.rad.ltype, ip.rad.btype, rk.XML.stretch())
-        ),
-        ip.inp.trace.label,
-        ip.plot.options,
-        ip.preview)
+          rk.XML.col(ip.rad.plottype, rk.XML.stretch()),
+          rk.XML.col(ip.rad.ltype, ip.rad.btype, ip.drp.boutreg, rk.XML.stretch())
+        )
+      )
+  ),
+  rk.XML.row(
+    rk.XML.col(
+      ip.frm.legend
+    ),
+    rk.XML.col(
+      ip.frm.se
     )
+  ),
+  ip.plot.options,
+  ip.preview
+)
+
+ip.full.dialog <- rk.XML.dialog(
+  rk.XML.tabbook(
+    label="Interaction plot",
+    tabs=list(
+      "Data"=ip.tab1,
+      "Options"=ip.tab2.options
+    ),
   ),
   label="Interaction plot"
 )
 
 ## JavaScript
+ # see if frames are checked
+ip.js.frm.legend <- rk.JS.vars(ip.frm.legend, modifiers="checked")
+ip.js.frm.se <- rk.JS.vars(ip.frm.se, modifiers="checked")
+
 ip.js.prnt <-   rk.paste.JS.graph(
+  ip.js.frm.legend,
+  ip.js.frm.se,
   ite(rkwarddev::id(ip.rad.plottype, " == \"line\""),
     echo("\t\tlineplot.CI("),
     echo("\t\tbargraph.CI(")),
   ite(ip.tvar.x, echo("\n\t\t\tx.factor=", ip.tvar.x)),
   ite(ip.tvar.response, echo(",\n\t\t\tresponse=", ip.tvar.response)),
   ite(ip.tvar.group, echo(",\n\t\t\tgroup=", ip.tvar.group)),
-  ite(rkwarddev::id(ip.rad.plottype, " == \"line\" & ", ip.rad.ltype, " != \"b\""), echo(",\n\t\t\ttype=\"", ip.rad.ltype, "\"")),
-  ite(rkwarddev::id(ip.rad.plottype, " == \"bar\" & ", ip.rad.btype, " == \"split\""), echo(",\n\t\t\tsplit=TRUE")),
-  ite(rkwarddev::id(ip.rad.plottype, " == \"line\" & !", ip.chk.legend, " & ", ip.tvar.group, " != \"\""), echo(",\n\t\t\tlegend=FALSE")),
-  ite(rkwarddev::id(ip.rad.plottype, " == \"bar\" & ", ip.chk.legend, " == \"true\" & ", ip.tvar.group, " != \"\""), echo(",\n\t\t\tlegend=TRUE")),
-  ite(rkwarddev::id(ip.chk.legend, " == \"true\" & ", ip.tvar.group, " != \"\" & ", ip.inp.trace.label, " != \"\""), echo(",\n\t\t\ttrace.label=\"", ip.inp.trace.label, "\"")),
-  ite(rkwarddev::id("!", ip.chk.se), echo(",\n\t\t\tci.fun=function(x)c(mean(x, na.rm=TRUE), mean(x, na.rm=TRUE))")),
+
+  ite(rkwarddev::id(ip.rad.plottype, " == \"line\""),
+    rk.paste.JS(
+      ite(rkwarddev::id(ip.rad.ltype, " != \"b\""), echo(",\n\t\t\ttype=\"", ip.rad.ltype, "\"")),
+      ite(rkwarddev::id("!", ip.js.frm.legend, " & ", ip.tvar.group, " != \"\""), echo(",\n\t\t\tlegend=FALSE")),
+      ite(rkwarddev::id("!", ip.js.frm.se), echo(",\n\t\t\tci.fun=function(x)c(mean(x, na.rm=TRUE), mean(x, na.rm=TRUE))"))
+    ),
+    rk.paste.JS(
+      ite(rkwarddev::id(ip.rad.btype, " == \"split\""), echo(",\n\t\t\tsplit=TRUE")),
+      ite(rkwarddev::id(ip.js.frm.legend, " & ", ip.tvar.group, " != \"\""), echo(",\n\t\t\tlegend=TRUE")),
+      ite(rkwarddev::id("!", ip.js.frm.se), echo(",\n\t\t\tuc=FALSE,\n\t\t\tlc=FALSE")),
+      ite(rkwarddev::id(ip.js.frm.se, " & !", ip.chk.se.uc), echo(",\n\t\t\tuc=FALSE")),
+      ite(rkwarddev::id(ip.js.frm.se, " & !", ip.chk.se.lc), echo(",\n\t\t\tlc=FALSE")),
+      ite(rkwarddev::id(ip.drp.boutreg, " == \"figure\""),
+        echo(",\n\t\t\txpd=TRUE"),
+        ite(rkwarddev::id(ip.drp.boutreg, " == \"device\""),
+          echo(",\n\t\t\txpd=NA")
+        )
+      )
+    )
+  ),
+  ite(rkwarddev::id(ip.js.frm.legend, " & ", ip.tvar.group, " != \"\" & ", ip.inp.trace.label, " != \"\""), echo(",\n\t\t\tleg.lab=\"", ip.inp.trace.label, "\"")),
   rkwarddev::id("echo(", ip.plot.options, ".replace(/, /g, \",\\n\\t\\t\\t\"));"),
-  echo(")"),
+  echo("\n\t\t)"),
   plotOpts=ip.plot.options
 )
 

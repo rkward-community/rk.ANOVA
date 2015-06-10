@@ -32,9 +32,12 @@ function doPrintout(full){
 	var radPlottype = getString("rad_Plottype");
 	var radElements = getString("rad_Elements");
 	var radBars = getString("rad_Bars");
+	var drpClipping = getString("drp_Clipping");
 	var inpLegndlbl = getString("inp_Legndlbl");
-	var chcStndrdrr = getBoolean("chc_Stndrdrr.state");
-	var chcLegend = getBoolean("chc_Legend.state");
+	var chcUpperrrr = getBoolean("chc_Upperrrr.state");
+	var chcLowerrrr = getBoolean("chc_Lowerrrr.state");
+	var frmLegendChecked = getBoolean("frm_Legend.checked");
+	var frmDrwstndrChecked = getBoolean("frm_Drwstndr.checked");
 
 	// create the plot
 	if(full) {
@@ -56,6 +59,8 @@ function doPrintout(full){
 	printIndentedUnlessEmpty("\t\t", embRkwrdpltptnGCodePreprocess, "\n", "");
 
 	// the actual plot:
+	var frmLegendChecked = getValue("frm_Legend.checked");
+	var frmDrwstndrChecked = getValue("frm_Drwstndr.checked");
 	if(radPlottype == "line") {
 		echo("\t\tlineplot.CI(");
 	} else {
@@ -70,26 +75,43 @@ function doPrintout(full){
 	if(vrslGrpngfct) {
 		echo(",\n\t\t\tgroup=" + vrslGrpngfct);
 	}
-	if(radPlottype == "line" & radElements != "b") {
+	if(radPlottype == "line") {
+		if(radElements != "b") {
 		echo(",\n\t\t\ttype=\"" + radElements + "\"");
 	}
-	if(radPlottype == "bar" & radBars == "split") {
-		echo(",\n\t\t\tsplit=TRUE");
-	}
-	if(radPlottype == "line" & !chcLegend & vrslGrpngfct != "") {
+	if(!frmLegendChecked & vrslGrpngfct != "") {
 		echo(",\n\t\t\tlegend=FALSE");
 	}
-	if(radPlottype == "bar" & chcLegend == "true" & vrslGrpngfct != "") {
-		echo(",\n\t\t\tlegend=TRUE");
-	}
-	if(chcLegend == "true" & vrslGrpngfct != "" & inpLegndlbl != "") {
-		echo(",\n\t\t\ttrace.label=\"" + inpLegndlbl + "\"");
-	}
-	if(!chcStndrdrr) {
+	if(!frmDrwstndrChecked) {
 		echo(",\n\t\t\tci.fun=function(x)c(mean(x, na.rm=TRUE), mean(x, na.rm=TRUE))");
 	}
+	} else {
+		if(radBars == "split") {
+		echo(",\n\t\t\tsplit=TRUE");
+	}
+	if(frmLegendChecked & vrslGrpngfct != "") {
+		echo(",\n\t\t\tlegend=TRUE");
+	}
+	if(!frmDrwstndrChecked) {
+		echo(",\n\t\t\tuc=FALSE,\n\t\t\tlc=FALSE");
+	}
+	if(frmDrwstndrChecked & !chcUpperrrr) {
+		echo(",\n\t\t\tuc=FALSE");
+	}
+	if(frmDrwstndrChecked & !chcLowerrrr) {
+		echo(",\n\t\t\tlc=FALSE");
+	}
+	if(drpClipping == "figure") {
+		echo(",\n\t\t\txpd=TRUE");
+	} else if(drpClipping == "device") {
+		echo(",\n\t\t\txpd=NA");
+	}
+	}
+	if(frmLegendChecked & vrslGrpngfct != "" & inpLegndlbl != "") {
+		echo(",\n\t\t\tleg.lab=\"" + inpLegndlbl + "\"");
+	}
 	echo(embRkwrdpltptnGCodePrintout.replace(/, /g, ",\n\t\t\t"));
-	echo(")");
+	echo("\n\t\t)");
 
 	// insert any option-setting code that should be run after the actual plot:
 	printIndentedUnlessEmpty("\t\t", embRkwrdpltptnGCodeCalculate, "\n", "");

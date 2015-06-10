@@ -1,5 +1,12 @@
 ChangeLog for package rk.ANOVA
 
+changes in version 0.01-21 (2015-06-10)
+fixed:
+  - interaction plot: legend for barplots works again
+  - interaction plot: fixed option for legend label
+added:
+  - interaction plot: new options added, all options moved to its own tab
+
 changes in version 0.01-20 (2015-03-14)
 fixed:
   - replaced the outdated links to sourceforge with our new KDE URL
