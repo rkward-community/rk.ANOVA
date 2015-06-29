@@ -1,5 +1,18 @@
 \name{NEWS}
 \title{News for Package 'rk.ANOVA'}
+\section{Changes in rk.ANOVA version 0.01-21 (2015-06-29)}{
+  \subsection{fixed}{
+    \itemize{
+      \item interaction plot: legend for barplots works again
+      \item interaction plot: fixed option for legend label
+    }
+  }
+  \subsection{added}{
+    \itemize{
+      \item interaction plot: new options added, all options moved to its own tab
+    }
+  }
+}
 \section{Changes in rk.ANOVA version 0.01-20 (2015-03-14)}{
   \subsection{fixed}{
     \itemize{
