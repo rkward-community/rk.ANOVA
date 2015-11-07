@@ -2,6 +2,8 @@
 
 This R package provides a GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions.
 
+![rk.ANOVA main tab](/inst/screenshots/main_tab.jpeg?raw=true "rk.ANOVA main tab")
+
 It is a plugin package for [RKWard](https://rkward.kde.org), a powerful GUI and IDE for [R](https://r-project.org),
 and will **only work in conjunction with RKWard**. However, RKWard is free software, please
 [check it out](https://rkward.kde.org).
