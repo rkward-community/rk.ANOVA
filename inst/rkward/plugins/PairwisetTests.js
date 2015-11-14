@@ -4,64 +4,64 @@
 
 
 function preprocess(){
-	// add requirements etc. here
+  // add requirements etc. here
 
 }
 
 function calculate(){
-	// read in variables from dialog
+  // read in variables from dialog
+  var ptDataFormat = getString("ptDataFormat");
+  var ptResponse = getString("ptResponse");
+  var ptGroup = getString("ptGroup");
+  var ptSepResponses = getString("ptSepResponses");
+  var ptAdjustP = getString("ptAdjustP");
+  var ptHypothesis = getString("ptHypothesis");
+  var ptPooledSD = getBoolean("ptPooledSD.state");
+  var ptPaired = getBoolean("ptPaired.state");
 
-	var radDatafrmt = getString("rad_Datafrmt");
-	var vrslRspnsvct = getString("vrsl_Rspnsvct");
-	var vrslGrpngvct = getString("vrsl_Grpngvct");
-	var vrslSprtrsp3 = getString("vrsl_Sprtrsp3");
-	var drpMthdfrdj = getString("drp_Mthdfrdj");
-	var radAltrntvh = getString("rad_Altrntvh");
-	var chcPldSDfrl = getBoolean("chc_PldSDfrl.state");
-	var chcPrdtTsts = getBoolean("chc_PrdtTsts.state");
-
-	// the R code to be evaluated
-	if(radDatafrmt == "one") {
-		echo("\tpair.t.results <- pairwise.t.test(\n\t\t");
-		if(vrslRspnsvct) {
-			echo("x=" + vrslRspnsvct);
-		}
-		if(vrslGrpngvct) {
-			echo(",\n\t\tg=" + vrslGrpngvct);
-		}
-	} else {
-		var vrslSprtrsp3 = getValue("vrsl_Sprtrsp3").split("\n").join(", ");
-		echo("\t# simple helper function to get the names of the objects\n");
-		echo("\tgrouping.vector <- function(...){\n\tunlist(lapply(match.call()[-1], function(x){rep(deparse(x), length(eval(x)))}))\n}\n");
-		if(vrslSprtrsp3) {
-			echo("\t# create data and grouping vectors\n\tdata <- c(" + vrslSprtrsp3 + ")\n\tgroup <- grouping.vector(" + vrslSprtrsp3 + ")\n\n");
-		}
-		echo("\t# the actual pairwise t-tests, using the prepared data\n\tpair.t.results <- pairwise.t.test(\n\t\t");
-		if(vrslSprtrsp3) {
-			echo("x=data,\n\t\tg=group");
-		}
-	}
-	if(drpMthdfrdj) {
-		echo(",\n\t\tp.adjust.method=\"" + drpMthdfrdj + "\"");
-	} else {}
-	if(chcPldSDfrl) {
-		echo(",\n\t\tpool.sd=TRUE");
-	} else {}
-	if(chcPrdtTsts) {
-		echo(",\n\t\tpaired=TRUE");
-	} else {}
-	if(radAltrntvh != "two.sided") {
-		echo(",\n\t\talternative=\"" + radAltrntvh + "\"");
-	} else {}
-	echo(")\n\n");
+  // the R code to be evaluated
+  if(ptDataFormat == "one") {
+    echo("\tpair.t.results <- pairwise.t.test(\n\t\t");  
+    if(ptResponse) {
+      echo("x=" + ptResponse);  
+    } else {}  
+    if(ptGroup) {
+      echo(",\n\t\tg=" + ptGroup);  
+    } else {}  
+  } else {
+    ptSepResponses = getValue("ptSepResponses").split("\n").join(", ");  
+    comment("simple helper function to get the names of the objects", "  ");  
+    echo("\tgrouping.vector <- function(...){\n\tunlist(lapply(match.call()[-1], function(x){rep(deparse(x), length(eval(x)))}))\n}\n");  
+    if(ptSepResponses) {
+      comment("create data and grouping vectors", "  ");  
+      echo("\tdata <- c(" + ptSepResponses + ")\n\tgroup <- grouping.vector(" + ptSepResponses + ")\n\n");  
+    } else {}  
+    comment("the actual pairwise t-tests, using the prepared data", "  ");  
+    echo("\tpair.t.results <- pairwise.t.test(\n\t\t");  
+    if(ptSepResponses) {
+      echo("x=data,\n\t\tg=group");  
+    } else {}  
+  }
+  if(ptAdjustP) {
+    echo(",\n\t\tp.adjust.method=\"" + ptAdjustP + "\"");  
+  } else {}
+  if(ptPooledSD) {
+    echo(",\n    pool.sd=TRUE");
+  } else {}
+  if(ptPaired) {
+    echo(",\n    paired=TRUE");
+  } else {}
+  if(ptHypothesis != "two.sided") {
+    echo(",\n\t\talternative=\"" + ptHypothesis + "\"");  
+  } else {}
+  echo(")\n\n");
 }
 
 function printout(){
-	// printout the results
-	new Header(i18n("Pairwise t-Tests")).print();
+  // printout the results
+  new Header(i18n("Pairwise t-Tests")).print();
 
-
-	echo("rk.print(pair.t.results)\n");
+  echo("rk.print(pair.t.results)\n");
 
 }
 

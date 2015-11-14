@@ -1,89 +1,91 @@
 <!DOCTYPE rkplugin >
 <document>
-	<!-- this code was generated using the rkwarddev package.
-			perhaps don't make changes here, but in the rkwarddev script instead! -->
-	<code file="Interactionplot.js" />
-	<help file="Interactionplot.rkh" />
-	<!-- <dependencies>
-			</dependencies> -->
-	<logic>
-		<convert id="lgc_rdPlttyp" sources="rad_Plottype.string" mode="equals" standard="line" />
-		<connect governor="lgc_rdPlttyp" client="rad_Elements.visible" />
-		<connect governor="lgc_rdPlttyp.not" client="rad_Bars.visible" />
-		<connect governor="lgc_rdPlttyp.not" client="drp_Clipping.visible" />
-		<convert id="lgc_vrslGrpn" sources="vrsl_Grpngfct.available" mode="notequals" standard="" />
-		<connect governor="lgc_vrslGrpn" client="rad_Bars.enabled" />
-		<connect governor="lgc_vrslGrpn" client="frm_Legend.enabled" />
-		<convert id="lgc_lgcvrsGL" sources="lgc_vrslGrpn;frm_Legend.checked" mode="and" />
-		<connect governor="lgc_lgcvrsGL" client="inp_Legndlbl.enabled" />
-		<connect governor="vrsl_Factrxxs.available" client="emb_rkwrdpltptnG.xvar" />
-		<connect governor="vrsl_Rspnsvct.available" client="emb_rkwrdpltptnG.yvar" />
-		<set id="emb_rkwrdpltptnG.allow_type" to="false" />
-	</logic>
-	<dialog label="Interaction plot">
-		<tabbook id="tbbk_Intrctnp" label="Interaction plot">
-			<tab label="Data" id="tab_Data">
-				<row id="row_vSSDDFFSRR">
-					<varselector id="vrs_Selectdt" label="Select data" />
-					<column id="clm_fDDFFSRRSG">
-						<frame label="Data" id="frm_Data">
-							<varslot id="vrsl_Factrxxs" label="Factor (x axis)" source="vrs_Selectdt" required="true" />
-							<varslot id="vrsl_Rspnsvct" label="Response vector" source="vrs_Selectdt" required="true" />
-							<varslot id="vrsl_Grpngfct" label="Grouping factor (traces)" source="vrs_Selectdt" />
-						</frame>
-						<stretch />
-					</column>
-				</row>
-			</tab>
-			<tab label="Options" id="tab_Options">
-				<column id="clm_rPPLBPPLBE">
-					<row id="row_fPPLBPPLBE">
-						<frame id="frm_rPPLBPPLBE">
-							<row id="row_cPPLBPPLBE">
-								<column id="clm_rddrdPlPLB">
-									<radio id="rad_Plottype" label="Plot type">
-										<option label="Lineplot" value="line" checked="true" />
-										<option label="Bargraph" value="bar" />
-									</radio>
-									<stretch />
-								</column>
-								<column id="clm_rEELLPBBGS">
-									<radio id="rad_Elements" label="Elements">
-										<option label="Lines + points" value="b" checked="true" />
-										<option label="Lines only" value="l" />
-										<option label="Points only" value="p" />
-									</radio>
-									<radio id="rad_Bars" label="Bars">
-										<option label="Grouped bars" value="group" checked="true" />
-										<option label="Split bars" value="split" />
-									</radio>
-									<dropdown id="drp_Clipping" label="Clipping">
-										<option label="clip to plot (no bar outside region)" value="plot" checked="true" />
-										<option label="clip to figure" value="figure" />
-										<option label="clip to device" value="device" />
-									</dropdown>
-									<stretch />
-								</column>
-							</row>
-						</frame>
-					</row>
-					<row id="row_cLLLLLLLLD">
-						<column id="clm_frmlblLLLL">
-							<frame label="Legend" checkable="true" id="frm_Legend">
-								<input label="Legend label" id="inp_Legndlbl" />
-							</frame>
-						</column>
-						<column id="clm_frmlDDUULL">
-							<frame label="Draw standard error" checkable="true" id="frm_Drwstndr">
-								<checkbox id="chc_Upperrrr" label="Upper error" value="true" checked="true" />
-								<checkbox id="chc_Lowerrrr" label="Lower error" value="true" checked="true" />
-							</frame>
-						</column>
-					</row>
-					<embed component="rkward::plot_options" as_button="true" label="Generic plot options" id="emb_rkwrdpltptnG" />
-					<preview />
-				</column>
-			</tab>
-		</tabbook>
-	</dialog>
+  <!-- this code was generated using the rkwarddev package.
+        perhaps don't make changes here, but in the rkwarddev script instead! -->
+  <code file="Interactionplot.js" />
+  <help file="Interactionplot.rkh" />
+  <!-- <dependencies>
+        </dependencies> -->
+  <logic>
+    <convert id="lgc_ipPltTyp" sources="ipPlotType.string" mode="equals" standard="line" />
+    <connect governor="lgc_ipPltTyp" client="ipPlotElements.visible" />
+    <connect governor="lgc_ipPltTyp.not" client="ipPlotBars.visible" />
+    <connect governor="lgc_ipPltTyp.not" client="ipClipping.visible" />
+    <connect governor="lgc_ipPltTyp.not" client="ipUpperError.enabled" />
+    <connect governor="lgc_ipPltTyp.not" client="ipLowerError.enabled" />
+    <convert id="lgc_ipGroups" sources="ipGroups.available" mode="notequals" standard="" />
+    <connect governor="lgc_ipGroups" client="ipPlotBars.enabled" />
+    <connect governor="lgc_ipGroups" client="ipLegend.enabled" />
+    <convert id="lgc_lgcpGrpL" sources="lgc_ipGroups;ipLegend.checked" mode="and" />
+    <connect governor="lgc_lgcpGrpL" client="ipLegendLabel.enabled" />
+    <connect governor="ipFactor.available" client="emb_rkwrdpltptnG.xvar" />
+    <connect governor="ipResponse.available" client="emb_rkwrdpltptnG.yvar" />
+    <set id="emb_rkwrdpltptnG.allow_type" to="false" />
+  </logic>
+  <dialog label="Interaction plot">
+    <tabbook id="tbbk_Intrctnp" label="Interaction plot">
+      <tab label="Data" id="tab_Data">
+        <row id="row_vDSDDFFDRR">
+          <varselector id="ipData" label="Select data" />
+          <column id="clm_fDDFFDRRDG">
+            <frame label="Data" id="frm_Data">
+              <varslot id="ipFactor" label="Factor (x axis)" source="ipData" required="true" />
+              <varslot id="ipResponse" label="Response vector" source="ipData" required="true" />
+              <varslot id="ipGroups" label="Grouping factor (traces)" source="ipData" />
+            </frame>
+            <stretch />
+          </column>
+        </row>
+      </tab>
+      <tab label="Options" id="tab_Options">
+        <column id="clm_rPTPLBPTPL">
+          <row id="row_fPTPLBPTPL">
+            <frame id="frm_rPTPLBPTPL">
+              <row id="row_cPTPLBPTPL">
+                <column id="clm_rddpPlTPLB">
+                  <radio id="ipPlotType" label="Plot type">
+                    <option label="Lineplot" value="line" checked="true" />
+                    <option label="Bargraph" value="bar" />
+                  </radio>
+                  <stretch />
+                </column>
+                <column id="clm_rPEELLPPBB">
+                  <radio id="ipPlotElements" label="Elements">
+                    <option label="Lines + points" value="b" checked="true" />
+                    <option label="Lines only" value="l" />
+                    <option label="Points only" value="p" />
+                  </radio>
+                  <radio id="ipPlotBars" label="Bars">
+                    <option label="Grouped bars" value="group" checked="true" />
+                    <option label="Split bars" value="split" />
+                  </radio>
+                  <dropdown id="ipClipping" label="Clipping">
+                    <option label="clip to plot (no bar outside region)" value="plot" checked="true" />
+                    <option label="clip to figure" value="figure" />
+                    <option label="clip to device" value="device" />
+                  </dropdown>
+                  <stretch />
+                </column>
+              </row>
+            </frame>
+          </row>
+          <row id="row_cLLLLLLLLL">
+            <column id="clm_frmlbLLLLL">
+              <frame label="Legend" checkable="true" id="ipLegend">
+                <input label="Legend label" id="ipLegendLabel" />
+              </frame>
+            </column>
+            <column id="clm_fDDSEUEULE">
+              <frame label="Draw standard error" checkable="true" id="ipDrawSE">
+                <checkbox id="ipUpperError" label="Upper error" value="true" checked="true" />
+                <checkbox id="ipLowerError" label="Lower error" value="true" checked="true" />
+              </frame>
+            </column>
+          </row>
+          <embed component="rkward::plot_options" as_button="true" label="Generic plot options" id="emb_rkwrdpltptnG" />
+          <preview />
+        </column>
+      </tab>
+    </tabbook>
+  </dialog>
 </document>

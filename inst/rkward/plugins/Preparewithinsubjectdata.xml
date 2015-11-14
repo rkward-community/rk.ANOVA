@@ -1,31 +1,31 @@
 <!DOCTYPE rkplugin >
 <document>
-	<!-- this code was generated using the rkwarddev package.
-			perhaps don't make changes here, but in the rkwarddev script instead! -->
-	<code file="Preparewithinsubjectdata.js" />
-	<help file="Preparewithinsubjectdata.rkh" />
-	<!-- <dependencies>
-			</dependencies> -->
-	<logic>
-		<connect governor="current_object" client="vrsl_Slctllvr.available" />
-		<connect governor="vrsl_Slctllvr.available" client="vrs_Selectdt.root" />
-		<connect governor="chc_Atmtccss.state" client="inp_Nmfrcssb.visible" />
-		<connect governor="chc_Atmtccss.state.not" client="vrsl_Cssbjctd.visible" />
-	</logic>
-	<dialog label="Prepare within subject data">
-		<row id="row_vSSSSSDDS2">
-			<varselector id="vrs_Selectdt" label="Select data" />
-			<column id="clm_vSSSDDS2NN">
-				<varslot id="vrsl_Slctllvr" label="Select all variables from one data.frame" source="vrs_Selectdt" classes="data.frame" />
-				<varslot id="vrsl_Dpndntrs" label="Dependent/response vectors" source="vrs_Selectdt" required="true" multi="true" min_vars="2" />
-				<input label="Name for dependent variable" id="inp_Nmfrdpnd" initial="response" required="true" />
-				<input label="Name for experimental condition" id="inp_Nmfrxprm" initial="condition" required="true" />
-				<checkbox id="chc_Atmtccss" label="Automatic case/subject identifier" value="true" checked="true" />
-				<input label="Name for case/subject identifier" id="inp_Nmfrcssb" initial="case" required="true" />
-				<varslot id="vrsl_Cssbjctd" label="Case/subject identifier" source="vrs_Selectdt" required="true" />
-				<varslot id="vrsl_Btwnsbjc" label="Between subject variables" source="vrs_Selectdt" multi="true" />
-				<saveobject label="Save results to workspace" checkable="true" checked="true" initial="anova.data" id="svb_Svrsltst" />
-			</column>
-		</row>
-	</dialog>
+  <!-- this code was generated using the rkwarddev package.
+        perhaps don't make changes here, but in the rkwarddev script instead! -->
+  <code file="Preparewithinsubjectdata.js" />
+  <help file="Preparewithinsubjectdata.rkh" />
+  <!-- <dependencies>
+        </dependencies> -->
+  <logic>
+    <connect governor="current_object.state" client="pdDataSelected.available" />
+    <connect governor="pdDataSelected.available" client="pdData.root" />
+    <connect governor="pdGenCaseID.state" client="pdNameCaseID.visible" />
+    <connect governor="pdGenCaseID.state.not" client="pdCaseID.visible" />
+  </logic>
+  <dialog label="Prepare within subject data">
+    <row id="row_vDSDSSDRDD">
+      <varselector id="pdData" label="Select data" />
+      <column id="clm_vDSSDRDD2N">
+        <varslot id="pdDataSelected" label="Select all variables from one data.frame" source="pdData" classes="data.frame" />
+        <varslot id="pdResponse" label="Dependent/response vectors" source="pdData" required="true" multi="true" min_vars="2" />
+        <input label="Name for dependent variable" id="pdNameDependend" initial="response" required="true" />
+        <input label="Name for experimental condition" id="pdNameCondition" initial="condition" required="true" />
+        <checkbox id="pdGenCaseID" label="Automatic case/subject identifier" value="true" checked="true" />
+        <input label="Name for case/subject identifier" id="pdNameCaseID" initial="case" required="true" />
+        <varslot id="pdCaseID" label="Case/subject identifier" source="pdData" required="true" />
+        <varslot id="pdBetween" label="Between subject variables" source="pdData" multi="true" />
+        <saveobject label="Save results to workspace" checkable="true" checked="true" initial="anova.data" id="pdSaveResults" />
+      </column>
+    </row>
+  </dialog>
 </document>

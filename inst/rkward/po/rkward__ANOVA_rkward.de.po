@@ -1,0 +1,605 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# m.eik michalke <m@reaktanz.de>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://p.sf.net/rkward/bugs\n"
+"POT-Creation-Date: 2015-11-15 00:01+0100\n"
+"PO-Revision-Date: 2015-11-15 00:01+0100\n"
+"Last-Translator: m.eik michalke <m@reaktanz.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "m.eik michalke"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "meik.michalke@hhu.de"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:17
+#. i18n: ectx: <about name="...">
+msgid "rk.ANOVA"
+msgstr "rk.ANOVA"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:17
+#. i18n: ectx: <about shortinfo="...">
+msgid ""
+"RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and "
+"plot interactions."
+msgstr ""
+"RKWard GUI zur Durchführung von ANOVAs (unter Verwendung des 'ez'-Pakets), "
+"paarweiser t-Tests und Interaktionsplots."
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:26
+#. i18n: ectx: <about> <author given="...">
+msgctxt "Author name"
+msgid "Meik"
+msgstr "Meik"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:26
+#. i18n: ectx: <about> <author family="...">
+msgctxt "Author name"
+msgid "Michalke"
+msgstr "Michalke"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:40
+#. i18n: ectx: <components> <component label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.js:62
+#. i18n: ectx: (Loaded from Pairwise t-Tests)
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:20
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="...">
+msgid "Pairwise t-Tests"
+msgstr "Paarweise t-Tests"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.js:33
+#. i18n: ectx: (Loaded from Pairwise t-Tests)
+msgctxt "R code comment"
+msgid "simple helper function to get the names of the objects"
+msgstr "Einfache Hilfsfunktion um die Namen der Objekte zu erhalten"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.js:36
+#. i18n: ectx: (Loaded from Pairwise t-Tests)
+msgctxt "R code comment"
+msgid "create data and grouping vectors"
+msgstr "Daten erzeugen und Vektoren gruppieren"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.js:39
+#. i18n: ectx: (Loaded from Pairwise t-Tests)
+msgctxt "R code comment"
+msgid "the actual pairwise t-tests, using the prepared data"
+msgstr "Die eigentlichen paarweisen t-Tests mit den aufbereiteten Daten"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:22
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <varselector label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:29
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="Data"> <varselector label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:17
+#. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <varselector label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:34
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Data"> <varselector label="...">
+msgid "Select data"
+msgstr "Wähle Daten"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:24
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <radio label="...">
+msgid "Data format"
+msgstr "Datenformat"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:25
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <radio label="Data format"> <option label="...">
+msgid "Single (grouped) vector"
+msgstr "Einzelner (gruppierter) Vektor"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:26
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <radio label="Data format"> <option label="...">
+msgid "Separate variables"
+msgstr "Separate Variablen"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:28
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:27
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:31
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="Data"> <frame label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:32
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:92
+#. i18n: ectx: <hierarchy> <menu label="...">
+msgid "Data"
+msgstr "Daten"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:29
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Data"> <varslot label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:33
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <frame label="Data"> <varslot label="...">
+msgid "Response vector"
+msgstr "Antwortvektor"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:30
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Data"> <varslot label="...">
+msgid "Grouping vector or factor"
+msgstr "Gruppenvektor oder -faktor"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:31
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Data"> <varslot label="...">
+msgid "Separate response vectors (>= 3)"
+msgstr "Separate Antwortvektoren (>= 3)"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:33
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="...">
+msgid "Alpha error correction"
+msgstr "Alphafehler-Korrektur"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:34
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Alpha error correction"> <dropdown label="...">
+msgid "Method for adjusting p values"
+msgstr "Methode zur Adjustierung der p-Werte"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:35
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Alpha error correction"> <dropdown label="Method for adjusting p values"> <option label="...">
+msgid "none"
+msgstr "keine"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:36
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Alpha error correction"> <dropdown label="Method for adjusting p values"> <option label="...">
+msgid "Bonferroni"
+msgstr "Bonferroni"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:37
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Alpha error correction"> <dropdown label="Method for adjusting p values"> <option label="...">
+msgid "Holm"
+msgstr "Holm"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:38
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Alpha error correction"> <dropdown label="Method for adjusting p values"> <option label="...">
+msgid "Benjamini & Hochberg (fdr)"
+msgstr "Benjamini & Hochberg (fdr)"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:39
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Alpha error correction"> <dropdown label="Method for adjusting p values"> <option label="...">
+msgid "Benjamini & Yekutieli"
+msgstr "Benjamini & Yekutieli"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:40
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Alpha error correction"> <dropdown label="Method for adjusting p values"> <option label="...">
+msgid "Hochberg"
+msgstr "Hochberg"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:41
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Alpha error correction"> <dropdown label="Method for adjusting p values"> <option label="...">
+msgid "Hommel"
+msgstr "Hommel"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:45
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <checkbox label="...">
+msgid "Pooled SD for all groups"
+msgstr "Gemeinsame Varianz für alle Gruppen"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:46
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <checkbox label="...">
+msgid "Paired t-Tests"
+msgstr "t-Test für gepaarte Stichproben"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:48
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <radio label="...">
+msgid "Alternative hypothesis"
+msgstr "Alternativhypothese"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:49
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <radio label="Alternative hypothesis"> <option label="...">
+msgid "Two-sided"
+msgstr "Zweiseitig"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:50
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <radio label="Alternative hypothesis"> <option label="...">
+msgid "First is greater"
+msgstr "Erster ist größer"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:51
+#. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <radio label="Alternative hypothesis"> <option label="...">
+msgid "Second is greater"
+msgstr "Zweiter ist größer"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:47
+#. i18n: ectx: <components> <component label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.js:43
+#. i18n: ectx: (Loaded from Interaction plot)
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:25
+#. i18n: ectx: (Interaction plot) <dialog label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:26
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="...">
+msgid "Interaction plot"
+msgstr "Interaktionsplot"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:32
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <frame label="Data"> <varslot label="...">
+msgid "Factor (x axis)"
+msgstr "Faktor (x-Achse)"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:34
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <frame label="Data"> <varslot label="...">
+msgid "Grouping factor (traces)"
+msgstr "Gruppenfaktor"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:40
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:78
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="...">
+msgid "Options"
+msgstr "Optionen"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:46
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="Options"> <radio label="...">
+msgid "Plot type"
+msgstr "Art des Plots"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:47
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <radio label="Plot type"> <option label="...">
+msgid "Lineplot"
+msgstr "Linienplot"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:48
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <radio label="Plot type"> <option label="...">
+msgid "Bargraph"
+msgstr "Balkengrafik"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:53
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="Options"> <radio label="...">
+msgid "Elements"
+msgstr "Elemente"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:54
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <radio label="Elements"> <option label="...">
+msgid "Lines + points"
+msgstr "Linien + Punkte"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:55
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <radio label="Elements"> <option label="...">
+msgid "Lines only"
+msgstr "Nur Linien"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:56
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <radio label="Elements"> <option label="...">
+msgid "Points only"
+msgstr "Nur Punkte"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:58
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="Options"> <radio label="...">
+msgid "Bars"
+msgstr "Balken"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:59
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <radio label="Bars"> <option label="...">
+msgid "Grouped bars"
+msgstr "Gruppierte Balken"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:60
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <radio label="Bars"> <option label="...">
+msgid "Split bars"
+msgstr "Geteilte Balken"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:62
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="Options"> <dropdown label="...">
+msgid "Clipping"
+msgstr "Zuschnitt"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:63
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <dropdown label="Clipping"> <option label="...">
+msgid "clip to plot (no bar outside region)"
+msgstr "Zuschnitt auf Plot (kein Balken außerhalb der Region)"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:64
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <dropdown label="Clipping"> <option label="...">
+msgid "clip to figure"
+msgstr "Zuschnitt auf Zeichnung"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:65
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <dropdown label="Clipping"> <option label="...">
+msgid "clip to device"
+msgstr "Zuschnitt auf Grafikgerät"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:74
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="Options"> <frame label="...">
+msgid "Legend"
+msgstr "Legende"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:75
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <frame label="Legend"> <input label="...">
+msgid "Legend label"
+msgstr "Legenden-Bezeichnung"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:79
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="Options"> <frame label="...">
+msgid "Draw standard error"
+msgstr "Zeichne Standardfehler"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:80
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <frame label="Draw standard error"> <checkbox label="...">
+msgid "Upper error"
+msgstr "Oberer Fehler"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:81
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <frame label="Draw standard error"> <checkbox label="...">
+msgid "Lower error"
+msgstr "Unterer Fehler"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:85
+#. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="Options"> <embed label="...">
+msgid "Generic plot options"
+msgstr "Allgemeine Plotoptionen"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:54
+#. i18n: ectx: <components> <component label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.js:70
+#. i18n: ectx: (Loaded from Prepare within subject data)
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:15
+#. i18n: ectx: (Prepare within subject data) <dialog label="...">
+msgid "Prepare within subject data"
+msgstr "Aufbereiten von Within-Subject-Daten"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.js:39
+#. i18n: ectx: (Loaded from Prepare within subject data)
+msgid "Can't determine number of cases, variables don't have equal length!"
+msgstr ""
+"Anzahl der Fälle kann nicht bestimmt werden,  die Variablen haben "
+"unterschiedliche Längen!"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:19
+#. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <varslot label="...">
+msgid "Select all variables from one data.frame"
+msgstr "Wähle alle Variablen aus einem data.frame"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:20
+#. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <varslot label="...">
+msgid "Dependent/response vectors"
+msgstr "Abhängige Variablen/Antwortvektoren"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:21
+#. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <input label="...">
+msgid "Name for dependent variable"
+msgstr "Name der abhängigen Variablen"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:22
+#. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <input label="...">
+msgid "Name for experimental condition"
+msgstr "Name der Experimentalbedingung"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:23
+#. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <checkbox label="...">
+msgid "Automatic case/subject identifier"
+msgstr "Automatische Fall-/Teilnehmeridentifikation"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:24
+#. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <input label="...">
+msgid "Name for case/subject identifier"
+msgstr "Name des Fall-/Teilnehmerbezeichners"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:25
+#. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <varslot label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:48
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Data"> <varslot label="...">
+msgid "Case/subject identifier"
+msgstr "Fall-/Teilnehmerbezeichner"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:26
+#. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <varslot label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:52
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Data"> <varslot label="...">
+msgid "Between subject variables"
+msgstr "Between-Subject-Variablen"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:27
+#. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <saveobject label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:108
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Options"> <saveobject label="...">
+msgid "Save results to workspace"
+msgstr "Speichere Ergebnisse im Workspace"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:61
+#. i18n: ectx: <components> <component label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:30
+#. i18n: ectx: (ANOVA) <dialog label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:31
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:96
+#. i18n: ectx: <hierarchy> <menu label="Data"> <menu label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:107
+#. i18n: ectx: <hierarchy> <menu label="Analysis"> <menu label="...">
+msgid "ANOVA"
+msgstr "ANOVA"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.js:39
+#. i18n: ectx: (Loaded from ANOVA)
+msgctxt "R code comment"
+msgid "set contrasts for accurate type 3 ANOVA"
+msgstr "setze Kontraste für genaue Typ-3-ANOVA"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.js:43
+#. i18n: ectx: (Loaded from ANOVA)
+msgctxt "R code comment"
+msgid "ezANOVA demands a subject identifier variable"
+msgstr "ezANOVA verlangt eine Teilnehmeridentifikationsvariable"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.js:84
+#. i18n: ectx: (Loaded from ANOVA)
+msgid "ANOVA results"
+msgstr "ANOVA-Ergebnisse"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.js:88
+#. i18n: ectx: (Loaded from ANOVA)
+msgid "Mauchly's Test for Sphericity"
+msgstr "Mauchly's Test auf Sphärizität"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.js:91
+#. i18n: ectx: (Loaded from ANOVA)
+msgid "Sphericity Corrections"
+msgstr "Sphärizitätskorrektur"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.js:94
+#. i18n: ectx: (Loaded from ANOVA)
+msgid "Levene's Test for Homgeneity"
+msgstr "Levene's Test auf Homogenität"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:37
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Data"> <varslot label="...">
+msgid "Data (must be data.frame)"
+msgstr "Daten (muss ein data.frame sein)"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:40
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Data"> <radio label="...">
+msgid "Design"
+msgstr "Desgin"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:41
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <radio label="Design"> <option label="...">
+msgid "Between subjects"
+msgstr "Between Subjects"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:42
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <radio label="Design"> <option label="...">
+msgid "Within subjects (repeated measures)"
+msgstr "Within Subjects (Messwiederholung)"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:43
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <radio label="Design"> <option label="...">
+msgid "Mixed"
+msgstr "Gemischt"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:47
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Data"> <varslot label="...">
+msgid "Dependent variable"
+msgstr "Abhängige Variable"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:51
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Data"> <varslot label="...">
+msgid "Within subject variables"
+msgstr "Within-Subject-Variable"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:57
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="...">
+msgid "Observed"
+msgstr "Beobachtet"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:59
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Observed"> <varselector label="...">
+msgid "Select observed variables"
+msgstr "Wähle beobachtete Variablen"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:62
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Observed"> <text>
+msgid ""
+"Observed variables are independent variables you have <b> already defined </"
+"b> as either between or within variables, but that were measured and <b> not "
+"manipulated </b> . They affect the calculated effect size (generalized eta "
+"seqared)."
+msgstr ""
+"Beobachtete Variablen sind unabhängige Variablen die <b> bereits definiert </"
+"b> sind, entweder als Between- oder Within-Variablen, die allerdings nur "
+"gemessen und <b> nicht manipuliert </b> wurden. Sie beeinflussen die "
+"berechnete Effektstärke (generalisiertes Eta-Quadrat)."
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:73
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Observed"> <varslot label="...">
+msgid "Observed variables (not manipulated)"
+msgstr "Beobachtete Variablen (nicht manipuliert)"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:82
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Options"> <dropdown label="...">
+msgid "Sums of squares type for unbalanced designs"
+msgstr "Quadratsummen-Typ für unbalancierte Designs"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:83
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <dropdown label="Sums of squares type for unbalanced designs"> <option label="...">
+msgid "Type 1"
+msgstr "Typ 1"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:84
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <dropdown label="Sums of squares type for unbalanced designs"> <option label="...">
+msgid "Type 2"
+msgstr "Typ 2"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:85
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <dropdown label="Sums of squares type for unbalanced designs"> <option label="...">
+msgid "Type 3"
+msgstr "Typ 3"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:89
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Options"> <dropdown label="...">
+msgid "Heteroscedasticity correction"
+msgstr "Heteroskedastizitätskorrektur"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:90
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <dropdown label="Heteroscedasticity correction"> <option label="...">
+msgid "None"
+msgstr "keine"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:91
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <dropdown label="Heteroscedasticity correction"> <option label="...">
+msgid "hc3 (Long & Ervin; default)"
+msgstr "hc3 (Long & Ervin; Voreinstellung)"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:92
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <dropdown label="Heteroscedasticity correction"> <option label="...">
+msgid "hc0 (White)"
+msgstr "hc0 (White)"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:93
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <dropdown label="Heteroscedasticity correction"> <option label="...">
+msgid "hc1 (Long & Ervin)"
+msgstr "hc1 (Long & Ervin)"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:94
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <dropdown label="Heteroscedasticity correction"> <option label="...">
+msgid "hc2 (Long & Ervin)"
+msgstr "hc2 (Long & Ervin)"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:95
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <dropdown label="Heteroscedasticity correction"> <option label="...">
+msgid "hc4 (Cribari-Neto)"
+msgstr "hc4 (Cribari-Neto)"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:100
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Options"> <checkbox label="...">
+msgid "Show sums of squares, raw likelihood ratios etc."
+msgstr "Zeige Quadratsummen, Rohwerte der Likelihood-Ratios etc."
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:103
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Options"> <checkbox label="...">
+msgid "Return 'aov' object"
+msgstr "Gebe 'aov'-Objekt zurück"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:107
+#. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Options"> <checkbox label="...">
+msgid "Suppress package loading messages"
+msgstr "Unterdrücke Meldungen beim Laden von Paketen"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:70
+#. i18n: ectx: <hierarchy> <menu label="...">
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:103
+#. i18n: ectx: <hierarchy> <menu label="...">
+msgid "Analysis"
+msgstr "Analyse"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:74
+#. i18n: ectx: <hierarchy> <menu label="Analysis"> <menu label="...">
+msgid "means"
+msgstr "Mittelwert"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:78
+#. i18n: ectx: <hierarchy> <menu label="Analysis"> <menu label="means"> <menu label="...">
+msgid "t-tests"
+msgstr "t-Tests"
+
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:86
+#. i18n: ectx: <hierarchy> <menu label="...">
+msgid "Plots"
+msgstr "Plots"

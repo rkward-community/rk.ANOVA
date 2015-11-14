@@ -3,14 +3,17 @@
 # note: this script only creates objects in your workspace,
 # *EXCEPT* for the last call, see below.
 
+require(rkwarddev)
+rkwarddev.required("0.07-4")
+
 local({
 # set the output directory to overwrite the actual plugin
 output.dir <- tempdir()
 overwrite <- TRUE
 # if you set guess.getters to TRUE, the resulting code will need RKWard >= 0.6.0
 guess.getter <- TRUE
-
-require(rkwarddev)
+rk.set.indent(by="  ")
+rk.set.empty.e(TRUE)
 
 about.info <- rk.XML.about(
   name="rk.ANOVA",
@@ -28,57 +31,67 @@ dependencies.info <- rk.XML.dependencies(
 ############
 ## ANOVA
 ############
-anova.drp.design <- rk.XML.radio(
+design <- rk.XML.radio(
   label="Design",
   options=list(
     "Between subjects"=c(val="between"),
     "Within subjects (repeated measures)"=c(val="within", chk=TRUE),
     "Mixed"=c(val="mixed")
-  )
+  ),
+  id.name="design"
 )
-var.select <- rk.XML.varselector(
-  label="Select data"
+data <- rk.XML.varselector(
+  label="Select data",
+  id.name="data"
 )
-var.data <- rk.XML.varslot(
+dataSelected <- rk.XML.varslot(
   label="Data (must be data.frame)",
-  source=var.select, required=TRUE, classes="data.frame"
+  source=data, required=TRUE, classes="data.frame",
+  id.name="dataSelected"
 )
-var.dv <- rk.XML.varslot(
+dependend <- rk.XML.varslot(
   label="Dependent variable",
-  source=var.select, required=TRUE
+  source=data, required=TRUE,
+  id.name="dependend"
 )
-var.wid <- rk.XML.varslot(
+caseID <- rk.XML.varslot(
   label="Case/subject identifier",
-  source=var.select
+  source=data,
+  id.name="caseID"
 )
-var.within <- rk.XML.varslot(
+within <- rk.XML.varslot(
   label="Within subject variables",
-  source=var.select, multi=TRUE
+  source=data, multi=TRUE,
+  id.name="within"
 )
-var.between <- rk.XML.varslot(
+between <- rk.XML.varslot(
   label="Between subject variables",
-  source=var.select, multi=TRUE
+  source=data, multi=TRUE,
+  id.name="between"
 )
 # observed data
-var.select2 <- rk.XML.varselector(
-  label="Select observed variables"
+data2 <- rk.XML.varselector(
+  label="Select observed variables",
+  id.name="data2"
 )
-var.observed <- rk.XML.varslot(
+observed <- rk.XML.varslot(
   label="Observed variables (not manipulated)",
-  source=var.select2, multi=TRUE
+  source=data2, multi=TRUE,
+  id.name="observed"
 )
 
-drp.vtype <- rk.XML.dropdown(
+sumOfSqType <- rk.XML.dropdown(
   label="Sums of squares type for unbalanced designs",
   options=list(
     "Type 1"=c(val=1),
     "Type 2"=c(val=2, chk=TRUE),
     "Type 3"=c(val=3)
-  )
+  ),
+  id.name="sumOfSqType"
 )
 
 # logic: only relevant for pure between designs
-drp.white <- rk.XML.dropdown(
+hetScedCorrection <- rk.XML.dropdown(
   label="Heteroscedasticity correction",
   options=list(
     "None"=c(val="false", chk=TRUE),
@@ -87,55 +100,60 @@ drp.white <- rk.XML.dropdown(
     "hc1 (Long & Ervin)"=c(val="hc1"),
     "hc2 (Long & Ervin)"=c(val="hc2"),
     "hc4 (Cribari-Neto)"=c(val="hc4")
-  )
+  ),
+  id.name="hetScedCorrection"
 )
 
-check.extrainfo <- rk.XML.cbox(
+showExtraInfo <- rk.XML.cbox(
   label="Show sums of squares, raw likelihood ratios etc.",
-  value="true"
+  value="true",
+  id.name="showExtraInfo"
 )
-check.aov <- rk.XML.cbox(
+aov <- rk.XML.cbox(
   label="Return 'aov' object",
   value="true",
-  chk=TRUE
+  chk=TRUE,
+  id.name="aov"
 )
 
-var.chk.suppress <- rk.XML.cbox(
+noLoadMsg <- rk.XML.cbox(
   label="Suppress package loading messages",
   value="true",
-  chk=TRUE
+  chk=TRUE,
+  id.name="noLoadMsg"
 )
-save.results <- rk.XML.saveobj(
+saveResults <- rk.XML.saveobj(
   "Save results to workspace",
-  initial="anova.results"
+  initial="anova.results",
+  id.name="saveResults"
 )
 
 tab1.data <- rk.XML.row(
-  var.select,
+  data,
   rk.XML.col(
-    rk.XML.frame(var.data),
-    rk.XML.frame(anova.drp.design),
-    rk.XML.frame(var.dv, var.wid),
-    rk.XML.frame(var.within, var.between)
+    rk.XML.frame(dataSelected),
+    rk.XML.frame(design),
+    rk.XML.frame(dependend, caseID),
+    rk.XML.frame(within, between)
   )
 )
 
 tab2.observed <- rk.XML.row(
-  var.select2,
+  data2,
   rk.XML.col(
     rk.XML.frame(rk.XML.text("Observed variables are independent variables you have <b>already defined</b> as either between or within variables, but that were measured and <b>not manipulated</b>. They affect the calculated effect size (generalized eta seqared).")),
-    rk.XML.frame(var.observed)
+    rk.XML.frame(observed)
   )
 )
 
 tab3.options <- rk.XML.row(
   rk.XML.col(
-    rk.XML.frame(drp.vtype),
-    rk.XML.frame(drp.white),
-    rk.XML.frame(rk.XML.col(check.extrainfo),rk.XML.col(check.aov)),
+    rk.XML.frame(sumOfSqType),
+    rk.XML.frame(hetScedCorrection),
+    rk.XML.frame(rk.XML.col(showExtraInfo),rk.XML.col(aov)),
     rk.XML.stretch(),
-    var.chk.suppress,
-    save.results
+    noLoadMsg,
+    saveResults
   )
 )
 
@@ -153,141 +171,163 @@ full.dialog <- rk.XML.dialog(
 
 ## logic section to tie the second varslot to the data.frame
 lgc.sect <- rk.XML.logic(
-  rk.XML.connect(governor="current_object", client=var.data, set="available"),
-  rk.XML.connect(governor=var.data, client=var.select, get="available", set="root"),
-  anova.gov.data <- rk.XML.convert(sources=list(available=var.data), mode=c(notequals="")),
-  anova.gov.between <- rk.XML.convert(sources=list(string=anova.drp.design), mode=c(equals="between")),
-  anova.gov.within <- rk.XML.convert(sources=list(string=anova.drp.design), mode=c(equals="within")),
-  anova.gov.mixed <- rk.XML.convert(sources=list(string=anova.drp.design), mode=c(equals="mixed")),
+  rk.XML.connect(governor="current_object", client=dataSelected, set="available"),
+  rk.XML.connect(governor=dataSelected, client=data, get="available", set="root"),
+  anova.gov.data <- rk.XML.convert(sources=list(available=dataSelected), mode=c(notequals="")),
+  anova.gov.between <- rk.XML.convert(sources=list(string=design), mode=c(equals="between")),
+  anova.gov.within <- rk.XML.convert(sources=list(string=design), mode=c(equals="within")),
+  anova.gov.mixed <- rk.XML.convert(sources=list(string=design), mode=c(equals="mixed")),
   anova.gov.show.bvars <- rk.XML.convert(sources=list(anova.gov.between, anova.gov.mixed), mode=c(or=""), id.name="lgc_bvars"),
   anova.gov.show.wvars <- rk.XML.convert(sources=list(anova.gov.within, anova.gov.mixed), mode=c(or=""), id.name="lgc_vvars"),
-  rk.XML.connect(governor=anova.gov.data, client=var.dv, set="enabled"),
-  rk.XML.connect(governor=anova.gov.data, client=var.between, set="enabled"),
-  rk.XML.connect(governor=anova.gov.data, client=var.within, set="enabled"),
-  rk.XML.connect(governor=anova.gov.data, client=var.wid, set="enabled"),
-  rk.XML.connect(governor=anova.gov.show.wvars, client=var.wid, set="required"),
-  rk.XML.connect(governor=anova.gov.show.bvars, client=var.between, set="visible"),
-  rk.XML.connect(governor=anova.gov.show.wvars, client=var.within, set="visible"),
-  rk.XML.connect(governor=anova.gov.show.bvars, client=var.between, set="required"),
-  rk.XML.connect(governor=anova.gov.show.wvars, client=var.within, set="required"),
+  rk.XML.connect(governor=anova.gov.data, client=dependend, set="enabled"),
+  rk.XML.connect(governor=anova.gov.data, client=between, set="enabled"),
+  rk.XML.connect(governor=anova.gov.data, client=within, set="enabled"),
+  rk.XML.connect(governor=anova.gov.data, client=caseID, set="enabled"),
+  rk.XML.connect(governor=anova.gov.show.wvars, client=caseID, set="required"),
+  rk.XML.connect(governor=anova.gov.show.bvars, client=between, set="visible"),
+  rk.XML.connect(governor=anova.gov.show.wvars, client=within, set="visible"),
+  rk.XML.connect(governor=anova.gov.show.bvars, client=between, set="required"),
+  rk.XML.connect(governor=anova.gov.show.wvars, client=within, set="required"),
   # observed data
   rk.XML.connect(governor=anova.gov.data, client=tab2.observed, set="enabled"),
-  rk.XML.connect(governor=var.data, client=var.select2, get="available", set="root")
+  rk.XML.connect(governor=dataSelected, client=data2, get="available", set="root")
 )
 
 ## JavaScript
 js.calc <- rk.paste.JS(
-  jsVarDv <- rk.JS.vars(var.dv, modifiers="shortname", join=", "),
-  jsVarWid <- rk.JS.vars(var.wid, modifiers="shortname", join=", "),
-  jsVarWithin <- rk.JS.vars(var.within, modifiers="shortname", join=", "),
-  jsVarBetween <- rk.JS.vars(var.between, modifiers="shortname", join=", "),
-  jsVarObserved <- rk.JS.vars(var.observed, modifiers="shortname", join=", "),
-  ite(rkwarddev::id(drp.vtype, " == 3"),
-    echo("\t# set contrasts for accurate type 3 ANOVA\n\toptions(contrasts=c(\"contr.sum\",\"contr.poly\"))\n")
-  ),
-  ite(rkwarddev::id(var.wid, " == \"\" & ", anova.drp.design, " == \"between\""),
-    echo(
-      "\t# ezANOVA demands a subject identifier variable\n\t",
-      var.data, " <- cbind(", var.data ,", ez.subject.ID.dummy=factor(1:nrow(", var.data ,")))\n"
-    )
+  jsVarDv <- rk.JS.vars(dependend, modifiers="shortname", join=", "),
+  jsVarWid <- rk.JS.vars(caseID, modifiers="shortname", join=", "),
+  jsVarWithin <- rk.JS.vars(within, modifiers="shortname", join=", "),
+  jsVarBetween <- rk.JS.vars(between, modifiers="shortname", join=", "),
+  jsVarObserved <- rk.JS.vars(observed, modifiers="shortname", join=", "),
+  js(
+    if(sumOfSqType == 3){
+      R.comment("set contrasts for accurate type 3 ANOVA")
+      echo("\toptions(contrasts=c(\"contr.sum\",\"contr.poly\"))\n")
+    } else {},
+    if(caseID == "" && design == "between"){
+      R.comment("ezANOVA demands a subject identifier variable")
+      echo("\t", dataSelected, " <- cbind(", dataSelected ,", ez.subject.ID.dummy=factor(1:nrow(", dataSelected ,")))\n")
+    } else {}
   ),
   echo("\tanova.results <- ezANOVA("),
-  ite(var.data, echo("\n\t\tdata=", var.data)),
-  ite(var.dv, echo(",\n\t\tdv=.(", jsVarDv ,")")),
-  ite(var.wid, echo(",\n\t\twid=.(", jsVarWid ,")"), ite(rkwarddev::id(anova.drp.design, " == \"between\""), echo(",\n\t\twid=.(ez.subject.ID.dummy)"))), # wid is needed anyway
-  ite(rkwarddev::id(var.within, " != \"\" & ", anova.drp.design, " != \"between\""), echo(",\n\t\twithin=.(", jsVarWithin ,")")),
-  ite(rkwarddev::id(var.between, " != \"\" & ", anova.drp.design, " != \"within\""), echo(",\n\t\tbetween=.(", jsVarBetween ,")")),
-  ite(var.observed, echo(",\n\t\tobserved=.(", jsVarObserved ,")")),
-
-  ite(rkwarddev::id(drp.vtype, " != 2"), echo(",\n\t\ttype=", drp.vtype)),
-  ite(rkwarddev::id(drp.white, " != \"false\""), echo(",\n\t\twhite.adjust=\"", drp.white, "\"")),
-  tf(check.extrainfo, opt="detailed"),
-  tf(check.aov, opt="return_aov"),
-  echo(")\n\n"),
-  empty.e=TRUE
+  js(
+    if(dataSelected){
+      echo("\n\t\tdata=", dataSelected)
+    } else {},
+    if(dependend){
+      echo(",\n\t\tdv=.(", jsVarDv ,")")
+    } else {},
+    if(caseID){
+      echo(",\n\t\twid=.(", jsVarWid ,")")
+    } else if(design == "between"){
+      echo(",\n\t\twid=.(ez.subject.ID.dummy)") # wid is needed anyway
+    } else {},
+    if(within != "" && design != "between"){
+      echo(",\n\t\twithin=.(", jsVarWithin ,")")
+    } else {},
+    if(between != "" && design != "within"){
+      echo(",\n\t\tbetween=.(", jsVarBetween ,")")
+    } else {},
+    if(observed){
+      echo(",\n\t\tobserved=.(", jsVarObserved ,")")
+    } else {},
+    if(sumOfSqType != 2){
+      echo(",\n\t\ttype=", sumOfSqType)
+    } else {},
+    if(hetScedCorrection != "false"){
+      echo(",\n\t\twhite.adjust=\"", hetScedCorrection, "\"")
+    } else {}
+  ),
+  tf(showExtraInfo, opt="detailed"),
+  tf(aov, opt="return_aov"),
+  echo(")\n\n")
 )
 
 js.print <- rk.paste.JS(
-  echo("rk.print(anova.results[[\"ANOVA\"]])\n"),
-  echo("\tif(\"Mauchly's Test for Sphericity\" %in% names(anova.results)){
-    rk.header(\"Mauchly's Test for Sphericity\", level=3)
-    rk.print(anova.results[[\"Mauchly's Test for Sphericity\"]])
-  } else {}\n"
-  ),
-  echo("\tif(\"Sphericity Corrections\" %in% names(anova.results)){
-    rk.header(\"Sphericity Corrections\", level=3)
-    rk.print(anova.results[[\"Sphericity Corrections\"]])
-  } else {}\n"
-  ),
-  echo("\tif(\"Levene's Test for Homgeneity\" %in% names(anova.results)){
-    rk.header(\"Levene's Test for Homgeneity\", level=3)
-    rk.print(anova.results[[\"Levene's Test for Homgeneity\"]])
-  } else {}\n"
-  ),
-  empty.e=TRUE
+  echo("\trk.print(anova.results[[\"ANOVA\"]])\n"),
+  echo("\tif(\"Mauchly's Test for Sphericity\" %in% names(anova.results)){\n\t\t"),
+  rk.JS.header("Mauchly's Test for Sphericity", level=3),
+  echo("\t\trk.print(anova.results[[\"Mauchly's Test for Sphericity\"]])\n\t} else {}\n"),
+  echo("\tif(\"Sphericity Corrections\" %in% names(anova.results)){\n\t\t"),
+  rk.JS.header("Sphericity Corrections", level=3),
+  echo("\t\trk.print(anova.results[[\"Sphericity Corrections\"]])\n\t} else {}\n"),
+  echo("\tif(\"Levene's Test for Homgeneity\" %in% names(anova.results)){\n\t\t"),
+  rk.JS.header("Levene's Test for Homgeneity", level=3),
+  echo("\t\trk.print(anova.results[[\"Levene's Test for Homgeneity\"]])\n\t} else {}\n")
 )
 
 ########
 ## prepare data
 ########
-pd.var.selectVars <- rk.XML.varselector(
-  label="Select data"
+pdData <- rk.XML.varselector(
+  label="Select data",
+  id.name="pdData"
 )
-pd.var.data <- rk.XML.varslot(
+pdDataSelected <- rk.XML.varslot(
   label="Select all variables from one data.frame",
-  source=pd.var.selectVars, classes="data.frame"
+  source=pdData, classes="data.frame",
+  id.name="pdDataSelected"
 )
-pd.var.dependent <- rk.XML.varslot(
+pdResponse <- rk.XML.varslot(
   label="Dependent/response vectors",
-  source=pd.var.selectVars, multi=TRUE, min=2, required=TRUE
+  source=pdData, multi=TRUE, min=2, required=TRUE,
+  id.name="pdResponse"
 )
-pd.inp.dependent <- rk.XML.input(
+pdNameDependend <- rk.XML.input(
   label="Name for dependent variable",
-  initial="response", required=TRUE
+  initial="response", required=TRUE,
+  id.name="pdNameDependend"
 )
-pd.inp.condition <- rk.XML.input(
+pdNameCondition <- rk.XML.input(
   label="Name for experimental condition",
   initial="condition",
-  required=TRUE
+  required=TRUE,
+  id.name="pdNameCondition"
 )
-pd.chk.genCaseID <- rk.XML.cbox(
+pdGenCaseID <- rk.XML.cbox(
   label="Automatic case/subject identifier",
-  chk=TRUE
+  chk=TRUE,
+  id.name="pdGenCaseID"
 )
-pd.inp.caseID <- rk.XML.input(
+pdNameCaseID <- rk.XML.input(
   label="Name for case/subject identifier",
   initial="case",
-  required=TRUE
+  required=TRUE,
+  id.name="pdNameCaseID"
 )
-pd.var.wid <- rk.XML.varslot(
+pdCaseID <- rk.XML.varslot(
   label="Case/subject identifier",
-  source=pd.var.selectVars,
-  required=TRUE
+  source=pdData,
+  required=TRUE,
+  id.name="pdCaseID"
 )
-pd.var.between <- rk.XML.varslot(
+pdBetween <- rk.XML.varslot(
   label="Between subject variables",
-  source=pd.var.selectVars,
-  multi=TRUE
+  source=pdData,
+  multi=TRUE,
+  id.name="pdBetween"
 )
-pd.save.results <- rk.XML.saveobj(
+pdSaveResults <- rk.XML.saveobj(
   label="Save results to workspace",
   initial="anova.data",
-  chk=TRUE
+  chk=TRUE,
+  id.name="pdSaveResults"
 )
 
 pd.full.dialog <- rk.XML.dialog(
   rk.XML.row(
-    pd.var.selectVars,
+    pdData,
     rk.XML.col(
-      pd.var.data,
-      pd.var.dependent,
-      pd.inp.dependent,
-      pd.inp.condition,
-      pd.chk.genCaseID,
-      pd.inp.caseID,
-      pd.var.wid,
-      pd.var.between,
-      pd.save.results
+      pdDataSelected,
+      pdResponse,
+      pdNameDependend,
+      pdNameCondition,
+      pdGenCaseID,
+      pdNameCaseID,
+      pdCaseID,
+      pdBetween,
+      pdSaveResults
     )
   ),
   label="Prepare within subject data"
@@ -295,59 +335,75 @@ pd.full.dialog <- rk.XML.dialog(
 
 ## logic section to tie the varslot to the data.frame
 pd.lgc.sect <- rk.XML.logic(
-  rk.XML.connect(governor="current_object", client=pd.var.data, set="available"),
-  rk.XML.connect(governor=pd.var.data, client=pd.var.selectVars, get="available", set="root"),
-#     pd.gov.data <- rk.XML.convert(sources=list(available=pd.var.data), mode=c(notequals="")),
-#     rk.XML.connect(governor=pd.gov.data, client=pd.var.dependent, set="enabled"),
-#     rk.XML.connect(governor=pd.gov.data, client=pd.inp.dependent, set="enabled"),
-#     rk.XML.connect(governor=pd.gov.data, client=pd.inp.condition, set="enabled"),
-#     rk.XML.connect(governor=pd.gov.data, client=pd.chk.genCaseID, set="enabled"),
-  rk.XML.connect(governor=pd.chk.genCaseID, client=pd.inp.caseID, set="visible"),
-  rk.XML.connect(governor=pd.chk.genCaseID, client=pd.var.wid, set="visible", not=TRUE)#,
-#     rk.XML.connect(governor=pd.gov.data, client=pd.inp.caseID, set="enabled"),
-#     rk.XML.connect(governor=pd.gov.data, client=pd.var.wid, set="enabled"),
-#     rk.XML.connect(governor=pd.gov.data, client=pd.var.between, set="enabled")
+  rk.XML.connect(governor="current_object", client=pdDataSelected, set="available"),
+  rk.XML.connect(governor=pdDataSelected, client=pdData, get="available", set="root"),
+#     pd.gov.data <- rk.XML.convert(sources=list(available=pdDataSelected), mode=c(notequals="")),
+#     rk.XML.connect(governor=pd.gov.data, client=pdResponse, set="enabled"),
+#     rk.XML.connect(governor=pd.gov.data, client=pdNameDependend, set="enabled"),
+#     rk.XML.connect(governor=pd.gov.data, client=pdNameCondition, set="enabled"),
+#     rk.XML.connect(governor=pd.gov.data, client=pdGenCaseID, set="enabled"),
+  rk.XML.connect(governor=pdGenCaseID, client=pdNameCaseID, set="visible"),
+  rk.XML.connect(governor=pdGenCaseID, client=pdCaseID, set="visible", not=TRUE)#,
+#     rk.XML.connect(governor=pd.gov.data, client=pdNameCaseID, set="enabled"),
+#     rk.XML.connect(governor=pd.gov.data, client=pdCaseID, set="enabled"),
+#     rk.XML.connect(governor=pd.gov.data, client=pdBetween, set="enabled")
 )
 
 ## JavaScript
 pd.js.calc <- rk.paste.JS(
-  pd.js.dep.names <- rk.JS.vars(pd.var.dependent, modifiers="shortname", join="\\\", \\\""),
-  pd.js.dep <- rk.JS.vars(pd.var.dependent, join=",\\n\\t\\t\\t"),
-  pd.js.wid <- rk.JS.vars(pd.var.wid, modifiers="shortname"),
-  pd.js.between.short <- rk.JS.vars(pd.var.between, modifiers="shortname"),
-  pd.js.between <- rk.JS.vars(pd.var.between, join=",\\n\\t\\t\\t", var.prefix="lng"),
-  ite(pd.var.data,
-    echo("\tnum.cases <- nrow(", pd.var.data,")\n"),
-    rk.paste.JS(
-      echo("\tnum.cases <- unique(sapply(list(\n\t\t\t", pd.js.dep),
-      ite(rkwarddev::id("!", pd.chk.genCaseID , " && ", pd.var.wid),
-        echo(",\n\t\t\t", pd.var.wid)),
-      ite(pd.var.between,
-        echo(",\n\t\t\t", pd.js.between)),
+  pd.js.dep.names <- rk.JS.vars(pdResponse, modifiers="shortname", join="\\\", \\\""),
+  pd.js.dep <- rk.JS.vars(pdResponse, join=",\\n\\t\\t\\t"),
+  pd.js.wid <- rk.JS.vars(pdCaseID, modifiers="shortname"),
+  pd.js.between.short <- rk.JS.vars(pdBetween, modifiers="shortname"),
+  pd.js.between <- rk.JS.vars(pdBetween, join=",\\n\\t\\t\\t", var.prefix="lng"),
+  js(
+    if(pdDataSelected){
+      echo("\tnum.cases <- nrow(", pdDataSelected,")\n")
+    } else {
+      echo("\tnum.cases <- unique(sapply(list(\n\t\t\t", pd.js.dep)
+      if(!pdGenCaseID && pdCaseID){
+        echo(",\n\t\t\t", pdCaseID)
+      } else {}
+      if(pdBetween){
+        echo(",\n\t\t\t", pd.js.between)
+      } else {}
       echo("),\n\t\tlength))\n\tif(length(num.cases) > 1) {",
-        "\n\t\tstop(simpleError(\"Can't determine number of cases, variables don't have equal length!\"))",
-        "\n\t}\n"), level=3)
+        "\n\t\tstop(simpleError(", i18n("Can't determine number of cases, variables don't have equal length!"), "))",
+        "\n\t}\n"
+      )
+    },
+    if(pdResponse){
+      echo("\tanova.conditions <- c(\"", pd.js.dep.names, "\")\n\tnum.conditions <- length(anova.conditions)\n\n")
+    } else {},
+    if(pdBetween){
+        js("var betweenVarsNames = ", pd.js.between.short, ".split(\"\\n\");", linebreaks=FALSE)
+        js("var betweenVars = ", pdBetween, ".split(\"\\n\");", linebreaks=FALSE)
+    } else {
+      rk.paste.JS("var betweenVars = \"\";", level=3)
+    }
   ),
-  ite(pd.var.dependent, echo("\tanova.conditions <- c(\"", pd.js.dep.names, "\")\n\tnum.conditions <- length(anova.conditions)\n\n")),
-  ite(pd.var.between,
-    rkwarddev::id("\tvar betweenVarsNames = ", pd.js.between.short, ".split(\"\\n\");\n",
-    "\tvar betweenVars = ", pd.var.between, ".split(\"\\n\");"),
-      "\tvar betweenVars = \"\";"),
   echo("\tanova.data <- data.frame("),
-  ite(pd.var.dependent,
-    echo("\n\t\t", pd.inp.dependent, "=c(\n\t\t\t", pd.js.dep, ")",
-    ",\n\t\t", pd.inp.condition, "=factor(rep(anova.conditions, each=num.cases))")
+  js(
+    if(pdResponse){
+      echo("\n\t\t", pdNameDependend, "=c(\n\t\t\t", pd.js.dep, ")",
+      ",\n\t\t", pdNameCondition, "=factor(rep(anova.conditions, each=num.cases))")
+    } else {},
+    if(pdGenCaseID && pdNameCaseID){
+      echo(",\n\t\t", pdNameCaseID, "=factor(rep(1:num.cases, times=num.conditions))")
+    } else {},
+    if(!pdGenCaseID && pdCaseID){
+      echo(",\n\t\t", pd.js.wid, "=factor(rep(", pdCaseID, ", times=num.conditions))")
+    } else {},
+    if(pdBetween){
+      js(
+        "for (var i=0, len=betweenVarsNames.length; i<len; ++i ){",
+        "  echo(\",\\n\\t\\t\" + betweenVarsNames[i] + \"=factor(rep(\" + betweenVars[i] + \", times=num.conditions))\");",
+        "}",
+        level=3
+      )
+    } else {}
   ),
-  ite(rkwarddev::id(pd.chk.genCaseID , " && ", pd.inp.caseID),
-    echo(",\n\t\t", pd.inp.caseID, "=factor(rep(1:num.cases, times=num.conditions))")),
-  ite(rkwarddev::id("!", pd.chk.genCaseID , " && ", pd.var.wid),
-    echo(",\n\t\t", pd.js.wid, "=factor(rep(", pd.var.wid, ", times=num.conditions))")),
-  ite(pd.var.between, rkwarddev::id("\tfor (var i=0, len=betweenVarsNames.length; i<len; ++i ){\n",
-    "\t\t\techo(\",\\n\\t\\t\" + betweenVarsNames[i] + \"=factor(rep(\" + betweenVars[i] + \", times=num.conditions))\");\n",
-    "\t\t}"
-  )),
-  echo(",\n\t\tstringsAsFactors=FALSE)\n\n"),
-  empty.e=TRUE
+  echo(",\n\t\tstringsAsFactors=FALSE)\n\n")
 )
 
 pd.js.print <- rk.paste.JS(
@@ -373,31 +429,36 @@ pdata.component <- rk.plugin.component(
 ########
 ## pairwise t-tests
 ########
-pt.var.selectVars <- rk.XML.varselector(
-  label="Select data"
+ptData <- rk.XML.varselector(
+  label="Select data",
+  id.name="ptData"
 )
-pt.data.format <- rk.XML.radio(
+ptDataFormat <- rk.XML.radio(
   label="Data format",
   options=list(
     "Single (grouped) vector"=c(val="one", chk=TRUE),
     "Separate variables"=c(val="group")
-  )
+  ),
+  id.name="ptDataFormat"
 )
-pt.tvar.data <- rk.XML.varslot(
+ptResponse <- rk.XML.varslot(
   label="Response vector",
-  source=pt.var.selectVars
+  source=ptData,
+  id.name="ptResponse"
 )
-pt.tvar.group <- rk.XML.varslot(
+ptGroup <- rk.XML.varslot(
   label="Grouping vector or factor",
-  source=pt.var.selectVars
+  source=ptData,
+  id.name="ptGroup"
 )
-pt.tvar.several <- rk.XML.varslot(
+ptSepResponses <- rk.XML.varslot(
   label="Separate response vectors (>= 3)",
-  source=pt.var.selectVars,
+  source=ptData,
   multi=TRUE,
-  min=3
+  min=3,
+  id.name="ptSepResponses"
 )
-pt.drp.adjust <- rk.XML.dropdown(
+ptAdjustP <- rk.XML.dropdown(
   label="Method for adjusting p values",
   options=list(
     "none"=c(val="none"),
@@ -407,45 +468,49 @@ pt.drp.adjust <- rk.XML.dropdown(
     "Benjamini &amp; Yekutieli"=c(val="BY"),
     "Hochberg"=c(val="hochberg"),
     "Hommel"=c(val="hommel")
-  )
+  ),
+  id.name="ptAdjustP"
 )
-pt.chk.poolSD <- rk.XML.cbox(
+ptPooledSD <- rk.XML.cbox(
   label="Pooled SD for all groups",
-  value="true"
+  value="true",
+  id.name="ptPooledSD"
 )
-pt.chk.paired <- rk.XML.cbox(
+ptPaired <- rk.XML.cbox(
   label="Paired t-Tests",
   value="true",
-  chk=TRUE
+  chk=TRUE,
+  id.name="ptPaired"
 )
-pt.radio.altern <- rk.XML.radio(
+ptHypothesis <- rk.XML.radio(
   label="Alternative hypothesis",
   options=list(
     "Two-sided"=c(val="two.sided"),
     "First is greater"=c(val="greater"),
     "Second is greater"=c(val="less")
-  )
+  ),
+  id.name="ptHypothesis"
 )
 pt.full.dialog <- rk.XML.dialog(
   rk.XML.row(
-    pt.var.selectVars,
+    ptData,
     rk.XML.col(
-      pt.data.format,
+      ptDataFormat,
       rk.XML.frame(
-        pt.tvar.data,
-        pt.tvar.group,
-        pt.tvar.several,
+        ptResponse,
+        ptGroup,
+        ptSepResponses,
         label="Data"
       ),
       rk.XML.frame(
-        pt.drp.adjust,
+        ptAdjustP,
         label="Alpha error correction"
       ),
       rk.XML.frame(
-        pt.chk.poolSD,
-        pt.chk.paired
+        ptPooledSD,
+        ptPaired
       ),
-      pt.radio.altern
+      ptHypothesis
     )
   ),
   label="Pairwise t-Tests"
@@ -453,48 +518,59 @@ pt.full.dialog <- rk.XML.dialog(
 
 ## logic
 pt.lgc.sect <- rk.XML.logic(
-  rk.XML.connect(governor=pt.chk.poolSD, client=pt.chk.paired, set="enabled", not=TRUE),
-  rk.XML.connect(governor=pt.chk.paired, client=pt.chk.poolSD, set="enabled", not=TRUE),
-  pt.gov.onevar <- rk.XML.convert(sources=list(string=pt.data.format), mode=c(equals="one")),
-  rk.XML.connect(governor=pt.gov.onevar, client=pt.tvar.data, set="visible"),
-  rk.XML.connect(governor=pt.gov.onevar, client=pt.tvar.data, set="required"),
-  rk.XML.connect(governor=pt.gov.onevar, client=pt.tvar.group, set="visible"),
-  rk.XML.connect(governor=pt.gov.onevar, client=pt.tvar.group, set="required"),
-  rk.XML.connect(governor=pt.gov.onevar, client=pt.tvar.several, set="visible", not=TRUE),
-  rk.XML.connect(governor=pt.gov.onevar, client=pt.tvar.several, set="required", not=TRUE)
+  rk.XML.connect(governor=ptPooledSD, client=ptPaired, set="enabled", not=TRUE),
+  rk.XML.connect(governor=ptPaired, client=ptPooledSD, set="enabled", not=TRUE),
+  pt.gov.onevar <- rk.XML.convert(sources=list(string=ptDataFormat), mode=c(equals="one")),
+  rk.XML.connect(governor=pt.gov.onevar, client=ptResponse, set="visible"),
+  rk.XML.connect(governor=pt.gov.onevar, client=ptResponse, set="required"),
+  rk.XML.connect(governor=pt.gov.onevar, client=ptGroup, set="visible"),
+  rk.XML.connect(governor=pt.gov.onevar, client=ptGroup, set="required"),
+  rk.XML.connect(governor=pt.gov.onevar, client=ptSepResponses, set="visible", not=TRUE),
+  rk.XML.connect(governor=pt.gov.onevar, client=ptSepResponses, set="required", not=TRUE)
 )
 
 ## JavaScript
+pt.vars.to.group <- rk.JS.vars(ptSepResponses, join=", ")
 pt.js.calc <- rk.paste.JS(
-  ite(rkwarddev::id(pt.data.format, " == \"one\""),
-    rk.paste.JS(
-      echo("\tpair.t.results <- pairwise.t.test(\n\t\t"),
-      ite(pt.tvar.data, echo("x=", pt.tvar.data)),
-      ite(pt.tvar.group, echo(",\n\t\tg=", pt.tvar.group)), level=3),
-    rk.paste.JS(
-      pt.vars.to.group <- rk.JS.vars(pt.tvar.several, join=", "),
-      echo("\t# simple helper function to get the names of the objects\n"),
-      echo("\tgrouping.vector <- function(...){\n\tunlist(lapply(match.call()[-1], function(x){rep(deparse(x), length(eval(x)))}))\n}\n"),
-      ite(pt.tvar.several,
-        echo(
-          "\t# create data and grouping vectors\n\tdata <- c(",
-          pt.vars.to.group, ")\n\tgroup <- grouping.vector(", pt.vars.to.group, ")\n\n"
-        )
-      ),
-      echo("\t# the actual pairwise t-tests, using the prepared data\n\tpair.t.results <- pairwise.t.test(\n\t\t"),
-      ite(pt.tvar.several, echo("x=data,\n\t\tg=group")), level=3
-  )),
-  ite(pt.drp.adjust, echo(",\n\t\tp.adjust.method=\"", pt.drp.adjust, "\"")),
-  tf(pt.chk.poolSD, opt="pool.sd"),
-  tf(pt.chk.paired, opt="paired"),
-  ite(rkwarddev::id(pt.radio.altern, " != \"two.sided\""), echo(",\n\t\talternative=\"", pt.radio.altern, "\"")),
-  echo(")\n\n"),
-  empty.e=TRUE
+  js(
+    if(ptDataFormat == "one"){
+        echo("\tpair.t.results <- pairwise.t.test(\n\t\t")
+        if(ptResponse){
+          echo("x=", ptResponse)
+        } else {}
+        if(ptGroup){
+          echo(",\n\t\tg=", ptGroup)
+        } else {}
+    } else {
+      js(pt.vars.to.group, " = getValue(", idq(ptSepResponses), ").split(\"\\n\").join(\", \");", linebreaks=FALSE)
+      R.comment("simple helper function to get the names of the objects")
+      echo("\tgrouping.vector <- function(...){\n\tunlist(lapply(match.call()[-1], function(x){rep(deparse(x), length(eval(x)))}))\n}\n")
+      if(ptSepResponses){
+        R.comment("create data and grouping vectors")
+        echo("\tdata <- c(", pt.vars.to.group, ")\n\tgroup <- grouping.vector(", pt.vars.to.group, ")\n\n")
+      } else {}
+      R.comment("the actual pairwise t-tests, using the prepared data")
+      echo("\tpair.t.results <- pairwise.t.test(\n\t\t")
+      if(ptSepResponses){
+        echo("x=data,\n\t\tg=group")
+      } else {}
+    },
+    if(ptAdjustP){
+      echo(",\n\t\tp.adjust.method=\"", ptAdjustP, "\"")
+    } else {}
+  ),
+  tf(ptPooledSD, opt="pool.sd"),
+  tf(ptPaired, opt="paired"),
+  js(
+    if(ptHypothesis != "two.sided"){
+      echo(",\n\t\talternative=\"", ptHypothesis, "\"")
+    } else {}
+  ),
+  echo(")\n\n")
 )
 
 pt.js.print <- rk.paste.JS(
-  echo("rk.print(pair.t.results)\n"),
-  empty.e=TRUE
+  echo("rk.print(pair.t.results)\n")
 )
 
 ## make a whole component of the t-test
@@ -517,77 +593,91 @@ pttest.component <- rk.plugin.component(
 ###########
 ## interaction plot
 ###########
-ip.var.selectVars <- rk.XML.varselector(
-  label="Select data"
+ipData <- rk.XML.varselector(
+  label="Select data",
+  id.name="ipData"
 )
-ip.tvar.x <- rk.XML.varslot(
+ipFactor <- rk.XML.varslot(
   label="Factor (x axis)",
-  source=ip.var.selectVars,
-  required=TRUE
+  source=ipData,
+  required=TRUE,
+  id.name="ipFactor"
 )
-ip.tvar.response <- rk.XML.varslot(
+ipResponse <- rk.XML.varslot(
   label="Response vector",
-  source=ip.var.selectVars,
-  required=TRUE
+  source=ipData,
+  required=TRUE,
+  id.name="ipResponse"
 )
-ip.tvar.group <- rk.XML.varslot(
+ipGroups <- rk.XML.varslot(
   label="Grouping factor (traces)",
-  source=ip.var.selectVars
+  source=ipData,
+  id.name="ipGroups"
 )
-ip.rad.plottype <- rk.XML.radio(
+ipPlotType <- rk.XML.radio(
   label="Plot type",
   options=list(
     "Lineplot"=c(val="line", chk=TRUE),
     "Bargraph"=c(val="bar")
-  )
+  ),
+  id.name="ipPlotType"
 )
-ip.rad.ltype <- rk.XML.radio(
+ipPlotElements <- rk.XML.radio(
   label="Elements",
   options=list(
     "Lines + points"=c(val="b", chk=TRUE),
     "Lines only"=c(val="l"),
     "Points only"=c(val="p")
-  )
+  ),
+  id.name="ipPlotElements"
 )
-ip.rad.btype <- rk.XML.radio(
+ipPlotBars <- rk.XML.radio(
   label="Bars",
   options=list(
     "Grouped bars"=c(val="group", chk=TRUE),
     "Split bars"=c(val="split")
-  )
+  ),
+  id.name="ipPlotBars"
 )
-ip.drp.boutreg <- rk.XML.dropdown(
+ipClipping <- rk.XML.dropdown(
   label="Clipping",
   options=list(
     "clip to plot (no bar outside region)"=c(val="plot", chk=TRUE), # xpd=FALSE
     "clip to figure"=c(val="figure"), # xpd=TRUE
     "clip to device"=c(val="device") # xpd=NA
-  )
+  ),
+  id.name="ipClipping"
 )
-ip.chk.se <- rk.XML.cbox(
+ipSE <- rk.XML.cbox(
   label="Standard error",
-  chk=TRUE
+  chk=TRUE,
+  id.name="ipSE"
 )
-ip.frm.legend <- rk.XML.frame(
-  ip.inp.trace.label <- rk.XML.input(
-    label="Legend label"
+ipLegend <- rk.XML.frame(
+  ipLegendLabel <- rk.XML.input(
+    label="Legend label",
+    id.name="ipLegendLabel"
   ),
   label="Legend",
   checkable=TRUE,
-  chk=TRUE
+  chk=TRUE,
+  id.name="ipLegend"
 )
-ip.frm.se <- rk.XML.frame(
-  ip.chk.se.uc <- rk.XML.cbox(
+ipDrawSE <- rk.XML.frame(
+  ipUpperError <- rk.XML.cbox(
     label="Upper error",
-    chk=TRUE
+    chk=TRUE,
+    id.name="ipUpperError"
   ),
-  ip.chk.se.lc <- rk.XML.cbox(
+  ipLowerError <- rk.XML.cbox(
     label="Lower error",
-    chk=TRUE
+    chk=TRUE,
+    id.name="ipLowerError"
   ),
   label="Draw standard error",
   checkable=TRUE,
-  chk=TRUE
+  chk=TRUE,
+  id.name="ipDrawSE"
 )
 
 ip.plot.options <- rk.plotOptions()
@@ -595,24 +685,26 @@ ip.preview <- rk.XML.preview()
 
 ## logic
 ip.lgc.sect <- rk.XML.logic(
-  ip.gov.lineplot <- rk.XML.convert(sources=list(string=ip.rad.plottype), mode=c(equals="line")),
-  rk.XML.connect(governor=ip.gov.lineplot, client=ip.rad.ltype, set="visible"),
-  rk.XML.connect(governor=ip.gov.lineplot, client=ip.rad.btype, set="visible", not=TRUE),
-  rk.XML.connect(governor=ip.gov.lineplot, client=ip.drp.boutreg, set="visible", not=TRUE),
-  ip.gov.traces <- rk.XML.convert(sources=list(available=ip.tvar.group), mode=c(notequals="")),
-  rk.XML.connect(governor=ip.gov.traces, client=ip.rad.btype, set="enabled"),
-  rk.XML.connect(governor=ip.gov.traces, client=ip.frm.legend, set="enabled"),
-  ip.gov.leglabel <- rk.XML.convert(sources=list(ip.gov.traces, checked=ip.frm.legend), mode=c(and="")),
-  rk.XML.connect(governor=ip.gov.leglabel, client=ip.inp.trace.label, set="enabled"),
-  rk.XML.connect(governor=ip.tvar.x, client=ip.plot.options, get="available", set="xvar"),
-  rk.XML.connect(governor=ip.tvar.response, client=ip.plot.options, get="available", set="yvar"),
+  ip.gov.lineplot <- rk.XML.convert(sources=list(string=ipPlotType), mode=c(equals="line")),
+  rk.XML.connect(governor=ip.gov.lineplot, client=ipPlotElements, set="visible"),
+  rk.XML.connect(governor=ip.gov.lineplot, client=ipPlotBars, set="visible", not=TRUE),
+  rk.XML.connect(governor=ip.gov.lineplot, client=ipClipping, set="visible", not=TRUE),
+  rk.XML.connect(governor=ip.gov.lineplot, client=ipUpperError, set="enabled", not=TRUE),
+  rk.XML.connect(governor=ip.gov.lineplot, client=ipLowerError, set="enabled", not=TRUE),
+  ip.gov.traces <- rk.XML.convert(sources=list(available=ipGroups), mode=c(notequals="")),
+  rk.XML.connect(governor=ip.gov.traces, client=ipPlotBars, set="enabled"),
+  rk.XML.connect(governor=ip.gov.traces, client=ipLegend, set="enabled"),
+  ip.gov.leglabel <- rk.XML.convert(sources=list(ip.gov.traces, checked=ipLegend), mode=c(and="")),
+  rk.XML.connect(governor=ip.gov.leglabel, client=ipLegendLabel, set="enabled"),
+  rk.XML.connect(governor=ipFactor, client=ip.plot.options, get="available", set="xvar"),
+  rk.XML.connect(governor=ipResponse, client=ip.plot.options, get="available", set="yvar"),
   rk.XML.set(ip.plot.options, set="allow_type", to=FALSE)
 )
 
 ip.tab1 <- rk.XML.row(
-  ip.var.selectVars,
+  ipData,
   rk.XML.col(
-    rk.XML.frame(ip.tvar.x, ip.tvar.response, ip.tvar.group,
+    rk.XML.frame(ipFactor, ipResponse, ipGroups,
       label="Data"
     ),
     rk.XML.stretch()
@@ -623,17 +715,17 @@ ip.tab2.options <- rk.XML.col(
   rk.XML.row(
       rk.XML.frame(
         rk.XML.row(
-          rk.XML.col(ip.rad.plottype, rk.XML.stretch()),
-          rk.XML.col(ip.rad.ltype, ip.rad.btype, ip.drp.boutreg, rk.XML.stretch())
+          rk.XML.col(ipPlotType, rk.XML.stretch()),
+          rk.XML.col(ipPlotElements, ipPlotBars, ipClipping, rk.XML.stretch())
         )
       )
   ),
   rk.XML.row(
     rk.XML.col(
-      ip.frm.legend
+      ipLegend
     ),
     rk.XML.col(
-      ip.frm.se
+      ipDrawSE
     )
   ),
   ip.plot.options,
@@ -653,40 +745,64 @@ ip.full.dialog <- rk.XML.dialog(
 
 ## JavaScript
  # see if frames are checked
-ip.js.frm.legend <- rk.JS.vars(ip.frm.legend, modifiers="checked")
-ip.js.frm.se <- rk.JS.vars(ip.frm.se, modifiers="checked")
+ip.js.frm.legend <- rk.JS.vars(ipLegend, modifiers="checked")
+ip.js.frm.se <- rk.JS.vars(ipDrawSE, modifiers="checked")
 
 ip.js.prnt <-   rk.paste.JS.graph(
   ip.js.frm.legend,
   ip.js.frm.se,
-  ite(rkwarddev::id(ip.rad.plottype, " == \"line\""),
-    echo("\t\tlineplot.CI("),
-    echo("\t\tbargraph.CI(")),
-  ite(ip.tvar.x, echo("\n\t\t\tx.factor=", ip.tvar.x)),
-  ite(ip.tvar.response, echo(",\n\t\t\tresponse=", ip.tvar.response)),
-  ite(ip.tvar.group, echo(",\n\t\t\tgroup=", ip.tvar.group)),
+  js(
+    if(ipPlotType == "line"){
+      echo("\t\tlineplot.CI(")
+    } else {
+      echo("\t\tbargraph.CI(")
+    },
+    if(ipFactor){
+      echo("\n\t\t\tx.factor=", ipFactor)
+    } else {},
+    if(ipResponse){
+      echo(",\n\t\t\tresponse=", ipResponse)
+    } else {},
+    if(ipGroups){
+      echo(",\n\t\t\tgroup=", ipGroups)
+    } else {},
 
-  ite(rkwarddev::id(ip.rad.plottype, " == \"line\""),
-    rk.paste.JS(
-      ite(rkwarddev::id(ip.rad.ltype, " != \"b\""), echo(",\n\t\t\ttype=\"", ip.rad.ltype, "\"")),
-      ite(rkwarddev::id("!", ip.js.frm.legend, " & ", ip.tvar.group, " != \"\""), echo(",\n\t\t\tlegend=FALSE")),
-      ite(rkwarddev::id("!", ip.js.frm.se), echo(",\n\t\t\tci.fun=function(x)c(mean(x, na.rm=TRUE), mean(x, na.rm=TRUE))"))
-    ),
-    rk.paste.JS(
-      ite(rkwarddev::id(ip.rad.btype, " == \"split\""), echo(",\n\t\t\tsplit=TRUE")),
-      ite(rkwarddev::id(ip.js.frm.legend, " & ", ip.tvar.group, " != \"\""), echo(",\n\t\t\tlegend=TRUE")),
-      ite(rkwarddev::id("!", ip.js.frm.se), echo(",\n\t\t\tuc=FALSE,\n\t\t\tlc=FALSE")),
-      ite(rkwarddev::id(ip.js.frm.se, " & !", ip.chk.se.uc), echo(",\n\t\t\tuc=FALSE")),
-      ite(rkwarddev::id(ip.js.frm.se, " & !", ip.chk.se.lc), echo(",\n\t\t\tlc=FALSE")),
-      ite(rkwarddev::id(ip.drp.boutreg, " == \"figure\""),
-        echo(",\n\t\t\txpd=TRUE"),
-        ite(rkwarddev::id(ip.drp.boutreg, " == \"device\""),
+    if(ipPlotType == "line"){
+      if(ipPlotElements != "b"){
+        echo(",\n\t\t\ttype=\"", ipPlotElements, "\"")
+      } else {}
+      if(!ip.js.frm.legend && ipGroups != ""){
+        echo(",\n\t\t\tlegend=FALSE")
+      } else {}
+      if(!ip.js.frm.se){
+        echo(",\n\t\t\tci.fun=function(x)c(mean(x, na.rm=TRUE), mean(x, na.rm=TRUE))")
+      } else {}
+    } else {
+      if(ipPlotBars == "split"){
+        echo(",\n\t\t\tsplit=TRUE")
+      } else {}
+      if(ip.js.frm.legend && ipGroups != ""){
+        echo(",\n\t\t\tlegend=TRUE")
+      } else {}
+      if(!ip.js.frm.se){
+        echo(",\n\t\t\tuc=FALSE,\n\t\t\tlc=FALSE")
+      } else {}
+      if(ip.js.frm.se && !ipUpperError){
+        echo(",\n\t\t\tuc=FALSE")
+      } else {}
+      if(ip.js.frm.se && !ipLowerError){
+        echo(",\n\t\t\tlc=FALSE")
+      } else {}
+      if(ipClipping == "figure"){
+        echo(",\n\t\t\txpd=TRUE")
+      } else if(ipClipping == "device"){
           echo(",\n\t\t\txpd=NA")
-        )
-      )
-    )
+      } else {}
+    },
+    if(ip.js.frm.legend && ipGroups != "" && ipLegendLabel != ""){
+      echo(",\n\t\t\tleg.lab=\"", ipLegendLabel, "\"")
+    } else {}
   ),
-  ite(rkwarddev::id(ip.js.frm.legend, " & ", ip.tvar.group, " != \"\" & ", ip.inp.trace.label, " != \"\""), echo(",\n\t\t\tleg.lab=\"", ip.inp.trace.label, "\"")),
   rkwarddev::id("echo(", ip.plot.options, ".replace(/, /g, \",\\n\\t\\t\\t\"));"),
   echo("\n\t\t)"),
   plotOpts=ip.plot.options
@@ -725,7 +841,7 @@ rk.ANOVA.dir <<- rk.plugin.skeleton(
     require="ez",
     calculate=js.calc,
     printout=js.print,
-    load.silencer=var.chk.suppress,
+    load.silencer=noLoadMsg,
     results.header="ANOVA results"
   ),
   pluginmap=list(name="ANOVA", hierarchy=list("analysis", "ANOVA")),

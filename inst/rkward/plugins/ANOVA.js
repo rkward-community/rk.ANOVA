@@ -4,98 +4,104 @@
 
 
 function preprocess(){
-	// add requirements etc. here
-	var chcSpprsspc = getValue("chc_Spprsspc");
-	if(chcSpprsspc) {
-		echo("suppressMessages(require(" + "ez" + "))\n");
-	} else {
-		echo("require(" + "ez" + ")\n");
-	}
+  // add requirements etc. here
+  var noLoadMsg = getValue("noLoadMsg");
+  if(noLoadMsg) {
+    echo("suppressMessages(require(" + "ez" + "))\n");
+  } else {
+    echo("require(" + "ez" + ")\n");
+  }
 }
 
 function calculate(){
-	// read in variables from dialog
+  // read in variables from dialog
+  var dataSelected = getString("dataSelected");
+  var design = getString("design");
+  var dependend = getString("dependend");
+  var caseID = getString("caseID");
+  var within = getString("within");
+  var between = getString("between");
+  var observed = getString("observed");
+  var sumOfSqType = getString("sumOfSqType");
+  var hetScedCorrection = getString("hetScedCorrection");
+  var saveResults = getString("saveResults");
+  var showExtraInfo = getBoolean("showExtraInfo.state");
+  var aov = getBoolean("aov.state");
+  var noLoadMsg = getBoolean("noLoadMsg.state");
 
-	var vrslDtmstbdt = getString("vrsl_Dtmstbdt");
-	var radDesign = getString("rad_Design");
-	var vrslDpndntvr = getString("vrsl_Dpndntvr");
-	var vrslCssbjctd = getString("vrsl_Cssbjctd");
-	var vrslWthnsbjc = getString("vrsl_Wthnsbjc");
-	var vrslBtwnsbjc = getString("vrsl_Btwnsbjc");
-	var vrslObsrvdvr = getString("vrsl_Obsrvdvr");
-	var drpSmsfsqrs = getString("drp_Smsfsqrs");
-	var drpHtrscdst = getString("drp_Htrscdst");
-	var svbSvrsltst = getString("svb_Svrsltst");
-	var chcShwsmsfs = getBoolean("chc_Shwsmsfs.state");
-	var chcRtrnvbjc = getBoolean("chc_Rtrnvbjc.state");
-	var chcSpprsspc = getBoolean("chc_Spprsspc.state");
-
-	// the R code to be evaluated
-	var vrslDpndntvrShortname = getValue("vrsl_Dpndntvr.shortname").split("\n").join(", ");
-	var vrslCssbjctdShortname = getValue("vrsl_Cssbjctd.shortname").split("\n").join(", ");
-	var vrslWthnsbjcShortname = getValue("vrsl_Wthnsbjc.shortname").split("\n").join(", ");
-	var vrslBtwnsbjcShortname = getValue("vrsl_Btwnsbjc.shortname").split("\n").join(", ");
-	var vrslObsrvdvrShortname = getValue("vrsl_Obsrvdvr.shortname").split("\n").join(", ");
-	if(drpSmsfsqrs == 3) {
-		echo("\t# set contrasts for accurate type 3 ANOVA\n\toptions(contrasts=c(\"contr.sum\",\"contr.poly\"))\n");
-	} else {}
-	if(vrslCssbjctd == "" & radDesign == "between") {
-		echo("\t# ezANOVA demands a subject identifier variable\n\t" + vrslDtmstbdt + " <- cbind(" + vrslDtmstbdt + ", ez.subject.ID.dummy=factor(1:nrow(" + vrslDtmstbdt + ")))\n");
-	} else {}
-	echo("\tanova.results <- ezANOVA(");
-	if(vrslDtmstbdt) {
-		echo("\n\t\tdata=" + vrslDtmstbdt);
-	} else {}
-	if(vrslDpndntvr) {
-		echo(",\n\t\tdv=.(" + vrslDpndntvrShortname + ")");
-	} else {}
-	if(vrslCssbjctd) {
-		echo(",\n\t\twid=.(" + vrslCssbjctdShortname + ")");
-	} else if(radDesign == "between") {
-		echo(",\n\t\twid=.(ez.subject.ID.dummy)");
-	}
-	if(vrslWthnsbjc != "" & radDesign != "between") {
-		echo(",\n\t\twithin=.(" + vrslWthnsbjcShortname + ")");
-	} else {}
-	if(vrslBtwnsbjc != "" & radDesign != "within") {
-		echo(",\n\t\tbetween=.(" + vrslBtwnsbjcShortname + ")");
-	} else {}
-	if(vrslObsrvdvr) {
-		echo(",\n\t\tobserved=.(" + vrslObsrvdvrShortname + ")");
-	} else {}
-	if(drpSmsfsqrs != 2) {
-		echo(",\n\t\ttype=" + drpSmsfsqrs);
-	} else {}
-	if(drpHtrscdst != "false") {
-		echo(",\n\t\twhite.adjust=\"" + drpHtrscdst + "\"");
-	} else {}
-	if(chcShwsmsfs) {
-		echo(",\n\t\tdetailed=TRUE");
-	} else {}
-	if(chcRtrnvbjc) {
-		echo(",\n\t\treturn_aov=TRUE");
-	} else {}
-	echo(")\n\n");
+  // the R code to be evaluated
+  var dependendShortname = getValue("dependend.shortname").split("\n").join(", ");
+  var caseIDShortname = getValue("caseID.shortname").split("\n").join(", ");
+  var withinShortname = getValue("within.shortname").split("\n").join(", ");
+  var betweenShortname = getValue("between.shortname").split("\n").join(", ");
+  var observedShortname = getValue("observed.shortname").split("\n").join(", ");
+  if(sumOfSqType == 3) {
+    comment("set contrasts for accurate type 3 ANOVA", "  ");  
+    echo("\toptions(contrasts=c(\"contr.sum\",\"contr.poly\"))\n");  
+  } else {}
+  if(caseID == "" && design == "between") {
+    comment("ezANOVA demands a subject identifier variable", "  ");  
+    echo("\t" + dataSelected + " <- cbind(" + dataSelected + ", ez.subject.ID.dummy=factor(1:nrow(" + dataSelected + ")))\n");  
+  } else {}
+  echo("\tanova.results <- ezANOVA(");
+  if(dataSelected) {
+    echo("\n\t\tdata=" + dataSelected);  
+  } else {}
+  if(dependend) {
+    echo(",\n\t\tdv=.(" + dependendShortname + ")");  
+  } else {}
+  if(caseID) {
+    echo(",\n\t\twid=.(" + caseIDShortname + ")");  
+  } else if(design == "between") {
+    echo(",\n\t\twid=.(ez.subject.ID.dummy)");  
+  } else {}
+  if(within != "" && design != "between") {
+    echo(",\n\t\twithin=.(" + withinShortname + ")");  
+  } else {}
+  if(between != "" && design != "within") {
+    echo(",\n\t\tbetween=.(" + betweenShortname + ")");  
+  } else {}
+  if(observed) {
+    echo(",\n\t\tobserved=.(" + observedShortname + ")");  
+  } else {}
+  if(sumOfSqType != 2) {
+    echo(",\n\t\ttype=" + sumOfSqType);  
+  } else {}
+  if(hetScedCorrection != "false") {
+    echo(",\n\t\twhite.adjust=\"" + hetScedCorrection + "\"");  
+  } else {}
+  if(showExtraInfo) {
+    echo(",\n    detailed=TRUE");
+  } else {}
+  if(aov) {
+    echo(",\n    return_aov=TRUE");
+  } else {}
+  echo(")\n\n");
 }
 
 function printout(){
-	// printout the results
-	new Header(i18n("ANOVA results")).print();
+  // printout the results
+  new Header(i18n("ANOVA results")).print();
 
-
-	echo("rk.print(anova.results[[\"ANOVA\"]])\n");
-	echo("\tif(\"Mauchly's Test for Sphericity\" %in% names(anova.results)){\n    rk.header(\"Mauchly's Test for Sphericity\", level=3)\n    rk.print(anova.results[[\"Mauchly's Test for Sphericity\"]])\n  } else {}\n");
-	echo("\tif(\"Sphericity Corrections\" %in% names(anova.results)){\n    rk.header(\"Sphericity Corrections\", level=3)\n    rk.print(anova.results[[\"Sphericity Corrections\"]])\n  } else {}\n");
-	echo("\tif(\"Levene's Test for Homgeneity\" %in% names(anova.results)){\n    rk.header(\"Levene's Test for Homgeneity\", level=3)\n    rk.print(anova.results[[\"Levene's Test for Homgeneity\"]])\n  } else {}\n");
-	//// save result object
-	// read in saveobject variables
-	var svbSvrsltst = getValue("svb_Svrsltst");
-	var svbSvrsltstActive = getValue("svb_Svrsltst.active");
-	var svbSvrsltstParent = getValue("svb_Svrsltst.parent");
-	// assign object to chosen environment
-	if(svbSvrsltstActive) {
-		echo(".GlobalEnv$" + svbSvrsltst + " <- anova.results\n");
-	}
+  echo("\trk.print(anova.results[[\"ANOVA\"]])\n");
+  echo("\tif(\"Mauchly's Test for Sphericity\" %in% names(anova.results)){\n\t\t");
+  new Header(i18n("Mauchly's Test for Sphericity"), 3).print();
+  echo("\t\trk.print(anova.results[[\"Mauchly's Test for Sphericity\"]])\n\t} else {}\n");
+  echo("\tif(\"Sphericity Corrections\" %in% names(anova.results)){\n\t\t");
+  new Header(i18n("Sphericity Corrections"), 3).print();
+  echo("\t\trk.print(anova.results[[\"Sphericity Corrections\"]])\n\t} else {}\n");
+  echo("\tif(\"Levene's Test for Homgeneity\" %in% names(anova.results)){\n\t\t");
+  new Header(i18n("Levene's Test for Homgeneity"), 3).print();
+  echo("\t\trk.print(anova.results[[\"Levene's Test for Homgeneity\"]])\n\t} else {}\n");
+  //// save result object
+  // read in saveobject variables
+  var saveResults = getValue("saveResults");
+  var saveResultsActive = getValue("saveResults.active");
+  var saveResultsParent = getValue("saveResults.parent");
+  // assign object to chosen environment
+  if(saveResultsActive) {
+    echo(".GlobalEnv$" + saveResults + " <- anova.results\n");
+  } else {}
 
 }
 
