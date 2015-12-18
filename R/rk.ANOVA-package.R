@@ -3,8 +3,8 @@
 #' \tabular{ll}{
 #' Package: \tab rk.ANOVA\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.01-21\cr
-#' Date: \tab 2015-06-29\cr
+#' Version: \tab 0.01-22\cr
+#' Date: \tab 2015-11-14\cr
 #' Depends: \tab rkward (>= 0.6.0)\cr
 #' Enhances: \tab rkward\cr
 #' License: \tab GPL (>= 3)\cr
@@ -12,7 +12,7 @@
 #' URL: \tab https://rkward.kde.org\cr
 #' }
 #'
-#' RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions.
+#' RKWard GUI to conduct ANOVAs (using the ez package), pairwise t- Tests and plot interactions.
 #'
 #' @aliases rk.ANOVA-package
 #' @name rk.ANOVA-package

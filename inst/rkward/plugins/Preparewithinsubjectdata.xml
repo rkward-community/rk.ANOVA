@@ -1,11 +1,11 @@
 <!DOCTYPE rkplugin >
 <document>
   <!-- this code was generated using the rkwarddev package.
-        perhaps don't make changes here, but in the rkwarddev script instead! -->
+    perhaps don't make changes here, but in the rkwarddev script instead! -->
   <code file="Preparewithinsubjectdata.js" />
   <help file="Preparewithinsubjectdata.rkh" />
   <!-- <dependencies>
-        </dependencies> -->
+      </dependencies> -->
   <logic>
     <connect governor="current_object.state" client="pdDataSelected.available" />
     <connect governor="pdDataSelected.available" client="pdData.root" />
