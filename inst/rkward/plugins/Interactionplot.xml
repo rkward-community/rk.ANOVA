@@ -1,11 +1,11 @@
 <!DOCTYPE rkplugin >
 <document>
   <!-- this code was generated using the rkwarddev package.
-        perhaps don't make changes here, but in the rkwarddev script instead! -->
+    perhaps don't make changes here, but in the rkwarddev script instead! -->
   <code file="Interactionplot.js" />
   <help file="Interactionplot.rkh" />
   <!-- <dependencies>
-        </dependencies> -->
+      </dependencies> -->
   <logic>
     <convert id="lgc_ipPltTyp" sources="ipPlotType.string" mode="equals" standard="line" />
     <connect governor="lgc_ipPltTyp" client="ipPlotElements.visible" />

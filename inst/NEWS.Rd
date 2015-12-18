@@ -1,5 +1,19 @@
 \name{NEWS}
 \title{News for Package 'rk.ANOVA'}
+\section{Changes in rk.ANOVA version 0.01-22 (2015-06-29)}{
+  \subsection{changed}{
+    \itemize{
+      \item updated the generator script
+      \item rebuilt with rkwarddev 0.08-1
+    }
+  }
+  \subsection{added}{
+    \itemize{
+      \item plugin is now translatable (see inst/rkward/po/)
+      \item german translation
+    }
+  }
+}
 \section{Changes in rk.ANOVA version 0.01-21 (2015-06-29)}{
   \subsection{fixed}{
     \itemize{

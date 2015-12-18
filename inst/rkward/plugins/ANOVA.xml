@@ -1,11 +1,11 @@
 <!DOCTYPE rkplugin >
 <document>
   <!-- this code was generated using the rkwarddev package.
-        perhaps don't make changes here, but in the rkwarddev script instead! -->
+    perhaps don't make changes here, but in the rkwarddev script instead! -->
   <code file="ANOVA.js" />
   <help file="ANOVA.rkh" />
   <!-- <dependencies>
-        </dependencies> -->
+      </dependencies> -->
   <logic>
     <connect governor="current_object.state" client="dataSelected.available" />
     <connect governor="dataSelected.available" client="data.root" />
