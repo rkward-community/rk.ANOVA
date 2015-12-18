@@ -1,6 +1,10 @@
 ChangeLog for package rk.ANOVA
 
-changes in version 0.01-22 (2015-06-29)
+changes in version 0.01-23 (2015-12-18)
+unreleased:
+  - this release is under development
+
+changes in version 0.01-22 (2015-12-18)
 changed:
   - updated the generator script
   - rebuilt with rkwarddev 0.08-1
