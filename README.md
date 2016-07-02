@@ -1,5 +1,7 @@
 # rk.ANOVA
 
+[![Flattr this git repo](https://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=tfry&url=https://github.com/rkward-community/rk.ANOVA&title=rk.ANOVA&language=en_GB&tags=github&category=software)
+
 This R package provides a GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions.
 
 ![rk.ANOVA main tab](/inst/screenshots/main_tab.png?raw=true "rk.ANOVA main tab")
