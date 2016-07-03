@@ -14,6 +14,7 @@ overwrite <- TRUE
 guess.getter <- TRUE
 rk.set.indent(by="  ")
 rk.set.empty.e(TRUE)
+update.translations <- TRUE
 
 about.info <- rk.XML.about(
   name="rk.ANOVA",
@@ -423,7 +424,8 @@ pdata.component <- rk.plugin.component(
   ),
   guess.getter=guess.getter,
   hierarchy=list("data", "ANOVA"),
-  create=c("xml", "js")
+  create=c("xml", "js"),
+  gen.info="$SRC/inst/rkward/rkwarddev_ANOVA_plugin_script.R"
 )
 
 ########
@@ -587,7 +589,8 @@ pttest.component <- rk.plugin.component(
   ),
   guess.getter=guess.getter,
   hierarchy=list("analysis", "means", "t-tests"),
-  create=c("xml", "js")
+  create=c("xml", "js"),
+  gen.info="$SRC/inst/rkward/rkwarddev_ANOVA_plugin_script.R"
 )
 
 ###########
@@ -817,10 +820,11 @@ plot.component <- rk.plugin.component(
   js=list(
     results.header="Interaction plot",
     require="sciplot",
-    doPrintout=ip.js.prnt),
+    printout=ip.js.prnt),
   guess.getter=guess.getter,
   hierarchy=list("plots"),
-  create=c("xml", "js")
+  create=c("xml", "js"),
+  gen.info="$SRC/inst/rkward/rkwarddev_ANOVA_plugin_script.R"
 )
 
 
@@ -849,11 +853,16 @@ rk.ANOVA.dir <<- rk.plugin.skeleton(
   dependencies=dependencies.info,
   create=c("pmap", "xml", "js", "desc"),
   overwrite=overwrite,
+  gen.info="$SRC/inst/rkward/rkwarddev_ANOVA_plugin_script.R",
   tests=FALSE,
 #  edit=TRUE,
-#  load=TRUE,
+  load=TRUE,
 #  show=TRUE,
   hints=FALSE
 )
+
+  if(isTRUE(update.translations)){
+    rk.updatePluginMessages(file.path(output.dir,"rk.ANOVA","inst","rkward","rk.ANOVA.pluginmap"))
+  } else {}
 
 })
