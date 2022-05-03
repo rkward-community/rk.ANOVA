@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://mail.kde.org/mailman/listinfo/kde-i18n-doc\n"
-"POT-Creation-Date: 2022-05-03 13:40+0200\n"
+"POT-Creation-Date: 2022-05-03 14:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,603 +17,603 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:1
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:2
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:19
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:19
 #. i18n: ectx: <about name="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:5
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:5
 msgid "rk.ANOVA"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:19
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:19
 #. i18n: ectx: <about shortinfo="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:8
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:8
 msgid ""
 "RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and "
 "plot interactions."
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:28
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:28
 #. i18n: ectx: <about> <author given="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:11
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:11
 msgctxt "Author name"
 msgid "Meik"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:28
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:28
 #. i18n: ectx: <about> <author family="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:14
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:14
 msgctxt "Author name"
 msgid "Michalke"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:42
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:42
 #. i18n: ectx: <components> <component label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.js:64
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.js:64
 #. i18n: ectx: (Loaded from Pairwise t-Tests)
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:22
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:22
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:17
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:32
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:36
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:17
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:32
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:36
 msgid "Pairwise t-Tests"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.js:35
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.js:35
 #. i18n: ectx: (Loaded from Pairwise t-Tests)
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:20
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:20
 msgctxt "R code comment"
 msgid "simple helper function to get the names of the objects"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.js:38
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.js:38
 #. i18n: ectx: (Loaded from Pairwise t-Tests)
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:24
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:24
 msgctxt "R code comment"
 msgid "create data and grouping vectors"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.js:41
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.js:41
 #. i18n: ectx: (Loaded from Pairwise t-Tests)
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:28
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:28
 msgctxt "R code comment"
 msgid "the actual pairwise t-tests, using the prepared data"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:24
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:24
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <varselector label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:31
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:31
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="Data"> <varselector label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:19
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:19
 #. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <varselector label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:36
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:36
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Data"> <varselector label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:39
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:128
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:223
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:289
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:39
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:128
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:223
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:289
 msgid "Select data"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:26
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:26
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <radio label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:42
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:42
 msgid "Data format"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:27
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:27
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <radio label="Data format"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:45
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:45
 msgid "Single (grouped) vector"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:28
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:28
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <radio label="Data format"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:48
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:48
 msgid "Separate variables"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:30
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:30
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:29
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:29
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:33
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:33
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="Data"> <frame label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:34
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:34
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:94
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:94
 #. i18n: ectx: <hierarchy> <menu label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:51
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:125
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:131
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:286
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:391
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:51
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:125
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:131
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:286
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:391
 msgid "Data"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:31
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:31
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Data"> <varslot label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:35
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:35
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <frame label="Data"> <varslot label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:54
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:137
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:54
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:137
 msgid "Response vector"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:32
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:32
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Data"> <varslot label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:57
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:57
 msgid "Grouping vector or factor"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:33
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:33
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Data"> <varslot label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:60
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:60
 msgid "Separate response vectors (>= 3)"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:35
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:35
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:63
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:63
 msgid "Alpha error correction"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:36
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:36
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Alpha error correction"> <dropdown label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:66
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:66
 msgid "Method for adjusting p values"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:37
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:37
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Alpha error correction"> <dropdown label="Method for adjusting p values"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:69
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:69
 msgid "none"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:38
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:38
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Alpha error correction"> <dropdown label="Method for adjusting p values"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:72
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:72
 msgid "Bonferroni"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:39
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:39
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Alpha error correction"> <dropdown label="Method for adjusting p values"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:75
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:75
 msgid "Holm"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:40
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:40
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Alpha error correction"> <dropdown label="Method for adjusting p values"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:78
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:78
 msgid "Benjamini & Hochberg (fdr)"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:41
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:41
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Alpha error correction"> <dropdown label="Method for adjusting p values"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:81
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:81
 msgid "Benjamini & Yekutieli"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:42
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:42
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Alpha error correction"> <dropdown label="Method for adjusting p values"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:84
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:84
 msgid "Hochberg"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:43
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:43
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <frame label="Alpha error correction"> <dropdown label="Method for adjusting p values"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:87
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:87
 msgid "Hommel"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:47
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:47
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <checkbox label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:90
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:90
 msgid "Pooled SD for all groups"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:48
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:48
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <checkbox label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:93
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:93
 msgid "Paired t-Tests"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:50
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:50
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <radio label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:96
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:96
 msgid "Alternative hypothesis"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:51
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:51
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <radio label="Alternative hypothesis"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:99
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:99
 msgid "Two-sided"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:52
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:52
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <radio label="Alternative hypothesis"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:102
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:102
 msgid "First is greater"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:53
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/PairwisetTests.xml:53
 #. i18n: ectx: (Pairwise t-Tests) <dialog label="Pairwise t-Tests"> <radio label="Alternative hypothesis"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:105
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:105
 msgid "Second is greater"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:49
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:49
 #. i18n: ectx: <components> <component label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.js:41
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.js:41
 #. i18n: ectx: (Loaded from Interaction plot)
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:27
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:27
 #. i18n: ectx: (Interaction plot) <dialog label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:28
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:28
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:108
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:115
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:119
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:122
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:108
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:115
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:119
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:122
 msgid "Interaction plot"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.js:15
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.js:15
 #. i18n: ectx: (Loaded from Interaction plot)
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:111
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:111
 msgid ""
 "Preview not available, because package sciplot is not installed or cannot be "
 "loaded."
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:34
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:34
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <frame label="Data"> <varslot label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:134
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:134
 msgid "Factor (x axis)"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:36
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:36
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <frame label="Data"> <varslot label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:140
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:140
 msgid "Grouping factor (traces)"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:42
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:42
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:80
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:80
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:143
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:331
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:143
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:331
 msgid "Options"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:48
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:48
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="Options"> <radio label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:146
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:146
 msgid "Plot type"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:49
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:49
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <radio label="Plot type"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:149
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:149
 msgid "Lineplot"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:50
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:50
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <radio label="Plot type"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:152
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:152
 msgid "Bargraph"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:55
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:55
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="Options"> <radio label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:155
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:155
 msgid "Elements"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:56
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:56
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <radio label="Elements"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:158
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:158
 msgid "Lines + points"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:57
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:57
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <radio label="Elements"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:161
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:161
 msgid "Lines only"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:58
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:58
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <radio label="Elements"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:164
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:164
 msgid "Points only"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:60
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:60
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="Options"> <radio label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:167
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:167
 msgid "Bars"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:61
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:61
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <radio label="Bars"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:170
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:170
 msgid "Grouped bars"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:62
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:62
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <radio label="Bars"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:173
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:173
 msgid "Split bars"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:64
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:64
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="Options"> <dropdown label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:176
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:176
 msgid "Clipping"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:65
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:65
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <dropdown label="Clipping"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:179
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:179
 msgid "clip to plot (no bar outside region)"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:66
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:66
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <dropdown label="Clipping"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:182
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:182
 msgid "clip to figure"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:67
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:67
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <dropdown label="Clipping"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:185
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:185
 msgid "clip to device"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:76
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:76
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="Options"> <frame label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:188
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:188
 msgid "Legend"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:77
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:77
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <frame label="Legend"> <input label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:191
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:191
 msgid "Legend label"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:81
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:81
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="Options"> <frame label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:194
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:194
 msgid "Draw standard error"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:82
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:82
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <frame label="Draw standard error"> <checkbox label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:197
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:197
 msgid "Upper error"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:83
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:83
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> [...] <frame label="Draw standard error"> <checkbox label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:200
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:200
 msgid "Lower error"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:87
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:87
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="Options"> <embed label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:203
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:203
 msgid "Generic plot options"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:88
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Interactionplot.xml:88
 #. i18n: ectx: (Interaction plot) <dialog label="Interaction plot"> <tabbook label="Interaction plot"> <tab label="Options"> <preview label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:206
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:206
 msgid "Preview"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:56
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:56
 #. i18n: ectx: <components> <component label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.js:71
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.js:71
 #. i18n: ectx: (Loaded from Prepare within subject data)
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:17
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:17
 #. i18n: ectx: (Prepare within subject data) <dialog label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:209
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:216
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:220
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:209
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:216
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:220
 msgid "Prepare within subject data"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.js:40
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.js:40
 #. i18n: ectx: (Loaded from Prepare within subject data)
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:212
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:212
 msgid "Can't determine number of cases, variables don't have equal length!"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:21
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:21
 #. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <varslot label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:226
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:226
 msgid "Select all variables from one data.frame"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:22
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:22
 #. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <varslot label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:229
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:229
 msgid "Dependent/response vectors"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:23
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:23
 #. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <input label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:232
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:232
 msgid "Name for dependent variable"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:24
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:24
 #. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <input label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:235
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:235
 msgid "Name for experimental condition"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:25
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:25
 #. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <checkbox label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:238
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:238
 msgid "Automatic case/subject identifier"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:26
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:26
 #. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <input label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:241
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:241
 msgid "Name for case/subject identifier"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:27
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:27
 #. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <varslot label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:50
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:50
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Data"> <varslot label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:244
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:310
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:244
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:310
 msgid "Case/subject identifier"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:28
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:28
 #. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <varslot label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:54
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:54
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Data"> <varslot label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:247
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:316
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:247
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:316
 msgid "Between subject variables"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:29
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/Preparewithinsubjectdata.xml:29
 #. i18n: ectx: (Prepare within subject data) <dialog label="Prepare within subject data"> <saveobject label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:110
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:110
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Options"> <saveobject label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:250
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:376
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:250
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:376
 msgid "Save results to workspace"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:63
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:63
 #. i18n: ectx: <components> <component label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:32
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:32
 #. i18n: ectx: (ANOVA) <dialog label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:33
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:33
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:98
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:98
 #. i18n: ectx: <hierarchy> <menu label="Data"> <menu label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:109
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:109
 #. i18n: ectx: <hierarchy> <menu label="Analysis"> <menu label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:253
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:280
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:283
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:394
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:400
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:253
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:280
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:283
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:394
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:400
 msgid "ANOVA"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.js:39
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.js:39
 #. i18n: ectx: (Loaded from ANOVA)
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:256
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:256
 msgctxt "R code comment"
 msgid "set contrasts for accurate type 3 ANOVA"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.js:43
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.js:43
 #. i18n: ectx: (Loaded from ANOVA)
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:260
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:260
 msgctxt "R code comment"
 msgid "ezANOVA demands a subject identifier variable"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.js:84
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.js:84
 #. i18n: ectx: (Loaded from ANOVA)
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:264
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:264
 msgid "ANOVA results"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.js:87
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.js:87
 #. i18n: ectx: (Loaded from ANOVA)
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:268
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:268
 msgid "Mauchly's Test for Sphericity"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.js:90
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.js:90
 #. i18n: ectx: (Loaded from ANOVA)
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:272
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:272
 msgid "Sphericity Corrections"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.js:93
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.js:93
 #. i18n: ectx: (Loaded from ANOVA)
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:276
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:276
 msgid "Levene's Test for Homgeneity"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:39
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:39
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Data"> <varslot label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:292
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:292
 msgid "Data (must be data.frame)"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:42
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:42
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Data"> <radio label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:295
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:295
 msgid "Design"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:43
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:43
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <radio label="Design"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:298
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:298
 msgid "Between subjects"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:44
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:44
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <radio label="Design"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:301
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:301
 msgid "Within subjects (repeated measures)"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:45
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:45
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <radio label="Design"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:304
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:304
 msgid "Mixed"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:49
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:49
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Data"> <varslot label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:307
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:307
 msgid "Dependent variable"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:53
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:53
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Data"> <varslot label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:313
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:313
 msgid "Within subject variables"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:59
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:59
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:319
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:319
 msgid "Observed"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:61
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:61
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Observed"> <varselector label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:322
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:322
 msgid "Select observed variables"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:64
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:64
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Observed"> <text>
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:325
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:325
 msgid ""
 "Observed variables are independent variables you have <b> already defined </"
 "b> as either between or within variables, but that were measured and <b> not "
@@ -621,119 +621,119 @@ msgid ""
 "seqared)."
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:75
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:75
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Observed"> <varslot label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:328
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:328
 msgid "Observed variables (not manipulated)"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:84
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:84
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Options"> <dropdown label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:334
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:334
 msgid "Sums of squares type for unbalanced designs"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:85
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:85
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <dropdown label="Sums of squares type for unbalanced designs"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:337
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:337
 msgid "Type 1"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:86
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:86
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <dropdown label="Sums of squares type for unbalanced designs"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:340
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:340
 msgid "Type 2"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:87
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:87
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <dropdown label="Sums of squares type for unbalanced designs"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:343
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:343
 msgid "Type 3"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:91
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:91
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Options"> <dropdown label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:346
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:346
 msgid "Heteroscedasticity correction"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:92
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:92
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <dropdown label="Heteroscedasticity correction"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:349
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:349
 msgid "None"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:93
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:93
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <dropdown label="Heteroscedasticity correction"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:352
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:352
 msgid "hc3 (Long & Ervin; default)"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:94
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:94
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <dropdown label="Heteroscedasticity correction"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:355
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:355
 msgid "hc0 (White)"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:95
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:95
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <dropdown label="Heteroscedasticity correction"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:358
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:358
 msgid "hc1 (Long & Ervin)"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:96
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:96
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <dropdown label="Heteroscedasticity correction"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:361
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:361
 msgid "hc2 (Long & Ervin)"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:97
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:97
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> [...] <dropdown label="Heteroscedasticity correction"> <option label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:364
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:364
 msgid "hc4 (Cribari-Neto)"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:102
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:102
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Options"> <checkbox label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:367
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:367
 msgid "Show sums of squares, raw likelihood ratios etc."
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:105
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:105
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Options"> <checkbox label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:370
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:370
 msgid "Return 'aov' object"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/plugins/ANOVA.xml:109
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/plugins/ANOVA.xml:109
 #. i18n: ectx: (ANOVA) <dialog label="ANOVA"> <tabbook label="ANOVA"> <tab label="Options"> <checkbox label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:373
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:373
 msgid "Suppress package loading messages"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:72
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:72
 #. i18n: ectx: <hierarchy> <menu label="...">
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:105
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:105
 #. i18n: ectx: <hierarchy> <menu label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:379
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:397
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:379
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:397
 msgid "Analysis"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:76
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:76
 #. i18n: ectx: <hierarchy> <menu label="Analysis"> <menu label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:382
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:382
 msgid "means"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:80
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:80
 #. i18n: ectx: <hierarchy> <menu label="Analysis"> <menu label="means"> <menu label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:385
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:385
 msgid "t-tests"
 msgstr ""
 
-#. i18n: file: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:88
+#. i18n: file: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/rk.ANOVA.pluginmap:88
 #. i18n: ectx: <hierarchy> <menu label="...">
-#: /home/m/daten/R/rkward_plugins/git//rk.ANOVA/inst/rkward/po/rc.cpp:388
+#: /home/m/daten/R/rkward_plugins/git/rk.ANOVA/inst/rkward/po/rc.cpp:388
 msgid "Plots"
 msgstr ""
