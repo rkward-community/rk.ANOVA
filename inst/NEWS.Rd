@@ -1,6 +1,14 @@
 \name{NEWS}
 \title{News for Package 'rk.ANOVA'}
-\section{Changes in rk.ANOVA version 0.01-22 (2015-06-29)}{
+\encoding{UTF-8}
+\section{Changes in rk.ANOVA version 0.01-23 (2022-05-03)}{
+  \subsection{fixed}{
+    \itemize{
+      \item screenshot URL and removed flattr-link in README.md
+    }
+  }
+}
+\section{Changes in rk.ANOVA version 0.01-22 (2015-12-18)}{
   \subsection{changed}{
     \itemize{
       \item updated the generator script

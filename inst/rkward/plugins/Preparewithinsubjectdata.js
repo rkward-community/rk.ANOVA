@@ -1,14 +1,16 @@
 // this code was generated using the rkwarddev package.
 // perhaps don't make changes here, but in the rkwarddev script instead!
+// 
+// look for a file called: $SRC/inst/rkward/rkwarddev_ANOVA_plugin_script.R
 
 
 
-function preprocess(){
+function preprocess(is_preview){
   // add requirements etc. here
 
 }
 
-function calculate(){
+function calculate(is_preview){
   // read in variables from dialog
   var pdDataSelected = getString("pdDataSelected");
   var pdResponse = getString("pdResponse");
@@ -17,7 +19,6 @@ function calculate(){
   var pdNameCaseID = getString("pdNameCaseID");
   var pdCaseID = getString("pdCaseID");
   var pdBetween = getString("pdBetween");
-  var pdSaveResults = getString("pdSaveResults");
   var pdGenCaseID = getBoolean("pdGenCaseID.state");
 
   // the R code to be evaluated
@@ -65,10 +66,9 @@ function calculate(){
   echo(",\n\t\tstringsAsFactors=FALSE)\n\n");
 }
 
-function printout(){
+function printout(is_preview){
   // printout the results
   new Header(i18n("Prepare within subject data")).print();
-
   echo("\trk.print(summary(anova.data))\n");
   //// save result object
   // read in saveobject variables

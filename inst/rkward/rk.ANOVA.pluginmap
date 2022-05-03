@@ -8,7 +8,9 @@
 >
   <!-- 
     this code was generated using the rkwarddev package.
-    perhaps don't make changes here, but in the rkwarddev script instead! 
+    perhaps don't make changes here, but in the rkwarddev script instead!
+    
+    look for a file called: $SRC/inst/rkward/rkwarddev_ANOVA_plugin_script.R 
   -->
   <dependencies rkward_min_version="0.6.0">
     <package name="ez" />
@@ -18,8 +20,8 @@
     name="rk.ANOVA"
     shortinfo="RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions."
     longinfo="RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions."
-    version="0.01-22"
-    releasedate="2015-12-18"
+    version="0.01-23"
+    releasedate="2022-05-03"
     url="https://rkward.kde.org"
     license="GPL (&gt;= 3)"
   >

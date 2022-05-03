@@ -1,8 +1,8 @@
 ChangeLog for package rk.ANOVA
 
-changes in version 0.01-23 (2022-04-20)
+changes in version 0.01-23 (2022-05-03)
 fixed:
-  - screenshot URL
+  - screenshot URL and removed flattr-link in README.md
 
 changes in version 0.01-22 (2015-12-18)
 changed:

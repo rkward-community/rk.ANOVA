@@ -1,16 +1,20 @@
 Package: rk.ANOVA
 Type: Package
-Title: RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot interactions.
-Version: 0.01-22
-Date: 2015-11-14
+Title: RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and plot
+          interactions.
+Version: 0.01-23
+Date: 2022-05-03
 Author: Meik Michalke
 Maintainer: Meik Michalke <meik.michalke@hhu.de>
 Depends: rkward (>= 0.6.0)
 Suggests: ez, sciplot
 Enhances: rkward
-Description: RKWard GUI to conduct ANOVAs (using the ez package), pairwise t- Tests and plot interactions.
+Description: RKWard GUI to conduct ANOVAs (using the ez package), pairwise t-Tests and
+          plot interactions.
 License: GPL (>= 3)
+Encoding: UTF-8
 LazyLoad: yes
 URL: https://rkward.kde.org
-Authors@R: person(given="Meik", family="Michalke", email="meik.michalke@hhu.de", role=c("aut", "cre"))
-RoxygenNote: 5.0.1
+Authors@R: person(given="Meik", family="Michalke", email="meik.michalke@hhu.de",
+          role=c("aut", "cre"))
+RoxygenNote: 7.1.2

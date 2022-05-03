@@ -1,19 +1,21 @@
 // this code was generated using the rkwarddev package.
 // perhaps don't make changes here, but in the rkwarddev script instead!
+// 
+// look for a file called: $SRC/inst/rkward/rkwarddev_ANOVA_plugin_script.R
 
 
 
-function preprocess(){
+function preprocess(is_preview){
   // add requirements etc. here
   var noLoadMsg = getValue("noLoadMsg");
   if(noLoadMsg) {
-    echo("suppressMessages(require(" + "ez" + "))\n");
+    echo("suppressMessages(require(ez))\n");
   } else {
-    echo("require(" + "ez" + ")\n");
+    echo("require(ez)\n");
   }
 }
 
-function calculate(){
+function calculate(is_preview){
   // read in variables from dialog
   var dataSelected = getString("dataSelected");
   var design = getString("design");
@@ -24,10 +26,8 @@ function calculate(){
   var observed = getString("observed");
   var sumOfSqType = getString("sumOfSqType");
   var hetScedCorrection = getString("hetScedCorrection");
-  var saveResults = getString("saveResults");
   var showExtraInfo = getBoolean("showExtraInfo.state");
   var aov = getBoolean("aov.state");
-  var noLoadMsg = getBoolean("noLoadMsg.state");
 
   // the R code to be evaluated
   var dependendShortname = getValue("dependend.shortname").split("\n").join(", ");
@@ -79,10 +79,9 @@ function calculate(){
   echo(")\n\n");
 }
 
-function printout(){
+function printout(is_preview){
   // printout the results
   new Header(i18n("ANOVA results")).print();
-
   echo("\trk.print(anova.results[[\"ANOVA\"]])\n");
   echo("\tif(\"Mauchly's Test for Sphericity\" %in% names(anova.results)){\n\t\t");
   new Header(i18n("Mauchly's Test for Sphericity"), 3).print();
