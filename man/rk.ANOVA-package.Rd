@@ -2,30 +2,36 @@
 % Please edit documentation in R/rk.ANOVA-package.R
 \docType{package}
 \name{rk.ANOVA-package}
+\alias{rk.ANOVA}
 \alias{rk.ANOVA-package}
-\title{The rk.ANOVA Package}
+\title{\packageTitle{rk.ANOVA}}
 \description{
-RKWard GUI to conduct ANOVAs (using the ez package),
-      pairwise t-Tests and plot interactions..
+\packageDescription{rk.ANOVA}
 }
 \details{
+The DESCRIPTION file:
 \tabular{ll}{
 Package: \tab rk.ANOVA\cr
 Type: \tab Package\cr
-Version: \tab 0.01-22\cr
-Date: \tab 2015-11-14\cr
+Version: \tab 0.01-23\cr
+Date: \tab 2022-05-03\cr
 Depends: \tab rkward (>= 0.6.0)\cr
 Enhances: \tab rkward\cr
+Encoding: \tab UTF-8\cr
 License: \tab GPL (>= 3)\cr
 LazyLoad: \tab yes\cr
 URL: \tab https://rkward.kde.org\cr
 }
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://rkward.kde.org}
+}
 
-RKWard GUI to conduct ANOVAs (using the ez package),
-      pairwise t- Tests and plot interactions.
 }
 \author{
-Meik Michalke
-}
-\keyword{package}
+\packageAuthor{rk.ANOVA}
 
+Maintainer: \packageMaintainer{rk.ANOVA}
+}

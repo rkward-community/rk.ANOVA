@@ -1,29 +1,27 @@
 // this code was generated using the rkwarddev package.
 // perhaps don't make changes here, but in the rkwarddev script instead!
-
-
-
-function preprocess(){
-  // add requirements etc. here
-  echo("require(sciplot)\n");
-}
-
-function calculate(){
-}
-
-function printout(){
-  // all the real work is moved to a custom defined function doPrintout() below
-  // true in this case means: We want all the headers that should be printed in the output:
-  doPrintout(true);
-}
+// 
+// look for a file called: $SRC/inst/rkward/rkwarddev_ANOVA_plugin_script.R
 
 function preview(){
-  preprocess();
-  calculate();
-  doPrintout(false);
+  preprocess(true);
+  calculate(true);
+  printout(true);
 }
 
-function doPrintout(full){
+function preprocess(is_preview){
+  // add requirements etc. here
+  if(is_preview) {
+    echo("if(!base::require(sciplot)){stop(" + i18n("Preview not available, because package sciplot is not installed or cannot be loaded.") + ")}\n");
+  } else {
+    echo("require(sciplot)\n");
+  }
+}
+
+function calculate(is_preview){
+}
+
+function printout(is_preview){
   // read in variables from dialog
   var ipFactor = getString("ipFactor");
   var ipResponse = getString("ipResponse");
@@ -38,18 +36,16 @@ function doPrintout(full){
   var ipLegendChecked = getBoolean("ipLegend.checked");
   var ipDrawSEChecked = getBoolean("ipDrawSE.checked");
 
-  // create the plot
-  if(full) {
-    new Header(i18n("Interaction plot")).print();
-  } else {}
-
-  // in case there are generic plot options defined:
+  // printout the results
+  if(!is_preview) {
+    new Header(i18n("Interaction plot")).print();  
+  } else {}  // in case there are generic plot options defined:
   var embRkwrdpltptnGCodePreprocess = getValue("emb_rkwrdpltptnG.code.preprocess");
   var embRkwrdpltptnGCodePrintout = getValue("emb_rkwrdpltptnG.code.printout");
   var embRkwrdpltptnGCodeCalculate = getValue("emb_rkwrdpltptnG.code.calculate");
 
-  if(full) {
-    echo("rk.graph.on()\n");
+  if(!is_preview) {
+    echo("rk.graph.on()\n");  
   } else {}
   echo("  try({\n");
 
@@ -115,7 +111,9 @@ function doPrintout(full){
   printIndentedUnlessEmpty("    ", embRkwrdpltptnGCodeCalculate, "\n", "");
 
   echo("\n  })\n");
-  if(full) {
-    echo("rk.graph.off()\n");
+  if(!is_preview) {
+    echo("rk.graph.off()\n");  
   } else {}
+
 }
+
